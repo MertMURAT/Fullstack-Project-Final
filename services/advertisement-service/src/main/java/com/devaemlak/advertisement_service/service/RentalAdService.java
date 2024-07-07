@@ -13,6 +13,7 @@ import com.devaemlak.advertisement_service.repository.AdvertisementRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -24,10 +25,12 @@ public class RentalAdService {
 
     private final AdvertisementRepository advertisementRepository;
 
+    @Transactional
     public void save(RentalAdSaveRequest request) {
         advertisementRepository.save(RentalAdConverter.toRentalAd(request));
     }
 
+    @Transactional
     public void updateStatus(AdvertisementUpdateStatusRequest updateStatusRequest) {
         Advertisement foundedAdvertisement = advertisementRepository.findById(updateStatusRequest.getId())
                 .orElseThrow(() -> new RuntimeException("Advertisement not found"));

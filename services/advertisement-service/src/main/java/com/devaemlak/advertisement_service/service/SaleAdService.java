@@ -15,6 +15,7 @@ import com.devaemlak.advertisement_service.repository.AdvertisementRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -25,18 +26,19 @@ public class SaleAdService {
 
     private final AdvertisementRepository advertisementRepository;
 
+    @Transactional
     public void save(SaleAdSaveRequest request) {
         advertisementRepository.save(SaleAdConverter.toSaleAd(request));
     }
 
+    @Transactional
     public void updateStatus(AdvertisementUpdateStatusRequest updateStatusRequest) {
         Advertisement foundedAdvertisement = advertisementRepository.findById(updateStatusRequest.getId())
                 .orElseThrow(() -> new RuntimeException("Advertisement not found"));
         foundedAdvertisement.setAdvertisementStatus(updateStatusRequest.getStatus());
         advertisementRepository.save(foundedAdvertisement);
     }
-
-
+    
     public List<SaleAdResponse> getAll() {
         List<SaleAd> saleAds = advertisementRepository.findAll().stream()
                 .filter(ad -> ad instanceof SaleAd)
