@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="user-service" />
         <module name="api-gateway-service" />
         <module name="discovery-client-service" />
         <module name="advertisement-service" />
@@ -18,6 +19,7 @@
       <module name="advertisement-service" options="-parameters" />
       <module name="api-gateway-service" options="-parameters" />
       <module name="discovery-client-service" options="-parameters" />
+      <module name="user-service" options="-parameters" />
     </option>
   </component>
 </project>
