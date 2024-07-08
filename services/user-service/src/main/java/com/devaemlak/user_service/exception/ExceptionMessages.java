@@ -7,5 +7,7 @@ import lombok.NoArgsConstructor;
 public class ExceptionMessages {
 
     public static final String USER_NOT_FOUND = "Kullanıcı bulunamadı.";
+    public static final String USER_SAVE_ERROR = "Kullanıcı kaydedilemedi.";
+    public static final String USER_RETRIEVE_ERROR = "Kullanıcılar getirilemedi.";
 
 }

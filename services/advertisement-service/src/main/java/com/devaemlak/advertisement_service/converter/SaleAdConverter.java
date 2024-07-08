@@ -47,7 +47,7 @@ public class SaleAdConverter {
                 .title(saleAd.getTitle())
                 .description(saleAd.getDescription())
                 .advertisementType(saleAd.getAdvertisementType())
-                .advertisementStatus(AdvertisementStatus.IN_REVIEW)
+                .advertisementStatus(saleAd.getAdvertisementStatus())
                 .price(saleAd.getPrice())
                 .assignee(saleAd.getAssignee())
                 .numberOfRooms(saleAd.getNumberOfRooms())

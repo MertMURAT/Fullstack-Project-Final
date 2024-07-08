@@ -3,6 +3,8 @@ package com.devaemlak.user_service.service;
 import com.devaemlak.user_service.converter.UserConverter;
 import com.devaemlak.user_service.dto.request.UserSaveRequest;
 import com.devaemlak.user_service.dto.response.UserResponse;
+import com.devaemlak.user_service.exception.ExceptionMessages;
+import com.devaemlak.user_service.exception.UserException;
 import com.devaemlak.user_service.model.User;
 import com.devaemlak.user_service.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -21,17 +23,26 @@ public class UserService {
 
     @Transactional
     public void save(UserSaveRequest request){
-        userRepository.save(UserConverter.toUser(request));
+        try {
+            userRepository.save(UserConverter.toUser(request));
+        } catch (Exception e) {
+            log.error("Kullanıcı kaydedilirken hata oluştu: {}", e.getMessage());
+            throw new UserException(ExceptionMessages.USER_SAVE_ERROR);
+        }
     }
 
     public List<UserResponse> getAll(){
-        return UserConverter.toResponse(userRepository.findAll());
+        try {
+            return UserConverter.toResponse(userRepository.findAll());
+        } catch (Exception e) {
+            log.error("Tüm kullanıcılar getirilirken hata oluştu: {}", e.getMessage());
+            throw new UserException(ExceptionMessages.USER_RETRIEVE_ERROR);
+        }
     }
 
     public UserResponse getById(Long id){
-        return getAll().stream()
-                .filter(userResponse -> userResponse.getId().equals(id))
-                .findFirst()
-                .orElse(null);
+        return userRepository.findById(id)
+                .map(UserConverter::toResponse)
+                .orElseThrow(() -> new UserException(ExceptionMessages.USER_NOT_FOUND));
     }
 }

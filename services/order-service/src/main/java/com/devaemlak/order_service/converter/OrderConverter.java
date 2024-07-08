@@ -18,6 +18,7 @@ public class OrderConverter {
                 .quantity(10)
                 .userId(request.getUserId())
                 .totalAmount(new BigDecimal(500))
+                .createdDate(LocalDateTime.now())
                 .build();
     }
 

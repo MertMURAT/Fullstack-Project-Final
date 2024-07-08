@@ -7,5 +7,7 @@ import lombok.NoArgsConstructor;
 public class ExceptionMessages {
 
     public static final String ORDER_NOT_FOUND = "Sipariş bulunamadı.";
+    public static final String ORDER_SAVE_ERROR = "Sipariş kaydedilemedi.";
+    public static final String ORDER_RETRIEVE_ERROR = "Siparişler getirilemedi.";
 
 }
