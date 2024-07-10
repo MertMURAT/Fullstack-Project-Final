@@ -1,5 +1,6 @@
 "use client"
 import { Button } from '@/components/ui/button'
+import { UserButton, useUser } from '@clerk/nextjs'
 import { Plus } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -7,7 +8,8 @@ import { usePathname } from 'next/navigation'
 import React, { useEffect } from 'react'
 
 function Header() {
-    const path=usePathname();
+    const path = usePathname();
+    const { user, isSignedIn } = useUser();
 
     useEffect(() => {
         console.log(path);
@@ -20,15 +22,21 @@ function Header() {
                     height={50} alt='logo' />
                 <ul className='hidden md:flex gap-10'>
                     <Link href={'/'}>
-                        <li className={`'hover:text-primary font-medium text-sm cursor-pointer' ${path=='/'&&'text-primary'}`}>For Sale</li>
+                        <li className={`'hover:text-primary font-medium text-sm cursor-pointer' ${path == '/' && 'text-primary'}`}>For Sale</li>
                     </Link>
                     <li className='hover:text-primary font-medium text-sm cursor-pointer'>For Rent</li>
                     <li className='hover:text-primary font-medium text-sm cursor-pointer'>Agent Finder</li>
                 </ul>
             </div>
-            <div className='flex gap-2'>
-                <Button className='flex gap-2'><Plus className='h-5 w-5'/> Post Your Ad</Button>
-                <Button variant="outline">Login</Button>
+            <div className='flex gap-2 items-center'>
+                <Button className='flex gap-2'><Plus className='h-5 w-5' /> Post Your Ad</Button>
+                {isSignedIn ?
+                    <UserButton />
+                    :
+                    <Link href={'/sign-in'}>
+                        <Button variant="outline">Login</Button>
+                    </Link>
+                }
             </div>
         </div>
     )
