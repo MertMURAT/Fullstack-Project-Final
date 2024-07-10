@@ -10,11 +10,6 @@
         <option value="$PROJECT_DIR$/services/user-service/pom.xml" />
         <option value="$PROJECT_DIR$/services/payment-service/pom.xml" />
         <option value="$PROJECT_DIR$/services/order-service/pom.xml" />
-        <option value="$PROJECT_DIR$/backend/services/discovery-client-service/pom.xml" />
-        <option value="$PROJECT_DIR$/backend/services/api-gateway-service/pom.xml" />
-        <option value="$PROJECT_DIR$/backend/services/advertisement-service/pom.xml" />
-        <option value="$PROJECT_DIR$/backend/services/order-service/pom.xml" />
-        <option value="$PROJECT_DIR$/backend/services/user-service/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

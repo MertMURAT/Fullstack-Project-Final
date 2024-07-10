@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8ade2e6a-db94-43b4-ba27-91a98be78c59" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.idea/Fullstack-Project-Final.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/AdvertisementServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/constants/AdvertisementConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/AdvertisementController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/RentalAdController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/SaleAdController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/AdvertisementConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/RentalAdConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/SaleAdConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/AdvertisementSaveRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/AdvertisementUpdateStatusRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/RentalAdSaveRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/SaleAdSaveRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/AdvertisementResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/ExceptionResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/GenericResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/RentalAdResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/SaleAdResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/exception/AdvertisementException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/exception/ExceptionMessages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/Advertisement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/BaseEntityModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/RentalAd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/SaleAd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/enums/AdvertisementStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/enums/AdvertisementType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/enums/HousingType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/enums/PriorityType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/repository/AdvertisementRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AdvertisementService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/RentalAdService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/SaleAdService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/test/java/com/devaemlak/advertisement_service/AdvertisementServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/api-gateway-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/api-gateway-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/api-gateway-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/api-gateway-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/api-gateway-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/api-gateway-service/src/main/java/com/devaemlak/api_gateway_service/ApiGatewayServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/api-gateway-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/api-gateway-service/src/test/java/com/devaemlak/api_gateway_service/ApiGatewayServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/discovery-client-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/discovery-client-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/discovery-client-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/discovery-client-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/discovery-client-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/discovery-client-service/src/main/java/com/devaemlak/discovery_client_service/DiscoveryClientServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/discovery-client-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/discovery-client-service/src/test/java/com/devaemlak/discovery_client_service/DiscoveryClientServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/OrderServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/constants/OrderConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/converter/OrderConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/dto/request/OrderSaveRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/dto/response/ExceptionResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/dto/response/GenericResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/dto/response/OrderResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/exception/ExceptionMessages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/exception/OrderException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/model/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/repository/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/test/java/com/devaemlak/order_service/OrderServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/UserServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/constants/UserConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/converter/UserConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/dto/request/UserSaveRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/dto/response/ExceptionResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/dto/response/GenericResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/dto/response/UserResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/exception/ExceptionMessages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/exception/UserException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/test/java/com/devaemlak/user_service/UserServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Fullstack-Project-Final.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/AdvertisementServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/constants/AdvertisementConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/AdvertisementController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/RentalAdController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/SaleAdController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/AdvertisementConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/RentalAdConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/SaleAdConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/AdvertisementSaveRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/AdvertisementUpdateStatusRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/RentalAdSaveRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/SaleAdSaveRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/AdvertisementResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/ExceptionResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/GenericResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/RentalAdResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/SaleAdResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/exception/AdvertisementException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/exception/ExceptionMessages.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/Advertisement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/BaseEntityModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/RentalAd.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/SaleAd.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/enums/AdvertisementStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/enums/AdvertisementType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/enums/HousingType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/enums/PriorityType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/repository/AdvertisementRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AdvertisementService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/RentalAdService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/SaleAdService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/advertisement-service/src/test/java/com/devaemlak/advertisement_service/AdvertisementServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/api-gateway-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/api-gateway-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/api-gateway-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/api-gateway-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/api-gateway-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/api-gateway-service/src/main/java/com/devaemlak/api_gateway_service/ApiGatewayServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/api-gateway-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/api-gateway-service/src/test/java/com/devaemlak/api_gateway_service/ApiGatewayServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/discovery-client-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/discovery-client-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/discovery-client-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/discovery-client-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/discovery-client-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/discovery-client-service/src/main/java/com/devaemlak/discovery_client_service/DiscoveryClientServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/discovery-client-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/discovery-client-service/src/test/java/com/devaemlak/discovery_client_service/DiscoveryClientServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/src/main/java/com/devaemlak/order_service/OrderServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/src/main/java/com/devaemlak/order_service/constants/OrderConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/src/main/java/com/devaemlak/order_service/controller/OrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/src/main/java/com/devaemlak/order_service/converter/OrderConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/src/main/java/com/devaemlak/order_service/dto/request/OrderSaveRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/src/main/java/com/devaemlak/order_service/dto/response/ExceptionResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/src/main/java/com/devaemlak/order_service/dto/response/GenericResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/src/main/java/com/devaemlak/order_service/dto/response/OrderResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/src/main/java/com/devaemlak/order_service/exception/ExceptionMessages.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/src/main/java/com/devaemlak/order_service/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/src/main/java/com/devaemlak/order_service/exception/OrderException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/src/main/java/com/devaemlak/order_service/model/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/src/main/java/com/devaemlak/order_service/repository/OrderRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/src/main/java/com/devaemlak/order_service/service/OrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order-service/src/test/java/com/devaemlak/order_service/OrderServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/src/main/java/com/devaemlak/user_service/UserServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/src/main/java/com/devaemlak/user_service/constants/UserConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/src/main/java/com/devaemlak/user_service/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/src/main/java/com/devaemlak/user_service/converter/UserConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/src/main/java/com/devaemlak/user_service/dto/request/UserSaveRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/src/main/java/com/devaemlak/user_service/dto/response/ExceptionResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/src/main/java/com/devaemlak/user_service/dto/response/GenericResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/src/main/java/com/devaemlak/user_service/dto/response/UserResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/src/main/java/com/devaemlak/user_service/exception/ExceptionMessages.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/src/main/java/com/devaemlak/user_service/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/src/main/java/com/devaemlak/user_service/exception/UserException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/src/main/java/com/devaemlak/user_service/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/src/main/java/com/devaemlak/user_service/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/src/main/java/com/devaemlak/user_service/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user-service/src/test/java/com/devaemlak/user_service/UserServiceApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="package-info" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2isNhHP040jJJpEhQTx6utCaDCj" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AdvertisementServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ApiGatewayServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.DiscoveryClientServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.OrderServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.UserServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mert/Desktop/Fullstack-Project-Final/backend/services/user-service&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Mert\Desktop\Fullstack-Project-Final\services\order-service\src\main\java\com\devaemlak\order_service\dto\response" />
+      <recent name="C:\Users\Mert\Desktop\Fullstack-Project-Final\services\order-service\src\main\java\com\devaemlak\order_service" />
+      <recent name="C:\Users\Mert\Desktop\Fullstack-Project-Final\services\user-service\src\main\java\com\devaemlak\user_service\dto\response" />
+      <recent name="C:\Users\Mert\Desktop\Fullstack-Project-Final\services\user-service\src\main\java\com\devaemlak\user_service\exception" />
+      <recent name="C:\Users\Mert\Desktop\Fullstack-Project-Final\services\api-gateway-service\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mert\Desktop\Fullstack-Project-Final\services\discovery-client-service\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.OrderServiceApplication">
+    <configuration name="AdvertisementServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="advertisement-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.devaemlak.advertisement_service.AdvertisementServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiGatewayServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="api-gateway-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.devaemlak.api_gateway_service.ApiGatewayServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.devaemlak.api_gateway_service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiscoveryClientServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="discovery-client-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.devaemlak.discovery_client_service.DiscoveryClientServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="order-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.devaemlak.order_service.OrderServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="user-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.devaemlak.user_service.UserServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.ApiGatewayServiceApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17890.1" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17890.1" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8ade2e6a-db94-43b4-ba27-91a98be78c59" name="Changes" comment="" />
+      <created>1720275442015</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1720275442015</updated>
+      <workItem from="1720275443218" duration="22953000" />
+      <workItem from="1720347103914" duration="29582000" />
+      <workItem from="1720600489633" duration="1602000" />
+      <workItem from="1720602203065" duration="38000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/SaleAdController.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/RentalAdController.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/services/user-service/src/main/java/com/devaemlak/user_service/controller/UserController.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/services/order-service/src/main/java/com/devaemlak/order_service/controller/OrderController.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/SaleAdService.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/SaleAdController.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
