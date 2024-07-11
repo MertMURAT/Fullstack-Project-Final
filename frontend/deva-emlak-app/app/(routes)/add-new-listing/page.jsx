@@ -6,12 +6,14 @@ import GoogleAddressSearch from "@/app/_components/GoogleAddressSearch"
 import { Button } from '@/components/ui/button'
 import { toast } from 'sonner'
 import { Loader } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 function AddNewListing() {
   const [selectedAddress, setSelectedAddress] = useState();
   const [coordinates, setCoordinates] = useState();
   const { user } = useUser();
   const [loader, setLoader] = useState(false);
+  const router = useRouter();
 
   const nextHandler = async () => {
     // console.log(selectedAddress, coordinates);
@@ -31,6 +33,7 @@ function AddNewListing() {
       setLoader(false)
       console.log("New data added, ", data);
       toast("New Address added for listing");
+      router.replace('/edit-new-listing/'+data[0].id)
     }
 
     if (error) {
@@ -54,9 +57,9 @@ function AddNewListing() {
             setCoordinates={(value) => setCoordinates(value)}
           />
           <Button
-            disabled={!selectedAddress || !coordinates||loader}
+            disabled={!selectedAddress || !coordinates || loader}
             onClick={nextHandler}>
-              {loader?<Loader className='animate-spin' />:'Next'}
+            {loader ? <Loader className='animate-spin' /> : 'Next'}
           </Button>
         </div>
       </div>
