@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import {
@@ -18,6 +18,8 @@ import { supabase } from '@/utils/supabase/client'
 import { toast } from 'sonner'
 import { useRouter } from 'next/navigation'
 import { useUser } from '@clerk/nextjs'
+import FileUpload from '../_components/FileUpload'
+import { Loader } from 'lucide-react'
 
 function EditListing({ params }) {
 
@@ -25,22 +27,27 @@ function EditListing({ params }) {
     const { user } = useUser();
     const router = useRouter();
     const [listing, setListing] = useState([]);
-
-    useEffect(() => {
-        // console.log(params.split('/')[2])
-        user & verifyUserRecord();
-    }, [user])
+    const [images, setImages] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     const verifyUserRecord = async () => {
         const { data, error } = await supabase
             .from('listing')
-            .select('*')
+            .select('*, listingImages(listing_id, url)')
             .eq('createdBy', user?.primaryEmailAddress.emailAddress)
             .eq('id', params.id);
 
         if (data) {
+            console.log("Veri :", data[0]);
             setListing(data[0]);
         }
+
+        // if (data && data.length > 0) {
+        //     setListing(data[0]);
+        // }
+        // else {
+        //     router.replace('/');
+        // }
 
         // if(data?.length<=0){
         //     router.replace('/')
@@ -48,7 +55,7 @@ function EditListing({ params }) {
     }
 
     const onSubmitHandler = async (formValue) => {
-
+        setLoading(true);
 
         const { data, error } = await supabase
             .from('listing')
@@ -59,9 +66,55 @@ function EditListing({ params }) {
         if (data) {
             console.log(data);
             toast('Listing updated and published')
+        } else if (error) {
+            toast('Error updating listing');
+            setLoading(false);
         }
 
+        for (const image of images) {
+            const file = image;
+            const fileName = Date.now().toString();
+            const fileExt = fileName.split('.').pop();
+            const { data, error } = await supabase.storage
+                .from('listingImages')
+                .upload(`${fileName}`, file, {
+                    contentType: `image/${fileExt}`,
+                    upsert: false
+                });
+
+            if (error) {
+
+                setLoading(false);
+                toast('Error while uploading images');
+            }
+            else {
+                // console.log('data : ', data);
+                const imageUrl = process.env.NEXT_PUBLIC_IMAGE_URL + fileName;
+                console.log(imageUrl);
+                const { data, error } = await supabase
+                    .from('listingImages')
+                    .insert([
+                        { url: imageUrl, listing_id: params?.id }
+                    ])
+                    .select();
+
+                if (error) {
+                    setLoading(false);
+                }
+            }
+        }
+        setLoading(false);
     }
+
+    useEffect(() => {
+        // console.log(params.split('/')[2])
+        user & verifyUserRecord();
+
+    }, [user])
+
+    // if (!listing) {
+    //     return <div>Veriler Yükleniyor...</div>;
+    // }
 
     return (
         <div className='px-10 md:px-36 my-10'>
@@ -71,8 +124,8 @@ function EditListing({ params }) {
                 initialValues={{
                     type: '',
                     propertyType: '',
-                    profileImage:user?.imageUrl,
-                    fullName:user?.fullName
+                    profileImage: user?.imageUrl,
+                    fullName: user?.fullName
                 }}
                 onSubmit={(values) => {
                     console.log(values);
@@ -89,9 +142,11 @@ function EditListing({ params }) {
                             <div className='grid grid-cols-1 md:grid-cols-3 gap-10'>
                                 <div className='flex gap-2 flex-col'>
                                     <h2 className='text-slate-500'>Do you want to Rent or Sell?</h2>
-                                    <RadioGroup defaultValue={listing?.type}
-                                        // onValueChange={(v)=>console.log(v)}>
-                                        onValueChange={(v) => values.type = v}>
+                                    <RadioGroup
+                                        // onValueChange={(v)=>console.log("",v)}
+                                        onValueChange={(v) => values.type = v}
+                                        defaultValue={listing ? listing?.type : listing?.type}
+                                    >
                                         <div className="flex items-center space-x-2">
                                             <RadioGroupItem value="Rent" id="Rent" />
                                             <Label htmlFor="Rent">Rent</Label>
@@ -108,7 +163,8 @@ function EditListing({ params }) {
                                         // onValueChange={(e)=> console.log(e)}
                                         onValueChange={(e) => values.propertyType = e}
                                         name='propertyType'
-                                        defaultValue={listing?.propertyType}>
+                                        defaultValue={listing?.propertyType}
+                                        onChange={handleChange}>
                                         <SelectTrigger className="w-[180px]">
                                             <SelectValue placeholder={listing?.propertyType ? listing?.propertyType : "Select Property Type"} />
                                         </SelectTrigger>
@@ -176,9 +232,17 @@ function EditListing({ params }) {
                                         onChange={handleChange} defaultValue={listing?.description} />
                                 </div>
                             </div>
+
+                            <div className='grid grid-cols-1 gap-2'>
+                                <h2 className=' font-lg text-slate-500 my-2'>Upload Property Images</h2>
+                                <FileUpload setImages={(value) => setImages(value)}
+                                imageList={listing?.listingImages} />
+                            </div>
+
                             <div className='flex gap-7 justify-end'>
                                 <Button variant="outline" className='text-primary border-orange-400'>Save</Button>
-                                <Button className="">Save & Publish</Button>
+                                <Button disabled={loading} className="">
+                                    {loading ? <Loader className='animate-spin' /> : 'Save & Publish'}</Button>
                             </div>
                         </div>
                     </form>)}
@@ -188,4 +252,4 @@ function EditListing({ params }) {
     )
 }
 
-export default EditListing
+export default EditListing;
