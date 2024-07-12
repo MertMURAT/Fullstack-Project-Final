@@ -20,6 +20,18 @@ import { useRouter } from 'next/navigation'
 import { useUser } from '@clerk/nextjs'
 import FileUpload from '../_components/FileUpload'
 import { Loader } from 'lucide-react'
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+    AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+
 
 function EditListing({ params }) {
 
@@ -66,12 +78,13 @@ function EditListing({ params }) {
         if (data) {
             console.log(data);
             toast('Listing updated and published')
+            setLoading(false);
         } else if (error) {
             toast('Error updating listing');
-            setLoading(false);
         }
 
         for (const image of images) {
+            setLoading(true);
             const file = image;
             const fileName = Date.now().toString();
             const fileExt = fileName.split('.').pop();
@@ -87,6 +100,8 @@ function EditListing({ params }) {
                 setLoading(false);
                 toast('Error while uploading images');
             }
+
+
             else {
                 // console.log('data : ', data);
                 const imageUrl = process.env.NEXT_PUBLIC_IMAGE_URL + fileName;
@@ -102,8 +117,22 @@ function EditListing({ params }) {
                     setLoading(false);
                 }
             }
+            setLoading(false);
         }
-        setLoading(false);
+    }
+
+    const publishButtonHandler = async () => {
+        setLoading(true);
+        const { data, error } = await supabase
+            .from('listing')
+            .update({ active: true })
+            .eq('id', params?.id)
+            .select()
+
+        if (data) {
+            setLoading(false);
+            toast('Listing published!');
+        }
     }
 
     useEffect(() => {
@@ -236,13 +265,35 @@ function EditListing({ params }) {
                             <div className='grid grid-cols-1 gap-2'>
                                 <h2 className=' font-lg text-slate-500 my-2'>Upload Property Images</h2>
                                 <FileUpload setImages={(value) => setImages(value)}
-                                imageList={listing?.listingImages} />
+                                    imageList={listing?.listingImages} />
                             </div>
 
                             <div className='flex gap-7 justify-end'>
-                                <Button variant="outline" className='text-primary border-orange-400'>Save</Button>
-                                <Button disabled={loading} className="">
-                                    {loading ? <Loader className='animate-spin' /> : 'Save & Publish'}</Button>
+                                <Button disabled={loading} variant="outline" className="text-primary border-primary">
+                                    {loading ? <Loader className='animate-spin' /> : 'Save'}
+                                </Button>
+
+                                <AlertDialog>
+                                    <AlertDialogTrigger asChild>
+                                        <Button type="button" disabled={loading} className="">
+                                            {loading ? <Loader className='animate-spin' /> : 'Save & Publish'}</Button>
+                                    </AlertDialogTrigger>
+                                    <AlertDialogContent>
+                                        <AlertDialogHeader>
+                                            <AlertDialogTitle>Ready to Publish?</AlertDialogTitle>
+                                            <AlertDialogDescription>
+                                                Do you really want to publish the listing?
+                                            </AlertDialogDescription>
+                                        </AlertDialogHeader>
+                                        <AlertDialogFooter>
+                                            <AlertDialogCancel>Cancel</AlertDialogCancel>
+                                            <AlertDialogAction onClick={() => publishButtonHandler()}>
+                                                {loading ? <Loader className='animate-spin' /> : 'Continue'}
+                                            </AlertDialogAction>
+                                        </AlertDialogFooter>
+                                    </AlertDialogContent>
+                                </AlertDialog>
+
                             </div>
                         </div>
                     </form>)}
