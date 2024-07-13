@@ -45,7 +45,7 @@ function EditListing({ params }) {
     const verifyUserRecord = async () => {
         const { data, error } = await supabase
             .from('listing')
-            .select('*, listingImages(listing_id, url)')
+            .select(`*, listingImages(listing_id, url)`)
             .eq('createdBy', user?.primaryEmailAddress.emailAddress)
             .eq('id', params.id);
 
@@ -138,6 +138,9 @@ function EditListing({ params }) {
     useEffect(() => {
         // console.log(params.split('/')[2])
         user & verifyUserRecord();
+        if(listing === null){
+            verifyUserRecord();
+        }
 
     }, [user])
 

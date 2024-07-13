@@ -16,7 +16,7 @@ function AddNewListing() {
   const router = useRouter();
 
   const nextHandler = async () => {
-    // console.log(selectedAddress, coordinates);
+    console.log(selectedAddress, coordinates);
     setLoader(true)
     const { data, error } = await supabase
       .from('listing')
@@ -33,7 +33,7 @@ function AddNewListing() {
       setLoader(false)
       console.log("New data added, ", data);
       toast("New Address added for listing");
-      router.replace('/edit-new-listing/'+data[0].id)
+      router.replace('/edit-new-listing/' + data[0].id)
     }
 
     if (error) {

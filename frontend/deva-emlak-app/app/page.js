@@ -1,6 +1,9 @@
+import ListingMapView from "./_components/ListingMapView"
+
 export default function Home() {
   return (
-    <div>
+    <div className="p-10">
+      <ListingMapView type='Rent' />
     </div>
   )
 }
