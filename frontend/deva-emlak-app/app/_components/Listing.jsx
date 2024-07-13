@@ -3,8 +3,11 @@ import Image from 'next/image'
 import { Bath, BedDouble, MapPin, Ruler, Search } from 'lucide-react'
 import GoogleAddressSearch from './GoogleAddressSearch'
 import { Button } from '@/components/ui/button'
+import FilterSection from './FilterSection'
 
-function Listing({ listing, handleSearchClick, searchedAddress }) {
+function Listing({ listing, handleSearchClick, searchedAddress
+  , setBedCount, setBathCount, setParkingCount, setHomeType
+ }) {
   const [address, setAddress] = useState();
   return (
     <div>
@@ -22,6 +25,13 @@ function Listing({ listing, handleSearchClick, searchedAddress }) {
           onClick={handleSearchClick}>
           <Search className='h-4 w-4' />Search</Button>
       </div>
+
+      <FilterSection 
+      setBedCount={setBedCount}
+      setBathCount={setBathCount}
+      setParkingCount={setParkingCount}
+      setHomeType={setHomeType}
+      />
 
       {address && <div className='px-3'>
         <h2 className='text-xl'>

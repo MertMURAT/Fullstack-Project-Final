@@ -4,10 +4,13 @@ import Listing from './Listing'
 import { supabase } from '@/utils/supabase/client'
 
 function ListingMapView({ type }) {
-
     const [searchedAddress, setSearchedAddress] = useState();
 
     const [listing, setListing] = useState([]);
+    const [bedCount, setBedCount] = useState(0);
+    const [bathCount, setBathCount] = useState(0);
+    const [parkingCount, setParkingCount] = useState(0);
+    const [homeType, setHomeType] = useState();
 
     useEffect(() => {
         getLatestListing();
@@ -34,19 +37,28 @@ function ListingMapView({ type }) {
     const handleSearchClick = async () => {
         console.log("Searched Address : ", searchedAddress);
         const searchTerm = searchedAddress?.value?.structured_formatting?.main_text;
-        const { data, error } = await supabase
+        let query = supabase
             .from('listing')
             .select(`*,listingImages(
             url,
             listing_id)`)
             .eq('active', true)
             .eq('type', type)
+            .gte('bedroom', bedCount)
+            .gte('bathroom', bathCount)
+            .gte('parking', parkingCount)
             .like('address', '%' + searchTerm + '%')
             .order('id', { ascending: false })
 
+        if (homeType) {
+            query.eq('propertyType', homeType)
+        }
+
+        const { data, error } = await query;
+
         if (data) {
             setListing(data);
-            console.log('Search data:' ,data);
+            console.log('Search data:', data);
         }
         if (error) {
             toast('Server Side Error')
@@ -58,7 +70,12 @@ function ListingMapView({ type }) {
             <div>
                 <Listing listing={listing}
                     handleSearchClick={handleSearchClick}
-                    searchedAddress={(v) => setSearchedAddress(v)} />
+                    searchedAddress={(v) => setSearchedAddress(v)}
+                    setBedCount={setBedCount}
+                    setBathCount={setBathCount}
+                    setParkingCount={setParkingCount}
+                    setHomeType={setHomeType}
+                />
             </div>
             <div>
                 Map
