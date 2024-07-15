@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import FilterSection from './FilterSection'
 
 function Listing({ listing, handleSearchClick, searchedAddress
-  , setBedCount, setBathCount, setParkingCount, setHomeType
+  , setBedCount, setBathCount, setParkingCount, setHomeType, setCoordinates
  }) {
   const [address, setAddress] = useState();
   return (
@@ -19,7 +19,7 @@ function Listing({ listing, handleSearchClick, searchedAddress
             setAddress(v)
           }}
 
-          setCoordinates={(v) => console.log(v)}
+          setCoordinates={setCoordinates}
         />
         <Button className='flex gap-2'
           onClick={handleSearchClick}>
