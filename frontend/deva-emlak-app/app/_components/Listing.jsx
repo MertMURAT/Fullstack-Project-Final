@@ -4,10 +4,11 @@ import { Bath, BedDouble, MapPin, Ruler, Search } from 'lucide-react'
 import GoogleAddressSearch from './GoogleAddressSearch'
 import { Button } from '@/components/ui/button'
 import FilterSection from './FilterSection'
+import Link from 'next/link'
 
 function Listing({ listing, handleSearchClick, searchedAddress
   , setBedCount, setBathCount, setParkingCount, setHomeType, setCoordinates
- }) {
+}) {
   const [address, setAddress] = useState();
   return (
     <div>
@@ -26,11 +27,11 @@ function Listing({ listing, handleSearchClick, searchedAddress
           <Search className='h-4 w-4' />Search</Button>
       </div>
 
-      <FilterSection 
-      setBedCount={setBedCount}
-      setBathCount={setBathCount}
-      setParkingCount={setParkingCount}
-      setHomeType={setHomeType}
+      <FilterSection
+        setBedCount={setBedCount}
+        setBathCount={setBathCount}
+        setParkingCount={setParkingCount}
+        setHomeType={setHomeType}
       />
 
       {address && <div className='px-3'>
@@ -40,38 +41,40 @@ function Listing({ listing, handleSearchClick, searchedAddress
 
       <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
         {listing?.length > 0 ? listing.map((item, index) => (
-          <div className='p-3 hover:border hover:border-primary rounded-lg cursor-pointer'>
-            <Image src={item?.listingImages[0].url}
-              width={800}
-              height={150}
-              className='rounded-lg object-cover h-[170px]'
-            />
-            <div className='flex mt-2 flex-col gap-2'>
-              <h2 className='font-bold text-xl'>${item?.price}</h2>
-              <h2 className='flex gap-2 text-sm text-gray-400'>
-                <MapPin className='h-4 w-4' />
-                {item?.address.split('"')[3]}</h2>
-              <div className='flex gap-2 mt-2 justify-between '>
-                <h2 className='flex gap-2 text-sm bg-slate-200 
+          <Link href={'/view-listing/' + item.id}>
+            <div className='p-3 hover:border hover:border-primary rounded-lg cursor-pointer'>
+              <Image src={item?.listingImages[0].url}
+                width={800}
+                height={150}
+                className='rounded-lg object-cover h-[170px]'
+              />
+              <div className='flex mt-2 flex-col gap-2'>
+                <h2 className='font-bold text-xl'>${item?.price}</h2>
+                <h2 className='flex gap-2 text-sm text-gray-400'>
+                  <MapPin className='h-4 w-4' />
+                  {item?.address.split('"')[3]}</h2>
+                <div className='flex gap-2 mt-2 justify-stretch'>
+                  <h2 className='flex gap-2 text-sm bg-slate-200 
                 rounded-md p-2 w-full text-gray-500 justify-center items-center'>
-                  <BedDouble />
-                  {item?.bedroom}
-                </h2>
+                    <BedDouble />
+                    {item?.bedroom}
+                  </h2>
 
-                <h2 className='flex gap-2 text-sm bg-slate-200 
+                  <h2 className='flex gap-2 text-sm bg-slate-200 
                 rounded-md p-2 w-full text-gray-500 justify-center items-center'>
-                  <Bath />
-                  {item?.bathroom}
-                </h2>
+                    <Bath />
+                    {item?.bathroom}
+                  </h2>
 
-                <h2 className='flex gap-2 text-sm bg-slate-200 
+                  <h2 className='flex gap-2 text-sm bg-slate-200 
                 rounded-md p-2 w-full text-gray-500 justify-center items-center'>
-                  <Ruler />
-                  {item?.area}
-                </h2>
+                    <Ruler />
+                    {item?.area}
+                  </h2>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))
           : [1, 2, 3, 4, 5, 6, 7, 8].map((item, index) => (
             <div key={index} className='h-[230px] w-full

@@ -138,10 +138,6 @@ function EditListing({ params }) {
     useEffect(() => {
         // console.log(params.split('/')[2])
         user & verifyUserRecord();
-        if(listing === null){
-            verifyUserRecord();
-        }
-
     }, [user])
 
     // if (!listing) {
