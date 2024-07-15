@@ -22,10 +22,14 @@ function Header() {
                 <Image src={'/logo.svg'} width={50}
                     height={50} alt='logo' />
                 <ul className='hidden md:flex gap-10'>
-                    <Link href={'/'}>
-                        <li className={`'hover:text-primary font-medium text-sm cursor-pointer' ${path == '/' && 'text-primary'}`}>For Sell</li>
+                    <Link href={'/sell'}>
+                        <li className={`'hover:text-primary font-medium text-sm cursor-pointer' 
+                            ${path == '/sell' && 'text-primary'}`}>For Sell</li>
                     </Link>
-                    <li className='hover:text-primary font-medium text-sm cursor-pointer'>For Rent</li>
+                    <Link href={'/rent'}>
+                        <li className={`'hover:text-primary font-medium text-sm cursor-pointer' 
+                            ${path == '/rent' && 'text-primary'}`}>For Rent</li>
+                    </Link>
                     <li className='hover:text-primary font-medium text-sm cursor-pointer'>Agent Finder</li>
                 </ul>
             </div>
