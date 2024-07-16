@@ -16,6 +16,7 @@ function ListingMapView({ type }) {
 
     useEffect(() => {
         getLatestListing();
+        fetchData();
     }, [])
 
     const getLatestListing = async () => {
@@ -35,6 +36,24 @@ function ListingMapView({ type }) {
             toast('Server Side Error')
         }
     }
+
+    const fetchData = async () => {
+        try {
+          const response = await fetch('http://localhost:8080/api/v1/advertisements');
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          
+          const data = await response.json();
+          console.log(data);
+          return data;
+
+        } catch (error) {
+          console.error('Error:', error);
+        }
+      };
+
+
 
     const handleSearchClick = async () => {
         console.log("Searched Address : ", searchedAddress);
