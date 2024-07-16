@@ -67,3 +67,8 @@
       @apply bg-background text-foreground;
     }
   }
+
+  .cl-internal-1c61r6f{
+    box-shadow: none;
+    width: '100%';
+  }

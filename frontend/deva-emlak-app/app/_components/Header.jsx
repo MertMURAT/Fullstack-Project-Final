@@ -1,12 +1,20 @@
 "use client"
-
-import { UserButton, useUser } from '@clerk/nextjs'
+import { SignOutButton, UserButton, useUser } from '@clerk/nextjs'
 import { Plus } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useEffect } from 'react'
-import { Button } from  '@/components/ui/button';
+import { Button } from '@/components/ui/button';
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
 
 function Header() {
     const path = usePathname();
@@ -38,7 +46,25 @@ function Header() {
                     <Button className='flex gap-2'><Plus className='h-5 w-5' /> Post Your Ad</Button>
                 </Link>
                 {isSignedIn ?
-                    <UserButton />
+                    // <UserButton />
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <Image src={user?.imageUrl}
+                                width={40} height={40} alt='user profile'
+                                className='rounded-full' />
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent>
+                            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                            <DropdownMenuSeparator />
+                            <DropdownMenuItem>
+                                <Link href={'/user'}>Profile</Link>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem>My Listing</DropdownMenuItem>
+                            <DropdownMenuItem><SignOutButton>
+                                Logout</SignOutButton>
+                            </DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
                     :
                     <Link href={'/sign-in'}>
                         <Button variant="outline">Login</Button>
