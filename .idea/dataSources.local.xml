@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="IU-241.17890.1">
-    <data-source name="deva_emlak@localhost" uuid="831226c1-0f52-4543-97cd-d57ae94834be">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
+    <data-source name="deva_emlak@localhost" uuid="07b02fd8-ccf6-457d-9dd2-b98d236821bb">
+      <database-info product="PostgreSQL" version="14.11" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.6.0" dbms="POSTGRES" exact-version="14.11" exact-driver-version="42.6">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
       <user-name>postgres</user-name>
-      <schema-mapping />
-    </data-source>
-    <data-source name="deva_emlak@localhost" uuid="03bdd9ce-c8a7-42b4-b937-79302196f41c">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
-      <user-name>postgres</user-name>
-      <schema-mapping />
-    </data-source>
-    <data-source name="deva_emlak@localhost" uuid="cc67ef5c-bbd8-4fdf-8e95-49726f9ce2dc">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
-      <user-name>postgres</user-name>
-      <schema-mapping />
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
     </data-source>
   </component>
 </project>

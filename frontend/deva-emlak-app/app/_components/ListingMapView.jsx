@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Listing from './Listing'
 import { supabase } from '@/utils/supabase/client'
 import GoogleMapSection from './GoogleMapSection';
+import { useUser } from '@clerk/nextjs';
 
 function ListingMapView({ type }) {
     const [searchedAddress, setSearchedAddress] = useState();
@@ -13,6 +14,7 @@ function ListingMapView({ type }) {
     const [parkingCount, setParkingCount] = useState(0);
     const [homeType, setHomeType] = useState();
     const [coordinates, setCoordinates] = useState();
+    const {user} = useUser();
 
     useEffect(() => {
         getLatestListing();
@@ -46,6 +48,7 @@ function ListingMapView({ type }) {
           
           const data = await response.json();
           console.log(data);
+          console.log(data.data[0].area);
           return data;
 
         } catch (error) {

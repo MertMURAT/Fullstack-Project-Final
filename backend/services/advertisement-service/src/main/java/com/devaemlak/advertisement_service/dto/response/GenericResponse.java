@@ -13,7 +13,6 @@ import org.springframework.http.HttpStatus;
 @NoArgsConstructor
 public class GenericResponse<T> {
 
-
     private String status;
     private HttpStatus httpStatus;
     private T data;

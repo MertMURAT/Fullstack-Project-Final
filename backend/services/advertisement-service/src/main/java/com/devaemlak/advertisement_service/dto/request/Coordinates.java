@@ -1,5 +1,6 @@
 package com.devaemlak.advertisement_service.dto.request;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,10 +10,11 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AdvertisementSaveRequest {
+public class Coordinates {
 
-    private String address;
-    private String coordinates;
-    private String createdBy;
+    @JsonProperty("lat")
+    private Double lat;
+    @JsonProperty("lng")
+    private Double lng;
 
 }

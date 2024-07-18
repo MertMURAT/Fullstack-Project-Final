@@ -7,12 +7,12 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-public class AdvertisementSaveRequest {
+@AllArgsConstructor
+public class SaleAdUpdateRequest extends AdvertisementUpdateRequest {
 
-    private String address;
-    private String coordinates;
-    private String createdBy;
+    private Integer garage;
+    private Integer garden;
+    private Integer swimmingPool;
 
 }

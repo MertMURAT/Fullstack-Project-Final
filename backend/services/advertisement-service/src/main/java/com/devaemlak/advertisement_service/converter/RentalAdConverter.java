@@ -1,6 +1,7 @@
 package com.devaemlak.advertisement_service.converter;
 
-import com.devaemlak.advertisement_service.dto.request.RentalAdSaveRequest;
+import com.devaemlak.advertisement_service.dto.request.AdvertisementSaveRequest;
+import com.devaemlak.advertisement_service.dto.request.RentalAdUpdateRequesst;
 import com.devaemlak.advertisement_service.dto.response.RentalAdResponse;
 import com.devaemlak.advertisement_service.model.Advertisement;
 import com.devaemlak.advertisement_service.model.RentalAd;
@@ -15,25 +16,30 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class RentalAdConverter {
 
-    public static RentalAd toRentalAd(RentalAdSaveRequest request) {
+    public static RentalAd toRentalAd(RentalAdUpdateRequesst request) {
         return  RentalAd.builder()
                 .title(request.getTitle())
                 .description(request.getDescription())
+                .address(request.getAddress())
+                .coordinates(request.getCoordinates())
                 .advertisementType(AdvertisementType.RENTAL)
                 .advertisementStatus(AdvertisementStatus.IN_REVIEW)
                 .price(request.getPrice())
                 .numberOfRooms(request.getNumberOfRooms())
-                .assignee(request.getAssignee())
-                .priorityType(request.getPriorityType())
-                .housingType(request.getHousingType())
-                .advertisementDate(LocalDateTime.now())
-                .userId(request.getUserId())
-                .monthlyRent(request.getMonthlyRent())
                 .area(request.getArea())
+                .assignee(request.getAssignee())
+                .housingType(request.getHousingType())
+                .floorNumber(request.getFloorNumber())
+                .created_at(LocalDateTime.now())
+                .userId(request.getUserId())
+                .createdBy(request.getCreatedBy())
+                .profileImage(request.getProfileImage())
+                .fullName(request.getFullName())
+
+                .monthlyRent(request.getMonthlyRent())
                 .depositAmount(request.getDepositAmount())
                 .isFurnished(request.isFurnished())
                 .includesUtilities(request.isIncludesUtilities())
-                .leaseTerm(request.getLeaseTerm())
                 .allowsPets(request.isAllowsPets())
                 .build();
     }
@@ -43,23 +49,64 @@ public class RentalAdConverter {
                 .id(rentalAd.getId())
                 .title(rentalAd.getTitle())
                 .description(rentalAd.getDescription())
+                .address(rentalAd.getAddress())
+                .coordinates(rentalAd.getCoordinates())
                 .advertisementType(rentalAd.getAdvertisementType())
                 .advertisementStatus(rentalAd.getAdvertisementStatus())
                 .price(rentalAd.getPrice())
                 .numberOfRooms(rentalAd.getNumberOfRooms())
-                .assignee(rentalAd.getAssignee())
-                .priorityType(rentalAd.getPriorityType())
-                .housingType(rentalAd.getHousingType())
-                .advertisementDate(LocalDateTime.now())
-                .userId(rentalAd.getUserId())
-                .monthlyRent(rentalAd.getMonthlyRent())
                 .area(rentalAd.getArea())
+                .assignee(rentalAd.getAssignee())
+                .housingType(rentalAd.getHousingType())
+                .floorNumber(rentalAd.getFloorNumber())
+                .created_at(rentalAd.getCreated_at())
+                .userId(rentalAd.getUserId())
+                .createdBy(rentalAd.getCreatedBy())
+                .profileImage(rentalAd.getProfileImage())
+                .fullName(rentalAd.getFullName())
+
+                .monthlyRent(rentalAd.getMonthlyRent())
                 .depositAmount(rentalAd.getDepositAmount())
                 .isFurnished(rentalAd.isFurnished())
                 .includesUtilities(rentalAd.isIncludesUtilities())
-                .leaseTerm(rentalAd.getLeaseTerm())
                 .allowsPets(rentalAd.isAllowsPets())
                 .build();
+    }
+
+    public static RentalAd toRentalInit(AdvertisementSaveRequest request){
+        return RentalAd.builder()
+                .address(request.getAddress())
+                .advertisementType(AdvertisementType.RENTAL)
+                .advertisementStatus(AdvertisementStatus.IN_REVIEW)
+                .coordinates(request.getCoordinates())
+                .createdBy(request.getCreatedBy())
+                .created_at(LocalDateTime.now())
+                .build();
+    }
+
+    public static Advertisement updateAdFromRentalAd(Advertisement advertisement, RentalAd rentalAd) {
+        advertisement.setTitle(rentalAd.getTitle());
+        advertisement.setDescription(rentalAd.getDescription());
+        advertisement.setPrice(rentalAd.getPrice());
+        advertisement.setNumberOfRooms(rentalAd.getNumberOfRooms());
+        advertisement.setArea(rentalAd.getArea());
+        advertisement.setAssignee(rentalAd.getAssignee());
+        advertisement.setHousingType(rentalAd.getHousingType());
+        advertisement.setFloorNumber(rentalAd.getFloorNumber());
+        advertisement.setCreatedBy(rentalAd.getCreatedBy());
+        advertisement.setProfileImage(rentalAd.getProfileImage());
+        advertisement.setFullName(rentalAd.getFullName());
+        advertisement.setUpdated_at(rentalAd.getUpdated_at());
+        advertisement.setUserId(rentalAd.getUserId());
+
+        if (advertisement instanceof RentalAd rentalAdInstance) {
+            rentalAdInstance.setMonthlyRent(rentalAd.getMonthlyRent());
+            rentalAdInstance.setDepositAmount(rentalAd.getDepositAmount());
+            rentalAdInstance.setFurnished(rentalAd.isFurnished());
+            rentalAdInstance.setIncludesUtilities(rentalAd.isIncludesUtilities());
+            rentalAdInstance.setAllowsPets(rentalAd.isAllowsPets());
+        }
+        return advertisement;
     }
 
     public static List<RentalAdResponse> toResponse(List<RentalAd> ads){

@@ -13,11 +13,9 @@ import java.math.BigDecimal;
 public class RentalAdResponse extends AdvertisementResponse {
 
     private BigDecimal monthlyRent;
-    private double area;
     private BigDecimal depositAmount;
     private boolean isFurnished;
     private boolean includesUtilities;
-    private int leaseTerm;
     private boolean allowsPets;
 
 }

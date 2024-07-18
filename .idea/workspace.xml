@@ -5,12 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ade2e6a-db94-43b4-ba27-91a98be78c59" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/services/api-gateway-service/src/main/java/com/devaemlak/api_gateway_service/config/GatewayCorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/services/api-gateway-service/src/main/java/com/devaemlak/api_gateway_service/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/AttachmentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/Coordinates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/SaleAdUpdateRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/ResponseData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/Attachment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/repository/AttachmentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AttachmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/03bdd9ce-c8a7-42b4-b937-79302196f41c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/03bdd9ce-c8a7-42b4-b937-79302196f41c.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/AdvertisementServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/AdvertisementServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/AdvertisementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/AdvertisementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/api-gateway-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/api-gateway-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/RentalAdController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/RentalAdController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/SaleAdController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/SaleAdController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/AdvertisementConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/AdvertisementConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/RentalAdConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/RentalAdConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/SaleAdConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/SaleAdConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/AdvertisementSaveRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/AdvertisementUpdateRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/RentalAdSaveRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/RentalAdUpdateRequesst.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/SaleAdSaveRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/AdvertisementResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/AdvertisementResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/GenericResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/GenericResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/RentalAdResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/RentalAdResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/SaleAdResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/SaleAdResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/exception/ExceptionMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/exception/ExceptionMessages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/Advertisement.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/Advertisement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/RentalAd.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/RentalAd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/SaleAd.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/SaleAd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/enums/PriorityType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AdvertisementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AdvertisementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/RentalAdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/RentalAdService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/SaleAdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/SaleAdService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/api-gateway-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/api-gateway-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/deva-emlak-app/app/(routes)/add-new-listing/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/deva-emlak-app/app/(routes)/add-new-listing/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/deva-emlak-app/app/(routes)/edit-new-listing/[id]/loading.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/deva-emlak-app/app/(routes)/edit-new-listing/[id]/page.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/deva-emlak-app/app/_components/ListingMapView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/deva-emlak-app/app/_components/ListingMapView.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,7 +210,7 @@
       <workItem from="1720347103914" duration="29582000" />
       <workItem from="1720600489633" duration="1602000" />
       <workItem from="1720602203065" duration="38000" />
-      <workItem from="1721123713966" duration="3946000" />
+      <workItem from="1721123713966" duration="58120000" />
     </task>
     <servers />
   </component>
@@ -218,6 +252,16 @@
           <url>file://$PROJECT_DIR$/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/SaleAdController.java</url>
           <line>34</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/SaleAdController.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/SaleAdService.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

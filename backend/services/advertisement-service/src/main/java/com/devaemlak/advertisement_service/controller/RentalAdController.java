@@ -1,20 +1,24 @@
 package com.devaemlak.advertisement_service.controller;
 
+import com.devaemlak.advertisement_service.dto.request.AdvertisementSaveRequest;
 import com.devaemlak.advertisement_service.dto.request.AdvertisementUpdateStatusRequest;
-import com.devaemlak.advertisement_service.dto.request.RentalAdSaveRequest;
-import com.devaemlak.advertisement_service.dto.request.SaleAdSaveRequest;
-import com.devaemlak.advertisement_service.dto.response.AdvertisementResponse;
+import com.devaemlak.advertisement_service.dto.request.RentalAdUpdateRequesst;
+import com.devaemlak.advertisement_service.dto.request.SaleAdUpdateRequest;
 import com.devaemlak.advertisement_service.dto.response.GenericResponse;
 import com.devaemlak.advertisement_service.dto.response.RentalAdResponse;
+import com.devaemlak.advertisement_service.dto.response.SaleAdResponse;
+import com.devaemlak.advertisement_service.exception.AdvertisementException;
 import com.devaemlak.advertisement_service.model.enums.AdvertisementStatus;
 import com.devaemlak.advertisement_service.service.RentalAdService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/v1/rental-ads")
 @RequiredArgsConstructor
@@ -23,9 +27,9 @@ public class RentalAdController {
     private final RentalAdService rentalAdService;
 
     @PostMapping
-    public ResponseEntity<Void> save(@RequestBody RentalAdSaveRequest request){
-        rentalAdService.save(request);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+    public ResponseEntity<RentalAdResponse> save(@RequestBody AdvertisementSaveRequest request){
+        RentalAdResponse rentalAdResponse = rentalAdService.save(request);
+        return new ResponseEntity<>(rentalAdResponse, HttpStatus.CREATED);
     }
 
     @GetMapping
@@ -42,6 +46,17 @@ public class RentalAdController {
     @GetMapping("/user/{id}")
     public GenericResponse<List<RentalAdResponse>> getByUserId(@PathVariable(name = "id") Long userId) {
         return GenericResponse.success(rentalAdService.getByUserId(userId));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<RentalAdResponse> update(@RequestBody RentalAdUpdateRequesst request, @PathVariable Long id) {
+        try {
+            RentalAdResponse rentalAdResponse = rentalAdService.update(request, id);
+            return new ResponseEntity<>(rentalAdResponse, HttpStatus.OK);
+        } catch (AdvertisementException e) {
+            log.error("Error updating RentalAd: {}", e.getMessage());
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+        }
     }
 
     @PutMapping

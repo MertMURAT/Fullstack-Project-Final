@@ -10,10 +10,8 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 public class SaleAdResponse extends AdvertisementResponse {
 
-    private double area;
-    private boolean hasGarage;
-    private boolean hasGarden;
-    private boolean hasSwimmingPool;
-    private int floorNumber;
+    private Integer garage;
+    private Integer garden;
+    private Integer swimmingPool;
 
 }
