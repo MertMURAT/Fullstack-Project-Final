@@ -8,8 +8,6 @@ const containerStyle = {
     borderRadius: 10
 };
 
-
-
 function GoogleMapSection({ listing, coordinates }) {
 
     // const { isLoaded } = useJsApiLoader({
@@ -24,6 +22,7 @@ function GoogleMapSection({ listing, coordinates }) {
 
     useEffect(() => {
         coordinates && setCenter(coordinates)
+        console.log("GoogleMapSection listing : ", listing);
     }, [coordinates])
 
     const [map, setMap] = React.useState(null)

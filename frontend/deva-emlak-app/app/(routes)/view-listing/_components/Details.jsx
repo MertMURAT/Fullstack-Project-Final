@@ -14,7 +14,7 @@ function Details({ listingDetail }) {
                         <h2 className='font-bold text-3xl'>$ {listingDetail?.price}</h2>
                         <h2 className='text-gray-500 text-lg flex gap-2'>
                             <MapPin />
-                            {listingDetail?.address.split('"')[3]}</h2>
+                            {listingDetail?.address}</h2>
                     </div>
                     <Button className='flex gap-2'><Share />  Share</Button>
                 </div>
@@ -61,13 +61,13 @@ function Details({ listingDetail }) {
                     </div>
                 </div>
                 <div>
-                    <h2 className='font-bold text-2xl '>Find On Map</h2>
+                    <h2 className='font-bold text-2xl '>Haritada Bul</h2>
                     <GoogleMapSection
                         coordinates={listingDetail.coordinates}
                         listing={[listingDetail]} />
                 </div>
                 <div>
-                    <h2 className='font-bold text-2xl'>Contact Agent</h2>
+                    <h2 className='font-bold text-2xl'>Kullanıcı ile iletişime geç</h2>
                     <AgentDetail listingDetail={listingDetail} />
                 </div>
             </div>

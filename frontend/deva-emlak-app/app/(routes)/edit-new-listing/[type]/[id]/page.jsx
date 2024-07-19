@@ -289,23 +289,11 @@ function EditListing({ params }) {
 
         console.log(updateDataStatus);
         await updateAdStatus(updateDataStatus);
-
-        // const { data, error } = await supabase
-        //     .from('listing')
-        //     .update({ active: true })
-        //     .eq('id', params?.id)
-        //     .select()
-
-        // if (data) {
-        //     setLoading(false);
-        //     toast('Listing published!');
-        // }
     }
 
     useEffect(() => {
         // console.log(params.split('/')[2])
-        // user & verifyUserRecord();
-        verifyUserRecord();
+        user & verifyUserRecord();
     }, [user])
 
     // if (!listing) {

@@ -4,89 +4,160 @@ import Listing from './Listing'
 import { supabase } from '@/utils/supabase/client'
 import GoogleMapSection from './GoogleMapSection';
 import { useUser } from '@clerk/nextjs';
+import { toast } from 'sonner';
 
-function ListingMapView({ type }) {
+function ListingMapView({ type, activate }) {
     const [searchedAddress, setSearchedAddress] = useState();
 
     const [listing, setListing] = useState([]);
-    const [bedCount, setBedCount] = useState(0);
-    const [bathCount, setBathCount] = useState(0);
-    const [parkingCount, setParkingCount] = useState(0);
+    const [area, setArea] = useState(0);
+    const [numberOfRooms, setNumberOfRooms] = useState(0);
+    const [floorNumber, setFloorNumber] = useState(0);
     const [homeType, setHomeType] = useState();
     const [coordinates, setCoordinates] = useState();
-    const {user} = useUser();
+    const { user } = useUser();
 
     useEffect(() => {
-        getLatestListing();
-        fetchData();
+
+        if(activate == 1){
+            getRentAndSellAd();
+            activate = 0;
+        }
+        if(activate == 2){
+            getRentAndSellAd();
+            activate = 0;
+        }
+        
+        getLatestAdvertisements();
+
     }, [])
 
-    const getLatestListing = async () => {
-        const { data, error } = await supabase
-            .from('listing')
-            .select(`*,listingImages(
-            url,
-            listing_id)`)
-            .eq('active', true)
-            .eq('type', type)
-            .order('id', { ascending: false })
+    // const getLatestListing = async () => {
+    //     const { data, error } = await supabase
+    //         .from('listing')
+    //         .select(`*,listingImages(
+    //         url,
+    //         listing_id)`)
+    //         .eq('active', true)
+    //         .eq('type', type)
+    //         .order('id', { ascending: false })
 
-        if (data) {
-            setListing(data);
-        }
-        if (error) {
-            toast('Server Side Error')
-        }
-    }
+    //     if (data) {
+    //         setListing(data);
+    //     }
+    //     if (error) {
+    //         toast('Server Side Error')
+    //     }
+    // }
 
-    const fetchData = async () => {
+    const getRentAndSellAd = async () => {
         try {
-          const response = await fetch('http://localhost:8080/api/v1/advertisements');
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          
-          const data = await response.json();
-          console.log(data);
-          console.log(data.data[0].area);
-          return data;
+            let uriExt;
+            if (type == 'Sell') {
+                uriExt = 'sale-ads'
+            } else {
+                uriExt = 'rental-ads'
+            }
 
+            const response = await fetch(`http://localhost:8080/api/v1/${uriExt}`);
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`HTTP error! status: ${response.status}, response: ${errorText}`);
+            }
+
+            const result = await response.json();
+            console.log('Sale-Rent güncel ilan listesi', result.data);
+            setListing(result.data);
+
+            return result;
         } catch (error) {
-          console.error('Error:', error);
+            console.error('Error:', error);
+            toast('Server Side Error');
+            throw error;
         }
-      };
+    };
 
+    const getLatestAdvertisements = async () => {
+        try {
+
+            const response = await fetch("http://localhost:8080/api/v1/advertisements/latest");
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`HTTP error! status: ${response.status}, response: ${errorText}`);
+            }
+
+            const result = await response.json();
+            console.log('Ana sayfa güncel ilan listesi', result.data);
+            setListing(result.data);
+
+            return result;
+        } catch (error) {
+            console.error('Error:', error);
+            toast('Server Side Error');
+            throw error;
+        }
+    };
+
+    const searchAdvertisements = async (type, area, numberOfRooms, floorNumber, searchTerm, homeType) => {
+        try {
+
+            const response = await fetch(`http://localhost:8080/api/v1/advertisements/search?searchTerm=${searchTerm}&numberOfRooms=${numberOfRooms}&floorNumber=${floorNumber}&area=${area}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`HTTP error! status: ${response.status}, response: ${errorText}`);
+            }
+
+            const result = await response.json();
+            console.log('Search result:', result);
+            setListing(result);
+
+            return result;
+        } catch (error) {
+            console.error('Error:', error);
+            toast('Server Side Error')
+            throw error;
+        }
+    };
 
 
     const handleSearchClick = async () => {
         console.log("Searched Address : ", searchedAddress);
         const searchTerm = searchedAddress?.value?.structured_formatting?.main_text;
-        let query = supabase
-            .from('listing')
-            .select(`*,listingImages(
-            url,
-            listing_id)`)
-            .eq('active', true)
-            .eq('type', type)
-            .gte('bedroom', bedCount)
-            .gte('bathroom', bathCount)
-            .gte('parking', parkingCount)
-            .like('address', '%' + searchTerm + '%')
-            .order('id', { ascending: false })
+        searchAdvertisements(type, area, numberOfRooms, floorNumber, searchTerm, homeType)
 
-        if (homeType) {
-            query.eq('propertyType', homeType)
-        }
+        // const searchTerm = searchedAddress?.value?.structured_formatting?.main_text;
+        // let query = supabase
+        //     .from('listing')
+        //     .select(`*,listingImages(
+        //     url,
+        //     listing_id)`)
+        //     .eq('active', true)
+        //     .eq('type', type)
+        //     .gte('area', bedCount)
+        //     .gte('numberOfRooms', bathCount)
+        //     .gte('floorNumber', parkingCount)
+        //     .like('address', '%' + searchTerm + '%')
+        //     .order('id', { ascending: false })
 
-        const { data, error } = await query;
+        // if (homeType) {
+        //     query.eq('propertyType', homeType)
+        // }
 
-        if (data) {
-            setListing(data);
-            console.log('Search data:', data);
-        }
-        if (error) {
-            toast('Server Side Error')
-        }
+        // const { data, error } = await query;
+
+        // if (data) {
+        //     setListing(data);
+        //     console.log('Search data:', data);
+        // }
+        // if (error) {
+        //     toast('Server Side Error')
+        // }
     }
 
     return (
@@ -95,9 +166,9 @@ function ListingMapView({ type }) {
                 <Listing listing={listing}
                     handleSearchClick={handleSearchClick}
                     searchedAddress={(v) => setSearchedAddress(v)}
-                    setBedCount={setBedCount}
-                    setBathCount={setBathCount}
-                    setParkingCount={setParkingCount}
+                    setArea={setArea}
+                    setNumberOfRooms={setNumberOfRooms}
+                    setFloorNumber={setFloorNumber}
                     setHomeType={setHomeType}
                     setCoordinates={setCoordinates}
                 />

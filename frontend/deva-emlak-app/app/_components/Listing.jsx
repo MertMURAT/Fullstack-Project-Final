@@ -7,7 +7,7 @@ import FilterSection from './FilterSection'
 import Link from 'next/link'
 
 function Listing({ listing, handleSearchClick, searchedAddress
-  , setBedCount, setBathCount, setParkingCount, setHomeType, setCoordinates
+  , setArea, setNumberOfRooms, setFloorNumber, setHomeType, setCoordinates
 }) {
   const [address, setAddress] = useState();
   return (
@@ -28,9 +28,9 @@ function Listing({ listing, handleSearchClick, searchedAddress
       </div>
 
       <FilterSection
-        setBedCount={setBedCount}
-        setBathCount={setBathCount}
-        setParkingCount={setParkingCount}
+        setArea={setArea}
+        setNumberOfRooms={setNumberOfRooms}
+        setFloorNumber={setFloorNumber}
         setHomeType={setHomeType}
       />
 
@@ -43,7 +43,9 @@ function Listing({ listing, handleSearchClick, searchedAddress
         {listing?.length > 0 ? listing.map((item, index) => (
           <Link href={'/view-listing/' + item.id}>
             <div className='p-3 hover:border hover:border-primary rounded-lg cursor-pointer'>
-              <Image src={item?.listingImages[0].url}
+              <Image
+                // src={item?.listingImages[0].url}
+                src="/placeholder.svg"
                 width={800}
                 height={150}
                 className='rounded-lg object-cover h-[170px]'
@@ -52,24 +54,24 @@ function Listing({ listing, handleSearchClick, searchedAddress
                 <h2 className='font-bold text-xl'>${item?.price}</h2>
                 <h2 className='flex gap-2 text-sm text-gray-400'>
                   <MapPin className='h-4 w-4' />
-                  {item?.address.split('"')[3]}</h2>
+                  {item?.address}</h2>
                 <div className='flex gap-2 mt-2 justify-stretch'>
                   <h2 className='flex gap-2 text-sm bg-slate-200 
                 rounded-md p-2 w-full text-gray-500 justify-center items-center'>
                     <BedDouble />
-                    {item?.bedroom}
+                    {item?.area}
                   </h2>
 
                   <h2 className='flex gap-2 text-sm bg-slate-200 
                 rounded-md p-2 w-full text-gray-500 justify-center items-center'>
                     <Bath />
-                    {item?.bathroom}
+                    {item?.numberOfRooms}
                   </h2>
 
                   <h2 className='flex gap-2 text-sm bg-slate-200 
                 rounded-md p-2 w-full text-gray-500 justify-center items-center'>
                     <Ruler />
-                    {item?.area}
+                    {item?.floorNumber}
                   </h2>
                 </div>
               </div>

@@ -13,7 +13,9 @@ function MarkerListingItem({ item, closeHandler }) {
                     <X className='text-primary' onClick={() => closeHandler()} />
                 </div>
 
-                <Image src={item?.listingImages[0].url}
+                <Image 
+                // src={item?.listingImages[0].url}
+                src="/placeholder.svg"
                     width={800}
                     height={150}
                     className='rounded-lg w-full object-cover h-full'
