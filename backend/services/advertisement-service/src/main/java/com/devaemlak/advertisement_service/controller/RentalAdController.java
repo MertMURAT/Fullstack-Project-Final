@@ -60,9 +60,9 @@ public class RentalAdController {
     }
 
     @PutMapping
-    public ResponseEntity<Void> updateStatus(@RequestBody AdvertisementUpdateStatusRequest updateStatusRequest){
-        rentalAdService.updateStatus(updateStatusRequest);
-        return new ResponseEntity<>(HttpStatus.OK);
+    public ResponseEntity<RentalAdResponse> updateStatus(@RequestBody AdvertisementUpdateStatusRequest updateStatusRequest){
+        RentalAdResponse rentalAdResponse = rentalAdService.updateStatus(updateStatusRequest);
+        return new ResponseEntity<>(rentalAdResponse, HttpStatus.OK);
     }
 
     @GetMapping("/status")

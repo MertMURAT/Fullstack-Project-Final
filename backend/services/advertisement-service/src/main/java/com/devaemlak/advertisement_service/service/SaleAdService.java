@@ -10,32 +10,35 @@ import com.devaemlak.advertisement_service.exception.ExceptionMessages;
 import com.devaemlak.advertisement_service.model.Advertisement;
 import com.devaemlak.advertisement_service.model.SaleAd;
 import com.devaemlak.advertisement_service.model.enums.AdvertisementStatus;
+import com.devaemlak.advertisement_service.producer.LogProducer;
+import com.devaemlak.advertisement_service.producer.dto.LogDto;
+import com.devaemlak.advertisement_service.producer.dto.enums.LogType;
+import com.devaemlak.advertisement_service.producer.dto.enums.OperationType;
 import com.devaemlak.advertisement_service.repository.AdvertisementRepository;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-@Slf4j
 @RequiredArgsConstructor
 public class SaleAdService {
 
     private final AdvertisementRepository advertisementRepository;
+    private final LogProducer logProducer;
 
     @Transactional
     public SaleAdResponse save(AdvertisementSaveRequest request) {
         try {
             SaleAd saleAd = SaleAdConverter.toSaleInit(request);
             advertisementRepository.save(saleAd);
-
+            logProducer.sendToLog(prepareLogDto(OperationType.INSERT, ExceptionMessages.ADVERTISEMENT_CREATED, LogType.INFO));
             return SaleAdConverter.toResponse(saleAd);
         } catch (Exception e) {
-            log.error("İlan oluşturulurken hata oluştu: {}", e.getMessage());
+            logProducer.sendToLog(prepareLogDto(OperationType.INSERT, ExceptionMessages.ADVERTISEMENT_SAVE_ERROR, LogType.ERROR));
             throw new AdvertisementException(ExceptionMessages.ADVERTISEMENT_SAVE_ERROR);
         }
     }
@@ -47,16 +50,17 @@ public class SaleAdService {
             if (foundedAd.isPresent()) {
                 Advertisement ad = foundedAd.get();
                 if (!(ad instanceof SaleAd updatedSaleAd)) {
-                    throw new AdvertisementException("Advertisement is not of type SaleAd.");
+                    throw new AdvertisementException(ExceptionMessages.ADVERTISEMENT_TYPE_ERROR);
                 }
                 SaleAd saleAd = SaleAdConverter.toSaleAd(request);
                 SaleAdConverter.updateAdFromSaleAd(updatedSaleAd, saleAd);
                 SaleAd saveAd = advertisementRepository.save(updatedSaleAd);
-
+                logProducer.sendToLog(prepareLogDto(OperationType.UPDATE, ExceptionMessages.ADVERTISEMENT_UPDATED, LogType.INFO));
                 return SaleAdConverter.toResponse(saveAd);
             }
             return null;
         } catch (Exception e) {
+            logProducer.sendToLog(prepareLogDto(OperationType.UPDATE, ExceptionMessages.ADVERTISEMENT_UPDATED, LogType.INFO));
             throw new AdvertisementException(ExceptionMessages.ADVERTISEMENT_UPDATE_ERROR);
         }
     }
@@ -68,11 +72,12 @@ public class SaleAdService {
                     .orElseThrow(() -> new AdvertisementException(ExceptionMessages.ADVERTISEMENT_NOT_FOUND));
             foundedAdvertisement.setAdvertisementStatus(updateStatusRequest.getStatus());
             Advertisement advertisement = advertisementRepository.save(foundedAdvertisement);
+            logProducer.sendToLog(prepareLogDto(OperationType.UPDATE, ExceptionMessages.ADVERTISEMENT_UPDATED, LogType.INFO));
             return SaleAdConverter.toResponse((SaleAd) advertisement);
         } catch (AdvertisementException e) {
             throw e;
         } catch (Exception e) {
-            log.error("İlan güncellenirken hata oluştu: {}", e.getMessage());
+            logProducer.sendToLog(prepareLogDto(OperationType.UPDATE, ExceptionMessages.ADVERTISEMENT_UPDATE_ERROR, LogType.ERROR));
             throw new AdvertisementException(ExceptionMessages.ADVERTISEMENT_UPDATE_ERROR);
         }
     }
@@ -83,25 +88,30 @@ public class SaleAdService {
                     .filter(ad -> ad instanceof SaleAd)
                     .map(ad -> (SaleAd) ad)
                     .toList();
+            logProducer.sendToLog(prepareLogDto(OperationType.GET, ExceptionMessages.ADVERTISEMENT_RETRIEVED, LogType.INFO));
             return SaleAdConverter.toResponse(saleAds);
         } catch (Exception e) {
-            log.error("Tüm satış ilanları çekilirken hata oluştu: {}", e.getMessage());
+            logProducer.sendToLog(prepareLogDto(OperationType.GET, ExceptionMessages.ADVERTISEMENT_RETRIEVE_ERROR, LogType.ERROR));
             throw new AdvertisementException(ExceptionMessages.ADVERTISEMENT_RETRIEVE_ERROR);
         }
     }
 
     public SaleAdResponse getById(Long id) {
-        return advertisementRepository.findById(id)
+        SaleAdResponse saleAdResponse = advertisementRepository.findById(id)
                 .filter(ad -> ad instanceof SaleAd)
                 .map(ad -> (SaleAd) ad)
                 .map(SaleAdConverter::toResponse)
                 .orElseThrow(() -> new AdvertisementException(ExceptionMessages.ADVERTISEMENT_NOT_FOUND));
+        logProducer.sendToLog(prepareLogDto(OperationType.GET, ExceptionMessages.ADVERTISEMENT_RETRIEVED, LogType.INFO));
+        return saleAdResponse;
     }
 
     public List<SaleAdResponse> getByUserId(Long userId) {
-        return getAll().stream()
+        List<SaleAdResponse> saleAdResponses = getAll().stream()
                 .filter(saleAdResponse -> saleAdResponse.getUserId().equals(userId))
                 .toList();
+        logProducer.sendToLog(prepareLogDto(OperationType.GET, ExceptionMessages.ADVERTISEMENT_RETRIEVED, LogType.INFO));
+        return saleAdResponses;
     }
 
     public List<SaleAdResponse> getByStatus(Long userId, AdvertisementStatus status) {
@@ -112,10 +122,22 @@ public class SaleAdService {
                             saleAdResponse.getAdvertisementStatus().equals(status) && saleAdResponse.getUserId().equals(userId))
                     .map(ad -> (SaleAd) ad)
                     .toList();
+            logProducer.sendToLog(prepareLogDto(OperationType.GET, ExceptionMessages.ADVERTISEMENT_RETRIEVED, LogType.INFO));
             return SaleAdConverter.toResponse(foundedAdvertisements);
         } catch (Exception e) {
-            log.error("Satış ilanları durumuna göre getirirken hata oluştu: {}", e.getMessage());
+            logProducer.sendToLog(prepareLogDto(OperationType.GET, ExceptionMessages.ADVERTISEMENT_RETRIEVE_ERROR, LogType.ERROR));
             throw new AdvertisementException(ExceptionMessages.ADVERTISEMENT_RETRIEVE_ERROR);
         }
+    }
+
+    private LogDto prepareLogDto(OperationType operationType, String message, LogType logType) {
+        return LogDto.builder()
+                .serviceName("advertisement-service(SaleAd)")
+                .operationType(operationType)
+                .logType(logType)
+                .message(message)
+                .timestamp(LocalDateTime.now())
+                .exception("Advertisement Exception")
+                .build();
     }
 }

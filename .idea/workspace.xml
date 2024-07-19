@@ -5,9 +5,99 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ade2e6a-db94-43b4-ba27-91a98be78c59" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/config/RabbitConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/producer/LogProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/producer/dto/LogDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/producer/dto/enums/LogType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/producer/dto/enums/OperationType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/config/RabbitConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/constants/LogConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/consumer/LogConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/consumer/response/LogDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/controller/LogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/converter/LogConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/dto/request/LogSaveRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/dto/request/LogUpdateRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/dto/response/ExceptionResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/dto/response/GenericResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/dto/response/LogResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/exception/ExceptionMessages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/exception/LogException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/model/Log.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/model/enums/LogType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/model/enums/OperationType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/repository/LogRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/service/LogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/.mongodb/mongosh/669a5ec35a30d516c1a26a12_log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/.mongodb/mongosh/669a5ec44234a90e69a26a12_log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/.mongodb/mongosh/config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/.mongodb/mongosh/mongosh_repl_history" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/.mongodb/mongosh/snippets/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/WiredTiger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/WiredTiger.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/WiredTiger.turtle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/WiredTiger.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/WiredTigerHS.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/_mdb_catalog.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/collection-0--3893855849773330699.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/collection-0--812744859606587770.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/collection-2--812744859606587770.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/collection-4--812744859606587770.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/collection-7--812744859606587770.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/diagnostic.data/metrics.2024-07-19T12-40-34Z-00000" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/diagnostic.data/metrics.2024-07-19T12-40-55Z-00000" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/diagnostic.data/metrics.2024-07-19T12-45-38Z-00000" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/diagnostic.data/metrics.interim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-1--3893855849773330699.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-1--812744859606587770.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-3--812744859606587770.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-5--812744859606587770.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-6--812744859606587770.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-8--812744859606587770.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-9--812744859606587770.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/journal/WiredTigerLog.0000000003" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/journal/WiredTigerPreplog.0000000001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/journal/WiredTigerPreplog.0000000002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/mongod.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/sizeStorer.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/storage.bson" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/rabbitmq-kurulum.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/config/RabbitConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/producer/LogProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/producer/dto/LogDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/producer/dto/enums/LogType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/producer/dto/enums/OperationType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/config/RabbitConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/producer/LogProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/producer/dto/LogDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/producer/dto/enums/LogType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/producer/dto/enums/OperationType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/AdvertisementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/AdvertisementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/AdvertisementServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/AdvertisementServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/RentalAdController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/RentalAdController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/exception/ExceptionMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/exception/ExceptionMessages.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AdvertisementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AdvertisementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AttachmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AttachmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/RentalAdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/RentalAdService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/SaleAdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/SaleAdService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/api-gateway-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/api-gateway-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/order-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/order-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/OrderServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/OrderServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/exception/ExceptionMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/exception/ExceptionMessages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/order-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/UserServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/exception/ExceptionMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/exception/ExceptionMessages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +107,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="package-info" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -30,6 +120,13 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -44,6 +141,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Docker.resources/docker-compose.yaml: Compose Deployment.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -53,12 +151,13 @@
     "Spring Boot.AdvertisementServiceApplication.executor": "Debug",
     "Spring Boot.ApiGatewayServiceApplication.executor": "Run",
     "Spring Boot.DiscoveryClientServiceApplication.executor": "Run",
+    "Spring Boot.LogServiceApplication.executor": "Debug",
     "Spring Boot.OrderServiceApplication.executor": "Debug",
     "Spring Boot.UserServiceApplication.executor": "Debug",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Mert/Desktop/Fullstack-Project-Final/backend/services/user-service",
+    "last_opened_file_path": "C:/Users/Mert/Desktop/Fullstack-Project-Final/backend/services/order-service/src/main/java/com/devaemlak/order_service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -82,14 +181,17 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Mert\Desktop\Fullstack-Project-Final\services\order-service\src\main\java\com\devaemlak\order_service\dto\response" />
-      <recent name="C:\Users\Mert\Desktop\Fullstack-Project-Final\services\order-service\src\main\java\com\devaemlak\order_service" />
-      <recent name="C:\Users\Mert\Desktop\Fullstack-Project-Final\services\user-service\src\main\java\com\devaemlak\user_service\dto\response" />
-      <recent name="C:\Users\Mert\Desktop\Fullstack-Project-Final\services\user-service\src\main\java\com\devaemlak\user_service\exception" />
-      <recent name="C:\Users\Mert\Desktop\Fullstack-Project-Final\services\api-gateway-service\src\main\resources" />
+      <recent name="C:\Users\Mert\Desktop\Fullstack-Project-Final\backend\services\order-service\src\main\java\com\devaemlak\order_service" />
+      <recent name="C:\Users\Mert\Desktop\Fullstack-Project-Final\backend\services\user-service\src\main\java\com\devaemlak\user_service" />
+      <recent name="C:\Users\Mert\Desktop\Fullstack-Project-Final\backend\services\log-service\src\main\java\com\devaemlak\log_service\dto\response" />
+      <recent name="C:\Users\Mert\Desktop\Fullstack-Project-Final\backend\services\log-service\src\main\resources" />
+      <recent name="C:\Users\Mert\Desktop\Fullstack-Project-Final\backend\services\log-service\src\main\java\com\devaemlak\log_service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Mert\Desktop\Fullstack-Project-Final\services\discovery-client-service\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.devaemlak.log_service.consumer.response" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -101,7 +203,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.OrderServiceApplication">
+  <component name="RunManager" selected="Spring Boot.LogServiceApplication">
     <configuration name="AdvertisementServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="advertisement-service" />
@@ -130,6 +232,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LogServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="log-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.devaemlak.log_service.LogServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="OrderServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="order-service" />
@@ -146,9 +255,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
+    <configuration name="resources/docker-compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="backend/services/log-service/src/main/resources/docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ApiGatewayServiceApplication" />
+        <item itemvalue="Docker.resources/docker-compose.yaml: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -173,6 +295,7 @@
       <workItem from="1720600489633" duration="1602000" />
       <workItem from="1720602203065" duration="38000" />
       <workItem from="1721123713966" duration="67240000" />
+      <workItem from="1721381199897" duration="19394000" />
     </task>
     <servers />
   </component>
@@ -222,8 +345,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/SaleAdService.java</url>
-          <line>45</line>
+          <line>48</line>
           <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/controller/LogController.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
