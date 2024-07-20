@@ -40,8 +40,6 @@
 
 ### ` 🏗️ N-Layered Architecture`
 
-![image](https://github.com/FMSS-Full-Stack-Bootcamp/grup-bir/assets/58560920/5dd809e9-b4c6-40d6-8c76-8eda11bad234)
-
 ## 'API Usage`
 
 ### `Advertisement Endpoints`
