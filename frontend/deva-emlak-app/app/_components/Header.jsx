@@ -14,12 +14,13 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { AdModal } from '@/components/component/ad-modal'
 
 
 function Header() {
     const path = usePathname();
     const { user, isSignedIn } = useUser();
-    const [ totalPackageQuantity, setTotalPackageQuantity ] = useState(0);
+    const [totalPackageQuantity, setTotalPackageQuantity] = useState(0);
 
     useEffect(() => {
         console.log(path);
@@ -51,8 +52,12 @@ function Header() {
     return (
         <div className='p-6 px-10 flex justify-between shadow-sm fixed top-0 w-full z-10 bg-white'>
             <div className='flex gap-12 items-center'>
-                <Image src={'/logo.svg'} width={50}
-                    height={50} alt='logo' />
+
+                <Link href={"/"}>
+                    <Image src={'/logo.svg'} width={50}
+                        height={50} alt='logo' />
+                </Link>
+
                 <ul className='hidden md:flex gap-10'>
                     <Link href={'/sell'}>
                         <li className={`'hover:text-primary font-medium text-sm cursor-pointer' 
@@ -75,9 +80,12 @@ function Header() {
                 </div>
 
 
-                <Link href={'/add-new-listing'}>
+                {/* <Link href={'/add-new-listing'}>
                     <Button className='flex gap-2'><Plus className='h-5 w-5' /> Post Your Ad</Button>
-                </Link>
+                </Link> */}
+
+                <AdModal />
+
                 {isSignedIn ?
                     // <UserButton />
                     <DropdownMenu>

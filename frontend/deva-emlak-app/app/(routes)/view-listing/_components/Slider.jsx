@@ -6,24 +6,21 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
-import Image from 'next/image'
-
-
 
 function Slider({ imageList }) {
     console.log('Resim liste : ', imageList);
     return (
         <div className='mt-5'>
-            {imageList ?
+            {imageList.length > 0 ?
                 <Carousel>
                     <CarouselContent>
-                        {imageList.map((item, index) => (
-                            <CarouselItem>
-                                <Image src={item.url} width={800}
+                        {imageList.map((url, index) => (
+                            <CarouselItem key={index}>
+                                <img src={url} width={800}
                                     height={300}
                                     alt='image'
-                                    className='rounded-xl object-cover h-[360px] w-full'>
-                                </Image>
+                                    className='rounded-xl object-contain h-[360px] w-full'>
+                                </img>
                             </CarouselItem>
                         ))}
                     </CarouselContent>
@@ -36,4 +33,4 @@ function Slider({ imageList }) {
     )
 }
 
-export default Slider
+export default Slider;

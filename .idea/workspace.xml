@@ -5,37 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ade2e6a-db94-43b4-ba27-91a98be78c59" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/config/SchedulerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/controller/PackageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/converter/AdPackageConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/dto/response/AdPackageResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/model/AdPackage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/repository/PackageRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/service/PackageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/journal/WiredTigerLog.0000000004" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/07b02fd8-ccf6-457d-9dd2-b98d236821bb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/07b02fd8-ccf6-457d-9dd2-b98d236821bb.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/api-gateway-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/api-gateway-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/AdvertisementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/AdvertisementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/AttachmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/AttachmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/ResponseData.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/ResponseData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/exception/ExceptionMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/exception/ExceptionMessages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/Attachment.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/Attachment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/repository/AttachmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/repository/AttachmentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AdvertisementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AdvertisementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AttachmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AttachmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/api-gateway-service/src/main/java/com/devaemlak/api_gateway_service/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/api-gateway-service/src/main/java/com/devaemlak/api_gateway_service/config/WebConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/WiredTiger.turtle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/WiredTiger.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/collection-0--3893855849773330699.wt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/collection-0--3893855849773330699.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/collection-2--812744859606587770.wt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/collection-2--812744859606587770.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/collection-4--812744859606587770.wt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/collection-4--812744859606587770.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/diagnostic.data/metrics.2024-07-19T12-45-38Z-00000" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/diagnostic.data/metrics.2024-07-19T12-45-38Z-00000" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/diagnostic.data/metrics.interim" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/diagnostic.data/metrics.interim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-1--3893855849773330699.wt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-1--3893855849773330699.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-3--812744859606587770.wt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-3--812744859606587770.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-5--812744859606587770.wt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-5--812744859606587770.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-6--812744859606587770.wt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-6--812744859606587770.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/journal/WiredTigerLog.0000000003" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/journal/WiredTigerLog.0000000003" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/journal/WiredTigerLog.0000000003" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/sizeStorer.wt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/sizeStorer.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/OrderServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/OrderServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/converter/OrderConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/converter/OrderConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/dto/response/OrderResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/dto/response/OrderResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/exception/ExceptionMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/exception/ExceptionMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/repository/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/deva-emlak-app/app/(routes)/edit-new-listing/[type]/[id]/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/deva-emlak-app/app/(routes)/edit-new-listing/[type]/[id]/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/deva-emlak-app/app/(routes)/user/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/deva-emlak-app/app/(routes)/user/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/deva-emlak-app/app/_components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/deva-emlak-app/app/_components/Header.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,44 +70,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Docker.resources/docker-compose.yaml: Compose Deployment.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.AdvertisementServiceApplication.executor": "Debug",
-    "Spring Boot.ApiGatewayServiceApplication.executor": "Run",
-    "Spring Boot.DiscoveryClientServiceApplication.executor": "Run",
-    "Spring Boot.LogServiceApplication.executor": "Debug",
-    "Spring Boot.OrderServiceApplication.executor": "Debug",
-    "Spring Boot.UserServiceApplication.executor": "Debug",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Mert/Desktop/Fullstack-Project-Final/backend/services/order-service/src/main/java/com/devaemlak/order_service",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Docker.resources/docker-compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AdvertisementServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.ApiGatewayServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.DiscoveryClientServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.LogServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.OrderServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.UserServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mert/Desktop/Fullstack-Project-Final/backend/services/order-service/src/main/java/com/devaemlak/order_service&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -194,7 +188,9 @@
       </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration name="resources/docker-compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -233,7 +229,8 @@
       <workItem from="1720600489633" duration="1602000" />
       <workItem from="1720602203065" duration="38000" />
       <workItem from="1721123713966" duration="67240000" />
-      <workItem from="1721381199897" duration="34143000" />
+      <workItem from="1721381199897" duration="34508000" />
+      <workItem from="1721467056320" duration="15492000" />
     </task>
     <servers />
   </component>
@@ -293,7 +290,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/AttachmentController.java</url>
-          <line>26</line>
+          <line>29</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -315,6 +312,21 @@
           <url>file://$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/service/PackageService.java</url>
           <line>80</line>
           <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/SaleAdService.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/AdvertisementController.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AdvertisementService.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -9,6 +9,7 @@ import lombok.*;
 @NoArgsConstructor
 public class ResponseData {
 
+    private String id;
     private String fileName;
     private String downloadURL;
     private String fileType;

@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+"use client"
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { Bath, BedDouble, MapPin, Ruler, Search } from 'lucide-react'
 import GoogleAddressSearch from './GoogleAddressSearch'
@@ -6,20 +7,24 @@ import { Button } from '@/components/ui/button'
 import FilterSection from './FilterSection'
 import Link from 'next/link'
 
-function Listing({ listing, handleSearchClick, searchedAddress
+function Listing({ listing, imageListing, handleSearchClick, searchedAddress
   , setArea, setNumberOfRooms, setFloorNumber, setHomeType, setCoordinates
 }) {
   const [address, setAddress] = useState();
+
+  useEffect(() => {
+
+    console.log('imagelisting listing',imageListing);
+
+}, [])
   return (
     <div>
       <div className='p-3 flex gap-7'>
         <GoogleAddressSearch
-          // selectedAddress={(v) => console.log(v)}
           selectedAddress={(v) => {
             searchedAddress(v)
             setAddress(v)
           }}
-
           setCoordinates={setCoordinates}
         />
         <Button className='flex gap-2'
@@ -43,12 +48,12 @@ function Listing({ listing, handleSearchClick, searchedAddress
         {listing?.length > 0 ? listing.map((item, index) => (
           <Link href={'/view-listing/' + item.id}>
             <div className='p-3 hover:border hover:border-primary rounded-lg cursor-pointer'>
-              <Image
-                // src={item?.listingImages[0].url}
-                src="/placeholder.svg"
+              <img
+                src={imageListing[item.id]?.[0] || "/placeholder.svg"}
                 width={800}
                 height={150}
-                className='rounded-lg object-cover h-[170px]'
+                alt='Listing Image'
+                className='rounded-lg object-contain h-[170px] w-full'
               />
               <div className='flex mt-2 flex-col gap-2'>
                 <h2 className='font-bold text-xl'>${item?.price}</h2>
@@ -81,7 +86,6 @@ function Listing({ listing, handleSearchClick, searchedAddress
           : [1, 2, 3, 4, 5, 6, 7, 8].map((item, index) => (
             <div key={index} className='h-[230px] w-full
             bg-slate-200 animate-pulse rounded-lg'>
-
             </div>
           ))}
       </div>

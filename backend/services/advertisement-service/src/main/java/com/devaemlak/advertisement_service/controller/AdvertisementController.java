@@ -33,6 +33,11 @@ public class AdvertisementController {
         return GenericResponse.success(advertisementService.getAll());
     }
 
+    @GetMapping("/{id}")
+    public GenericResponse<Advertisement> getById(@PathVariable Long id) {
+        return GenericResponse.success(advertisementService.getById(id));
+    }
+
     @GetMapping("/latest")
     public GenericResponse<List<Advertisement>> getLatestListing() {
         return GenericResponse.success(advertisementService.getAllByActive());

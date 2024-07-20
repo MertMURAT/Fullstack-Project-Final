@@ -6,10 +6,11 @@ import GoogleMapSection from './GoogleMapSection';
 import { useUser } from '@clerk/nextjs';
 import { toast } from 'sonner';
 
-function ListingMapView({ type, activate }) {
+function ListingMapView({ type }) {
     const [searchedAddress, setSearchedAddress] = useState();
 
     const [listing, setListing] = useState([]);
+    const [imagesList, setImagesList] = useState({});
     const [area, setArea] = useState(0);
     const [numberOfRooms, setNumberOfRooms] = useState(0);
     const [floorNumber, setFloorNumber] = useState(0);
@@ -19,17 +20,15 @@ function ListingMapView({ type, activate }) {
 
     useEffect(() => {
 
-        if(activate == 1){
+        if(type == 'Sell'){
             getRentAndSellAd();
-            activate = 0;
-        }
-        if(activate == 2){
+        }else if(type == 'Rent'){
             getRentAndSellAd();
-            activate = 0;
+        }else{
+            getLatestAdvertisements();
+            getAttachmentsAndSetImages();
         }
         
-        getLatestAdvertisements();
-
     }, [])
 
     // const getLatestListing = async () => {
@@ -55,7 +54,7 @@ function ListingMapView({ type, activate }) {
             let uriExt;
             if (type == 'Sell') {
                 uriExt = 'sale-ads'
-            } else {
+            } else if(type == 'Rent'){
                 uriExt = 'rental-ads'
             }
 
@@ -97,6 +96,54 @@ function ListingMapView({ type, activate }) {
             throw error;
         }
     };
+    const getAttachmentsAndSetImages = async () => {
+        try {
+            const attachments = await getAttachmentsByAdvertisementId(advertisementId);
+            const imageUrls = await Promise.all(attachments.map(async (attachment) => {
+                const downloadUrl = await downloadFile(attachment.id);
+                return downloadUrl;
+            }));
+            setImagesList(imageUrls);
+        } catch (error) {
+            console.error('Error:', error);
+            toast('Error while fetching images');
+        }
+    };
+
+    const getAttachments = async () => {
+        try {
+            const response = await fetch(`http://localhost:8080/api/v1/attachments`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`HTTP error! status: ${response.status}, response: ${errorText}`);
+            }
+            const result = await response.json();
+            console.log('getAttachmentsByAdvertisementId', result);
+            return result.data;
+        } catch (error) {
+            console.error('Error:', error);
+            toast('Server Side Error');
+            throw error;
+        }
+    };
+
+    const downloadFile = async (fileId) => {
+        try {
+            const response = await fetch(`http://localhost:8080/api/v1/attachments/download/${fileId}`);
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            const blob = await response.blob();
+            return URL.createObjectURL(blob);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
+
 
     const searchAdvertisements = async (type, area, numberOfRooms, floorNumber, searchTerm, homeType) => {
         try {
@@ -115,7 +162,8 @@ function ListingMapView({ type, activate }) {
 
             const result = await response.json();
             console.log('Search result:', result);
-            setListing(result);
+            setListing(result.data);
+            result.data.forEach(item => getAttachmentsAndSetImages(item.id));
 
             return result;
         } catch (error) {
@@ -164,6 +212,7 @@ function ListingMapView({ type, activate }) {
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
             <div>
                 <Listing listing={listing}
+                    imageListing={imagesList}
                     handleSearchClick={handleSearchClick}
                     searchedAddress={(v) => setSearchedAddress(v)}
                     setArea={setArea}
@@ -176,8 +225,8 @@ function ListingMapView({ type, activate }) {
             <div className='right-10 h-full 
             md:w-[350px] lg:w-[450px] xl:w-[900px] '>
                 <GoogleMapSection
-                listing={listing}
-                coordinates={coordinates} />
+                    listing={listing}
+                    coordinates={coordinates} />
             </div>
         </div>
     )

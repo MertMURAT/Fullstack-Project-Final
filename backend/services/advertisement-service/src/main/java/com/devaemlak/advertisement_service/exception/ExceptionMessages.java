@@ -24,6 +24,7 @@ public class ExceptionMessages {
     public static final String FILE_PATH_ERROR = "Dosya geçersiz yol sırası içeriyor";
     public static final String FILE_NOT_FOUND = "Dosya bulunamadı!";
     public static final String FILE_ATTACHMENT_ERROR = "Dosya kaydedilemedi.";
+    public static final String FILE_ATTACHMENT_RETRIEVE_ERROR = "DB' den dosyalar getirilirken hata oluştu.";
     // rabbitmq
     public static final String LOG_WRITE_QUEUE = "Log kuyruğa alındı.";
 

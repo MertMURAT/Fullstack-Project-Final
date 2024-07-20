@@ -44,6 +44,18 @@ public class AdvertisementService {
         }
     }
 
+    public Advertisement getById(Long id) {
+        try {
+            Advertisement advertisement = advertisementRepository.findById(id)
+                    .orElseThrow(() -> new AdvertisementException(ExceptionMessages.ADVERTISEMENT_NOT_FOUND));
+            logProducer.sendToLog(prepareLogDto(OperationType.GET, ExceptionMessages.ADVERTISEMENT_RETRIEVED, LogType.INFO));
+            return advertisement;
+        } catch (AdvertisementException e) {
+            logProducer.sendToLog(prepareLogDto(OperationType.GET, ExceptionMessages.ADVERTISEMENT_RETRIEVE_ERROR, LogType.ERROR));
+            throw e;
+        }
+    }
+
     public List<Advertisement> getAllByActive() {
         try {
             List<Advertisement> advertisements = advertisementRepository.findAll().stream()

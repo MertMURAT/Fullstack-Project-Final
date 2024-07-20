@@ -192,8 +192,9 @@ function EditListing({ params }) {
     };
 
     const uploadImage = async (file) => {
+
         let formImageData = new FormData();
-        formImageData.set('file', file);
+        formImageData.append('file', file);
 
         try {
             const response = await fetch(`http://localhost:8080/api/v1/attachments/upload/${params.id}`, {
@@ -215,6 +216,8 @@ function EditListing({ params }) {
             console.error('Error uploading file:', error);
         }
     };
+
+   
 
     const onSubmitHandler = async (formValue) => {
         setLoading(true);
@@ -287,14 +290,14 @@ function EditListing({ params }) {
     const updatePackageCount = async () => {
         try {
             const response = await fetch('http://localhost:8080/api/v1/ad-packages', {
-                method: 'PUT'  
+                method: 'PUT'
             });
-  
+
             if (!response.ok) {
                 const errorText = await response.text();
                 throw new Error(`HTTP error! status: ${response.status}, response: ${errorText}`);
             }
-  
+
             console.log('package count decrease by one', response);
             return response;
         } catch (error) {
@@ -302,14 +305,15 @@ function EditListing({ params }) {
             throw error;
         }
     };
-  
+
 
     const publishButtonHandler = async () => {
         setLoading(true);
 
-        console.log(updateDataStatus);
+        console.log('update status id', updateDataStatus.id);
         await updateAdStatus(updateDataStatus);
         updatePackageCount();
+        console.log("yayınlama işlemi tamamlandı");
     }
 
     useEffect(() => {
@@ -324,7 +328,6 @@ function EditListing({ params }) {
     return (
         <div className='px-10 md:px-36 my-10'>
             <h2 className='font-bold text-2xl'> İlan detaylarını giriniz</h2>
-
             <Formik
                 initialValues={{
                     // profileImage: user?.imageUrl,
@@ -353,36 +356,6 @@ function EditListing({ params }) {
                                 <div className='flex gap-2 flex-col'>
                                     <h2 className='text-slate-500'>Kiralık mı? / Satılık mı?</h2>
                                     <h2 className='text-slate-500'>{adType == 'Rent' ? 'Kiralık' : 'Satılık'}</h2>
-                                    {/* <RadioGroup
-                                        // onValueChange={(v)=>console.log("",v)}
-                                        onValueChange={(v) => values.type = v}
-                                        defaultValue={listing ? listing?.type : listing?.type}
-                                    >
-                                        <div className="flex items-center space-x-2">
-                                            <RadioGroupItem value="Rent" id="Rent" />
-                                            <Label htmlFor="Rent">Rent</Label>
-                                        </div>
-                                        <div className="flex items-center space-x-2">
-                                            <RadioGroupItem value="Sell" id="Sell" />
-                                            <Label htmlFor="Sell">Sell</Label>
-                                        </div>
-                                    </RadioGroup> */}
-                                    {/* <Select
-                                        onValueChange={(e) => {
-                                            values.advertisementType = e
-                                            setAdType(e);
-                                        }}
-                                        name='advertisementType'
-                                        defaultValue={listing?.advertisementType}
-                                        onChange={handleChange}>
-                                        <SelectTrigger className="w-[180px] font-bold bg-orange-200">
-                                            <SelectValue placeholder={listing?.advertisementType ? listing?.advertisementType : "İlan Tipi Seç"} />
-                                        </SelectTrigger>
-                                        <SelectContent>
-                                            <SelectItem value="Sell">Satılık</SelectItem>
-                                            <SelectItem value="Rent">Kiralık</SelectItem>
-                                        </SelectContent>
-                                    </Select> */}
                                 </div>
                                 <div className='flex flex-col gap-2'>
                                     <h2 className='text-slate-500'>Ev Tipi</h2>
@@ -470,7 +443,7 @@ function EditListing({ params }) {
                                             values.isFurnished = e
                                         }}
                                         name='isFurnished'
-                                        defaultValue={listing?.isFurnished == true? 'true' : 'false'}
+                                        defaultValue={listing?.isFurnished == true ? 'true' : 'false'}
                                         onChange={handleChange}>
                                         <SelectTrigger className="w-full font-mono bg-white">
                                             <SelectValue placeholder={listing?.isFurnished ? listing?.isFurnished : "Lütfen Seçiniz"} />
@@ -490,7 +463,7 @@ function EditListing({ params }) {
                                             values.includesUtilities = e
                                         }}
                                         name='includesUtilities'
-                                        defaultValue={listing?.includesUtilities == true? 'true' : 'false'}
+                                        defaultValue={listing?.includesUtilities == true ? 'true' : 'false'}
                                         onChange={handleChange}>
                                         <SelectTrigger className="w-full font-mono bg-white">
                                             <SelectValue placeholder={listing?.includesUtilities ? listing?.includesUtilities : "Lütfen Seçiniz"} />
@@ -509,7 +482,7 @@ function EditListing({ params }) {
                                             values.allowsPets = e
                                         }}
                                         name='allowsPets'
-                                        defaultValue={listing?.allowsPets == true? 'true' : 'false'}
+                                        defaultValue={listing?.allowsPets == true ? 'true' : 'false'}
                                         onChange={handleChange}>
                                         <SelectTrigger className="w-full font-mono bg-white">
                                             <SelectValue placeholder={listing?.allowsPets ? listing?.allowsPets : "Lütfen Seçiniz"} />
@@ -554,13 +527,13 @@ function EditListing({ params }) {
                             <div className='grid grid-cols-1 gap-2'>
                                 <h2 className=' font-lg text-slate-500 my-2'>Fotoğraf Yükle</h2>
                                 <FileUpload setImages={(value) => setImages(value)}
-                                    // imageList={listing?.listingImages} 
-                                    imageList={images} 
-                                    />
+                                     imageList={listing?.listingImages} 
+                                    // imageList={images}
+                                />
                             </div>
 
                             <div className='flex gap-7 justify-end'>
-                                <Button disabled={loading} variant="outline" className="text-primary border-primary">
+                                <Button type="onSubmit" disabled={loading} variant="outline" className="text-primary border-primary">
                                     {loading ? <Loader className='animate-spin' /> : 'Kaydet'}
                                 </Button>
 

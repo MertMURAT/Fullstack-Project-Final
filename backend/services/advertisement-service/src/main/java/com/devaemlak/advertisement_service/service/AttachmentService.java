@@ -10,10 +10,12 @@ import com.devaemlak.advertisement_service.producer.dto.enums.OperationType;
 import com.devaemlak.advertisement_service.repository.AttachmentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 @Service
@@ -54,6 +56,25 @@ public class AttachmentService {
                 .orElseThrow(() -> new AdvertisementException(ExceptionMessages.FILE_NOT_FOUND));
         logProducer.sendToLog(prepareLogDto(OperationType.GET, ExceptionMessages.FILE_ATTACHMENT_RETRIEVED, LogType.INFO));
         return attachment;
+    }
+
+    @Transactional(readOnly = true)
+    public List<Attachment> getByAdvertisementId(Long advertisementId) {
+        List<Attachment> attachments = attachmentRepository.findByAdvertisementId(advertisementId);
+        logProducer.sendToLog(prepareLogDto(OperationType.GET, ExceptionMessages.FILE_ATTACHMENT_RETRIEVED, LogType.INFO));
+        return attachments;
+    }
+
+    @Transactional(readOnly = true)
+    public List<Attachment> getAllAttachments() {
+        try {
+            List<Attachment> attachments = attachmentRepository.findAll();
+            logProducer.sendToLog(prepareLogDto(OperationType.GET, ExceptionMessages.FILE_ATTACHMENT_RETRIEVED, LogType.INFO));
+            return attachments;
+        } catch (Exception e) {
+            logProducer.sendToLog(prepareLogDto(OperationType.GET, ExceptionMessages.FILE_ATTACHMENT_RETRIEVED, LogType.ERROR));
+            throw new AdvertisementException(ExceptionMessages.FILE_ATTACHMENT_RETRIEVE_ERROR);
+        }
     }
 
     private LogDto prepareLogDto(OperationType operationType, String message, LogType logType) {

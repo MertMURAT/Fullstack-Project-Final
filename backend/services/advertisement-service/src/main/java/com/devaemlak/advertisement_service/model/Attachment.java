@@ -24,6 +24,7 @@ public class Attachment {
     private String fileType;
 
     @Lob
+    @Basic(fetch = FetchType.LAZY)
     @Column(name = "data")
     private byte[] data;
 
