@@ -5,6 +5,7 @@ import com.devaemlak.order_service.dto.request.OrderSaveRequest;
 import com.devaemlak.order_service.dto.response.OrderResponse;
 import com.devaemlak.order_service.exception.ExceptionMessages;
 import com.devaemlak.order_service.exception.OrderException;
+import com.devaemlak.order_service.model.Order;
 import com.devaemlak.order_service.producer.LogProducer;
 import com.devaemlak.order_service.producer.dto.LogDto;
 import com.devaemlak.order_service.producer.dto.enums.LogType;
@@ -23,12 +24,14 @@ public class OrderService {
 
     private final OrderRepository orderRepository;
     private final LogProducer logProducer;
+    private final PackageService packageService;
 
     @Transactional
     public void save(OrderSaveRequest request) {
         try {
             orderRepository.save(OrderConverter.toOrder(request));
             logProducer.sendToLog(prepareLogDto(OperationType.INSERT, ExceptionMessages.ORDER_SAVED, LogType.INFO));
+            packageService.save();
         } catch (Exception e) {
             logProducer.sendToLog(prepareLogDto(OperationType.INSERT, ExceptionMessages.ORDER_SAVE_ERROR, LogType.ERROR));
             throw new OrderException(ExceptionMessages.ORDER_SAVE_ERROR);

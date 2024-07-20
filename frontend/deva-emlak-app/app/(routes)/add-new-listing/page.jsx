@@ -1,6 +1,5 @@
 "use client"
 import React, { useState } from 'react'
-import { supabase } from '@/utils/supabase/client'
 import { useUser } from '@clerk/nextjs'
 import GoogleAddressSearch from "@/app/_components/GoogleAddressSearch"
 import { Button } from '@/components/ui/button'

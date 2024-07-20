@@ -23,6 +23,5 @@ public class OrderResponse {
     private BigDecimal totalAmount;
     private Long userId;
     private LocalDateTime createdDate;
-    private LocalDateTime lastModifiedDate;
 
 }

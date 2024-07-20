@@ -2,6 +2,7 @@ package com.devaemlak.order_service.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
@@ -32,12 +33,7 @@ public class Order {
     @Column(name = "userId")
     private Long userId;
 
-    @CreatedDate
     @Column(name = "createdDate", updatable = false, nullable = false)
     private LocalDateTime createdDate;
-
-    @LastModifiedDate
-    @Column(name = "lastModifiedDate", insertable = false)
-    private LocalDateTime lastModifiedDate;
 
 }

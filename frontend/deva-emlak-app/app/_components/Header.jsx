@@ -4,7 +4,7 @@ import { Plus } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button';
 import {
     DropdownMenu,
@@ -19,10 +19,34 @@ import {
 function Header() {
     const path = usePathname();
     const { user, isSignedIn } = useUser();
+    const [ totalPackageQuantity, setTotalPackageQuantity ] = useState(0);
 
     useEffect(() => {
         console.log(path);
+        getTotalPackageQuantity();
     }, [])
+
+    const getTotalPackageQuantity = async () => {
+        try {
+
+            const response = await fetch("http://localhost:8080/api/v1/ad-packages/total-quantity");
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`HTTP error! status: ${response.status}, response: ${errorText}`);
+            }
+
+            const result = await response.json();
+            console.log('total quantity : ', result.data);
+            console.log('total quantity result: ', result);
+            setTotalPackageQuantity(result.data);
+
+            return result;
+        } catch (error) {
+            console.error('Error:', error);
+            throw error;
+        }
+    };
+
 
     return (
         <div className='p-6 px-10 flex justify-between shadow-sm fixed top-0 w-full z-10 bg-white'>
@@ -38,10 +62,19 @@ function Header() {
                         <li className={`'hover:text-primary font-medium text-sm cursor-pointer' 
                             ${path == '/rent' && 'text-primary'}`}>For Rent</li>
                     </Link>
-                    <li className='hover:text-primary font-medium text-sm cursor-pointer'>Agent Finder</li>
+                    {/* <li className='hover:text-primary font-medium text-sm cursor-pointer'>Agent Finder</li> */}
                 </ul>
             </div>
-            <div className='flex gap-2 items-center'>
+            <div className='flex gap-5 items-center'>
+                <div className='flex'>
+                    <Link href={'/pricing'}>
+                        <Button className='flex gap-2'><Plus className='h-5 w-5' /></Button>
+                    </Link>
+
+                    <Button className='flex gap-2 bg-slate-200 text-black text-lg font-bold'>{totalPackageQuantity}</Button>
+                </div>
+
+
                 <Link href={'/add-new-listing'}>
                     <Button className='flex gap-2'><Plus className='h-5 w-5' /> Post Your Ad</Button>
                 </Link>

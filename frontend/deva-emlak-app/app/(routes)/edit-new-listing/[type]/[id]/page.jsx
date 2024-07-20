@@ -284,11 +284,32 @@ function EditListing({ params }) {
         // }
     }
 
+    const updatePackageCount = async () => {
+        try {
+            const response = await fetch('http://localhost:8080/api/v1/ad-packages', {
+                method: 'PUT'  
+            });
+  
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`HTTP error! status: ${response.status}, response: ${errorText}`);
+            }
+  
+            console.log('package count decrease by one', response);
+            return response;
+        } catch (error) {
+            console.error('Error:', error);
+            throw error;
+        }
+    };
+  
+
     const publishButtonHandler = async () => {
         setLoading(true);
 
         console.log(updateDataStatus);
         await updateAdStatus(updateDataStatus);
+        updatePackageCount();
     }
 
     useEffect(() => {

@@ -17,7 +17,7 @@ public class OrderConverter {
         return Order.builder()
                 .quantity(10)
                 .userId(request.getUserId())
-                .totalAmount(new BigDecimal(500))
+                .totalAmount(new BigDecimal(100))
                 .createdDate(LocalDateTime.now())
                 .build();
     }
@@ -29,7 +29,6 @@ public class OrderConverter {
                 .totalAmount(order.getTotalAmount())
                 .userId(order.getUserId())
                 .createdDate(order.getCreatedDate())
-                .lastModifiedDate(order.getLastModifiedDate())
                 .build();
     }
 
