@@ -43,12 +43,12 @@ function Listing({ listing, handleSearchClick, searchedAddress
         {listing?.length > 0 ? listing.map((item, index) => (
           <Link href={'/view-listing/' + item.id}>
             <div className='p-3 hover:border hover:border-primary rounded-lg cursor-pointer'>
-              <img
+              <Image
                 src={item.images[0].imageUrl || "/placeholder.svg"}
                 width={800}
                 height={150}
                 alt='Listing Image'
-                className='rounded-lg object-contain h-[170px] w-full'
+                className='rounded-lg object-cover h-[170px] w-full'
               />
               <div className='flex mt-2 flex-col gap-2'>
                 <h2 className='font-bold text-xl'>${item?.price}</h2>
