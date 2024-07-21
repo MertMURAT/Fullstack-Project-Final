@@ -1,7 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import Listing from './Listing'
-import { supabase } from '@/utils/supabase/client'
 import GoogleMapSection from './GoogleMapSection';
 import { useUser } from '@clerk/nextjs';
 import { toast } from 'sonner';
@@ -29,24 +28,6 @@ function ListingMapView({ type }) {
         }
         
     }, [])
-
-    // const getLatestListing = async () => {
-    //     const { data, error } = await supabase
-    //         .from('listing')
-    //         .select(`*,listingImages(
-    //         url,
-    //         listing_id)`)
-    //         .eq('active', true)
-    //         .eq('type', type)
-    //         .order('id', { ascending: false })
-
-    //     if (data) {
-    //         setListing(data);
-    //     }
-    //     if (error) {
-    //         toast('Server Side Error')
-    //     }
-    // }
 
     const getRentAndSellAd = async () => {
         try {
@@ -96,14 +77,54 @@ function ListingMapView({ type }) {
         }
     };
   
-    const searchAdvertisements = async (type, area, numberOfRooms, floorNumber, searchTerm, homeType) => {
-        try {
+    // const searchAdvertisements = async (type, area, numberOfRooms, floorNumber, searchTerm, homeType) => {
+    //     try {
 
-            const response = await fetch(`http://localhost:8080/api/v1/advertisements/search?searchTerm=${searchTerm}&numberOfRooms=${numberOfRooms}&floorNumber=${floorNumber}&area=${area}`, {
-                method: 'GET',
+    //         const response = await fetch(`http://localhost:8080/api/v1/advertisements/search?searchTerm=${searchTerm}&numberOfRooms=${numberOfRooms}&floorNumber=${floorNumber}&area=${area}`, {
+    //             method: 'GET',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //         });
+
+    //         if (!response.ok) {
+    //             const errorText = await response.text();
+    //             throw new Error(`HTTP error! status: ${response.status}, response: ${errorText}`);
+    //         }
+
+    //         const result = await response.json();
+    //         console.log('Search result:', result);
+    //         setListing(result.data);
+    //         result.data.forEach(item => getAttachmentsAndSetImages(item.id));
+
+    //         return result;
+    //     } catch (error) {
+    //         console.error('Error:', error);
+    //         toast('Server Side Error')
+    //         throw error;
+    //     }
+    // };
+
+
+    const handleSearchClick = async () => {
+        console.log("Searched Address : ", searchedAddress);
+        try {
+            const searchParams = {
+                page: 0,
+                size: 10,
+                address: searchedAddress?.value?.structured_formatting?.main_text || '',
+                area: area,
+                numberOfRooms: numberOfRooms,
+                floorNumber: floorNumber,
+                housingType: homeType || ''
+            };
+
+            const response = await fetch('http://localhost:8080/api/v1/advertisements/search', {
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
+                body: JSON.stringify(searchParams),
             });
 
             if (!response.ok) {
@@ -112,51 +133,13 @@ function ListingMapView({ type }) {
             }
 
             const result = await response.json();
-            console.log('Search result:', result);
+            console.log('Search results:', result.data);
             setListing(result.data);
-            result.data.forEach(item => getAttachmentsAndSetImages(item.id));
-
-            return result;
+            toast('Arama başarılıs!');
         } catch (error) {
             console.error('Error:', error);
-            toast('Server Side Error')
-            throw error;
+            toast('Server Side Error');
         }
-    };
-
-
-    const handleSearchClick = async () => {
-        console.log("Searched Address : ", searchedAddress);
-        const searchTerm = searchedAddress?.value?.structured_formatting?.main_text;
-        searchAdvertisements(type, area, numberOfRooms, floorNumber, searchTerm, homeType)
-
-        // const searchTerm = searchedAddress?.value?.structured_formatting?.main_text;
-        // let query = supabase
-        //     .from('listing')
-        //     .select(`*,listingImages(
-        //     url,
-        //     listing_id)`)
-        //     .eq('active', true)
-        //     .eq('type', type)
-        //     .gte('area', bedCount)
-        //     .gte('numberOfRooms', bathCount)
-        //     .gte('floorNumber', parkingCount)
-        //     .like('address', '%' + searchTerm + '%')
-        //     .order('id', { ascending: false })
-
-        // if (homeType) {
-        //     query.eq('propertyType', homeType)
-        // }
-
-        // const { data, error } = await query;
-
-        // if (data) {
-        //     setListing(data);
-        //     console.log('Search data:', data);
-        // }
-        // if (error) {
-        //     toast('Server Side Error')
-        // }
     }
 
     return (

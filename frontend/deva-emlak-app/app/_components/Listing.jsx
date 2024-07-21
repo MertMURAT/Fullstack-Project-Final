@@ -44,7 +44,7 @@ function Listing({ listing, handleSearchClick, searchedAddress
           <Link href={'/view-listing/' + item.id}>
             <div className='p-3 hover:border hover:border-primary rounded-lg cursor-pointer'>
               <Image
-                src={item.images[0].imageUrl || "/placeholder.svg"}
+                src={item.images[0]?.imageUrl || "/placeholder.svg"}
                 width={800}
                 height={150}
                 alt='Listing Image'

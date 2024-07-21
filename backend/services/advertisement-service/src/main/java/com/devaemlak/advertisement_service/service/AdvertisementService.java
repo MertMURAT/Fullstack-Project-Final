@@ -2,6 +2,7 @@ package com.devaemlak.advertisement_service.service;
 
 import com.devaemlak.advertisement_service.converter.AdvertisementConverter;
 import com.devaemlak.advertisement_service.dto.request.AdvertisementSaveRequest;
+import com.devaemlak.advertisement_service.dto.request.AdvertisementSearchRequest;
 import com.devaemlak.advertisement_service.exception.AdvertisementException;
 import com.devaemlak.advertisement_service.exception.ExceptionMessages;
 import com.devaemlak.advertisement_service.model.Advertisement;
@@ -13,7 +14,11 @@ import com.devaemlak.advertisement_service.producer.dto.LogDto;
 import com.devaemlak.advertisement_service.producer.dto.enums.LogType;
 import com.devaemlak.advertisement_service.producer.dto.enums.OperationType;
 import com.devaemlak.advertisement_service.repository.AdvertisementRepository;
+import com.devaemlak.advertisement_service.repository.specification.AdvertisementSpecification;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -70,24 +75,15 @@ public class AdvertisementService {
         }
     }
 
-    public List<Advertisement> search(AdvertisementType type, int area, int numberOfRooms, int floorNumber, String searchTerm, HousingType homeType) {
-        try {
-            List<Advertisement> advertisements = advertisementRepository.findAll().stream()
-                    .filter(ad -> ad.getAdvertisementStatus().equals(AdvertisementStatus.ACTIVE))
-                    .filter(ad -> ad.getAdvertisementType().equals(type))
-                    .filter(ad -> ad.getArea() >= area)
-                    .filter(ad -> ad.getNumberOfRooms() >= numberOfRooms)
-                    .filter(ad -> ad.getFloorNumber() >= floorNumber)
-                    .filter(ad -> ad.getAddress().toLowerCase().contains(searchTerm.toLowerCase()))
-                    .filter(ad -> homeType == null || ad.getHousingType().equals(homeType))
-                    .sorted((ad1, ad2) -> ad2.getId().compareTo(ad1.getId()))
-                    .toList();
-            logProducer.sendToLog(prepareLogDto(OperationType.GET, ExceptionMessages.ADVERTISEMENT_RETRIEVED, LogType.INFO));
-            return advertisements;
-        } catch (Exception e) {
-            logProducer.sendToLog(prepareLogDto(OperationType.GET, ExceptionMessages.ADVERTISEMENT_RETRIEVE_ERROR, LogType.ERROR));
-            throw new AdvertisementException(ExceptionMessages.ADVERTISEMENT_RETRIEVE_ERROR);
-        }
+    public List<Advertisement> getAllBySearchParams(AdvertisementSearchRequest request) {
+
+        Specification<Advertisement> advertisementSpecification = AdvertisementSpecification.initAdvertisementSpecification(request);
+
+        PageRequest pageRequest = PageRequest.of(request.getPage(), request.getSize());
+
+        Page<Advertisement> advertisements = advertisementRepository.findAll(advertisementSpecification, pageRequest);
+
+        return advertisements.stream().toList();
     }
 
     private LogDto prepareLogDto(OperationType operationType, String message, LogType logType) {

@@ -1,6 +1,7 @@
 package com.devaemlak.advertisement_service.controller;
 
 import com.devaemlak.advertisement_service.dto.request.AdvertisementSaveRequest;
+import com.devaemlak.advertisement_service.dto.request.AdvertisementSearchRequest;
 import com.devaemlak.advertisement_service.dto.response.AdvertisementResponse;
 import com.devaemlak.advertisement_service.dto.response.GenericResponse;
 import com.devaemlak.advertisement_service.model.Advertisement;
@@ -43,15 +44,8 @@ public class AdvertisementController {
         return GenericResponse.success(advertisementService.getAllByActive());
     }
 
-    @GetMapping("/search")
-    public GenericResponse<List<Advertisement>> searchAdvertisements(
-            @RequestParam(required = false) AdvertisementType type,
-            @RequestParam(required = false) int area,
-            @RequestParam(required = false) int numberOfRooms,
-            @RequestParam(required = false) int floorNumber,
-            @RequestParam String searchTerm,
-            @RequestParam(required = false) HousingType homeType) {
-
-        return GenericResponse.success(advertisementService.search(type, area, numberOfRooms, floorNumber, searchTerm, homeType));
+    @PostMapping("/search")
+    public GenericResponse<List<Advertisement>> getAllBySearchParams(@RequestBody AdvertisementSearchRequest request){
+        return GenericResponse.success(advertisementService.getAllBySearchParams(request));
     }
 }
