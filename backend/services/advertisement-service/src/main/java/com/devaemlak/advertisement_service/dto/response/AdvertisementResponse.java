@@ -1,12 +1,13 @@
 package com.devaemlak.advertisement_service.dto.response;
 
+import com.devaemlak.advertisement_service.dto.request.Coordinates;
 import com.devaemlak.advertisement_service.model.Image;
 import com.devaemlak.advertisement_service.model.enums.AdvertisementStatus;
 import com.devaemlak.advertisement_service.model.enums.AdvertisementType;
 import com.devaemlak.advertisement_service.model.enums.HousingType;
-import jakarta.persistence.Column;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import org.locationtech.jts.geom.Point;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -23,7 +24,7 @@ public class AdvertisementResponse {
     private String title;
     private String description;
     private String address;
-    private String coordinates;
+    private Coordinates coordinates;
     private AdvertisementType advertisementType;
     private AdvertisementStatus advertisementStatus;
     private BigDecimal price;

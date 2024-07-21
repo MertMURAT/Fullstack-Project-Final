@@ -11,8 +11,10 @@ public class ExceptionMessages {
     public static final String ADVERTISEMENT_CREATED = "İlan oluşturuldu.";
     public static final String ADVERTISEMENT_UPDATED = "İlan güncellendi.";
     public static final String ADVERTISEMENT_RETRIEVED = "DB' den ilanlar başarıyla getirildi.";
+    public static final String ADVERTISEMENT_DELETED = "İlan silme işlemi başarılı";
     public static final String FILE_ATTACHMENT_SAVED = "Dosya kaydetme işlemi başarılı.";
     public static final String FILE_ATTACHMENT_RETRIEVED = "DB' den dosyalar başarıyla getirildi";
+
 
     // FAILED
     public static final String ADVERTISEMENT_NOT_FOUND = "İlan bulunamadı.";

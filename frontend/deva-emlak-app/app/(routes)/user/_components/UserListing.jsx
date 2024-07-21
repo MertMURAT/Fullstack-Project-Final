@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import { Bath, BedDouble, MapPin, Ruler, Trash } from 'lucide-react'
+import { Bath, BedDouble, Columns3, DoorOpen, MapPin, Ruler, Trash } from 'lucide-react'
 import { useUser } from '@clerk/nextjs'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
@@ -124,6 +124,31 @@ function UserListing() {
         }
     };
 
+    const deleteUserListing = async (id) => {
+        try {
+            const response = await fetch(`http://localhost:8080/api/v1/advertisements/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`HTTP error! status: ${response.status}, response: ${errorText}`);
+            }
+
+            // Update the listings after deletion
+            const updatedListings = listing.filter(item => item.id !== id);
+            setListing(updatedListings);
+            toast("İlan silindi.");
+        } catch (error) {
+            console.error('Error:', error);
+            toast('Server Side Error');
+            throw error;
+        }
+    };
+
     return (
         <div>
             <h2 className='font-bold text-2xl'>İlan listeni Yönet</h2>
@@ -159,18 +184,18 @@ function UserListing() {
                             <h2 className='font-bold text-xl'>${item?.price}</h2>
                             <h2 className='flex gap-2 text-sm text-gray-400'>
                                 <MapPin className='h-4 w-4' />
-                                {item?.address.split('"')[3]}</h2>
+                                {item?.address}</h2>
                             <div className='flex gap-2 mt-2 justify-stretch'>
                                 <h2 className='flex gap-2 text-sm bg-slate-200 
                                     rounded-md p-2 w-full text-gray-500 justify-center items-center'>
-                                    <BedDouble />
-                                    {item?.bedroom}
+                                    <DoorOpen />
+                                    {item?.numberOfRooms}
                                 </h2>
 
                                 <h2 className='flex gap-2 text-sm bg-slate-200 
                                     rounded-md p-2 w-full text-gray-500 justify-center items-center'>
-                                    <Bath />
-                                    {item?.bathroom}
+                                    <Columns3 />
+                                    {item?.floorNumber}
                                 </h2>
 
                                 <h2 className='flex gap-2 text-sm bg-slate-200 
@@ -200,12 +225,12 @@ function UserListing() {
                                         variant="outline"
                                         className={`w-full ${item.advertisementStatus === 'PASSIVE' ? 'bg-green-500 hover:bg-green-700 text-white' : 'bg-red-500 hover:bg-red-700 text-white'}`}
                                     >
-                                        {item.advertisementStatus === 'PASSIVE' ? 'AKTİF' : 'PASİF'}
+                                        {item.advertisementStatus === 'ACTIVE' || item.advertisementStatus === 'IN_REVIEW' ? 'PASİF' : 'AKTİF'}
                                     </Button>
                                 </Link>
 
                                 <Link href={'/user#/my-listing'} className='w-full' >
-                                    <Button onClick={() => DeleteUserListing(item.id)} size='sm' variant="destructive"><Trash /></Button>
+                                    <Button onClick={() => deleteUserListing(item.id)} size='sm' variant="destructive"><Trash /></Button>
                                 </Link>
 
                             </div>

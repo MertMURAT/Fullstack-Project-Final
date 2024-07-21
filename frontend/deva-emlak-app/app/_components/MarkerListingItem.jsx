@@ -8,14 +8,13 @@ function MarkerListingItem({ item, closeHandler }) {
     return (
         <div>
             <div className='
-            rounded-lg cursor-pointer w-[250px] border border-orange-500'>
+            rounded-lg cursor-pointer w-[180px] border border-orange-500'>
                 <div className='bg-white'>
                     <X className='text-primary' onClick={() => closeHandler()} />
                 </div>
 
                 <Image 
-                // src={item?.listingImages[0].url}
-                src="/placeholder.svg"
+                src={item?.images[0].imageUrl}
                     width={800}
                     height={150}
                     className='rounded-lg w-full object-cover h-full'
@@ -24,7 +23,7 @@ function MarkerListingItem({ item, closeHandler }) {
                     <h2 className='font-bold text-xl'>${item?.price}</h2>
                     <h2 className='flex gap-2 text-sm text-gray-400'>
                         <MapPin className='h-4 w-4' />
-                        {item?.address.split('"')[3]}</h2>
+                        {item?.address}</h2>
                     {/* <div className='flex gap-2 mt-2 justify-between '>
                         <h2 className='flex gap-2 text-sm bg-slate-200 
                 rounded-md p-2 w-full text-gray-500 justify-center items-center'>

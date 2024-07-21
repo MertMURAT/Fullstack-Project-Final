@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.locationtech.jts.geom.Point;
 
 import java.math.BigDecimal;
 
@@ -17,7 +18,7 @@ public class AdvertisementUpdateRequest {
     private String title;
     private String description;
     private String address;
-    private String coordinates;
+    private Point coordinates;
     private BigDecimal price;
     private int numberOfRooms;
     private double area;

@@ -14,7 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-function AddNewListing({handleClose}) {
+function AddNewListing({ handleClose }) {
   const [selectedAddress, setSelectedAddress] = useState();
   const [coordinates, setCoordinates] = useState();
   const { user } = useUser();
@@ -63,7 +63,7 @@ function AddNewListing({handleClose}) {
 
   const initData = {
     address: selectedAddress?.value?.structured_formatting?.main_text,
-    coordinates: `{lat: ${coordinates?.lat}, lng: ${coordinates?.lng}}`,
+    coordinates: coordinates,
     createdBy: user?.primaryEmailAddress.emailAddress,
   };
 
@@ -73,54 +73,40 @@ function AddNewListing({handleClose}) {
     await initialPostData(initData);
   }
 
-
-
-
   return (
-    <div className='mt-10 md:mx-56 lg:mx-80'>
-      <div className='p-10 flex flex-col
-                      gap-5 items-center justify-center'>
-        <h2 className='font-bold text-2xl'> Yeni ilan oluştur</h2>
-        <div className='p-10 px-20 rounded-lg border 
-        w-full
-        shadow-md flex flex-col gap-5'>
-
-          <div className='flex gap-2 flex-col'>
-            <h2 className='text-slate-500'>Kiralık mı? / Satılık mı?</h2>
-            <Select
-              onValueChange={(e) => {
-                // values.advertisementType = e
-                setAdType(e);
-              }}
-              name='advertisementType'
-            // defaultValue={listing?.advertisementType}
-            // onChange={handleChange}
-            >
-              <SelectTrigger className="w-[180px] font-bold bg-orange-200">
-                <SelectValue
-                  placeholder="İlan Tipi Seç"
-                />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="Sell">Satılık</SelectItem>
-                <SelectItem value="Rent">Kiralık</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-
-          <h2 className='text-gray-500'>İlanın yer aldığı adresi giriniz</h2>
+    <div className="flex justify-center items-center mt-10">
+    <div className="w-full max-w-5xl p-10 flex flex-col gap-5 items-center justify-center">
+      <h2 className="font-bold text-3xl">Yeni ilan oluştur</h2>
+      <div className="w-full p-10 rounded-lg border shadow-md flex flex-col gap-5">
+        <div className="flex gap-2 flex-col">
+          <h2 className="text-slate-500">Kiralık mı? / Satılık mı?</h2>
+          <Select onValueChange={(e) => setAdType(e)} name="advertisementType">
+            <SelectTrigger className="w-[180px] font-bold bg-orange-200">
+              <SelectValue placeholder="İlan Tipi Seç" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Sell">Satılık</SelectItem>
+              <SelectItem value="Rent">Kiralık</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+        <div className="flex flex-col gap-2">
+          <h2 className="text-gray-500">İlanın yer aldığı adresi giriniz</h2>
           <GoogleAddressSearch
             selectedAddress={(value) => setSelectedAddress(value)}
             setCoordinates={(value) => setCoordinates(value)}
           />
-          <Button
-            disabled={!selectedAddress || !coordinates || loader}
-            onClick={nextHandler}>
-            {loader ? <Loader className='animate-spin' /> : 'Sonraki'}
-          </Button>
         </div>
+        <Button
+          disabled={!selectedAddress || !coordinates || loader}
+          onClick={nextHandler}
+          className="w-full mt-5"
+        >
+          {loader ? <Loader className="animate-spin" /> : 'Sonraki'}
+        </Button>
       </div>
     </div>
+  </div>
   )
 }
 

@@ -16,6 +16,9 @@ import com.devaemlak.advertisement_service.producer.dto.enums.LogType;
 import com.devaemlak.advertisement_service.producer.dto.enums.OperationType;
 import com.devaemlak.advertisement_service.repository.AdvertisementRepository;
 import lombok.RequiredArgsConstructor;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.GeometryFactory;
+import org.locationtech.jts.geom.Point;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,12 +31,15 @@ import java.util.Optional;
 public class SaleAdService {
 
     private final AdvertisementRepository advertisementRepository;
+    private final GeometryFactory geometryFactory;
     private final LogProducer logProducer;
 
     @Transactional
     public SaleAdResponse save(AdvertisementSaveRequest request) {
         try {
+            Point point = geometryFactory.createPoint(new Coordinate(request.getCoordinates().getLng(), request.getCoordinates().getLat()));
             SaleAd saleAd = SaleAdConverter.toSaleInit(request);
+            saleAd.setCoordinates(point);
             advertisementRepository.save(saleAd);
             logProducer.sendToLog(prepareLogDto(OperationType.INSERT, ExceptionMessages.ADVERTISEMENT_CREATED, LogType.INFO));
             return SaleAdConverter.toResponse(saleAd);

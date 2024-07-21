@@ -23,20 +23,16 @@ export function AdModal() {
     <div>
       <Button onClick={() => setIsModalOpen(true)}>İlan Oluştur</Button>
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex justify-center items-center bg-black/50">
-          <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-3xl relative">
+        <div className="fixed  inset-0 z-50 flex justify-center items-center bg-black/50">
+          <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-3xl relative modal-container">
             <div className="absolute top-2 right-2">
               <Button variant="ghost" onClick={handleClose}>
                 <XIcon className="w-4 h-4" />
               </Button>
             </div>
-            <form onSubmit={handleSubmit} className="">
-              <div className="flex justify-center w-full">
+            <form onSubmit={handleSubmit} className="modal-content">
+              <div className="flex justify-center w-full h-full">
                 <AddNewListing handleClose={handleClose} />
-              </div>
-
-              <div className="flex justify-center mt-4">
-                <Button type="submit">Submit</Button>
               </div>
             </form>
           </div>

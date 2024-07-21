@@ -12,9 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Coordinates {
 
-    @JsonProperty("lat")
     private Double lat;
-    @JsonProperty("lng")
     private Double lng;
 
 }

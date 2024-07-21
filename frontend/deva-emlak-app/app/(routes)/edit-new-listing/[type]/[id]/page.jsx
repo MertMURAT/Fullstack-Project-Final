@@ -62,28 +62,6 @@ function EditListing({ params }) {
             await getAdData();
           }
 
-        // const { data, error } = await supabase
-        //     .from('listing')
-        //     .select(`*, listingImages(listing_id, url)`)
-        //     .eq('createdBy', user?.primaryEmailAddress.emailAddress)
-        //     .eq('id', params.id);
-
-        // if (data) {
-        //     console.log("Veri :", data[0]);
-        // }
-
-        // if (data && data.length > 0) {
-        //     setSupaBaseListing(data[0]);
-        // }
-        // else {
-        //     router.replace('/');
-        // }
-
-        // if(data?.length<=0){
-        //     router.replace('/')
-        // }
-    // }
-
     const getAdData = async () => {
         try {
             let uriExt;
@@ -415,30 +393,30 @@ function EditListing({ params }) {
 
                             </div>
 
-                            {adType == 'Sell' &&
+                            {params.type == 'Sell' &&
                                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
                                     <div className='flex gap-2 flex-col'>
                                         <h2 className='text-slate-500'>Garaj</h2>
-                                        <Input type="number" placeholder='Ör: 2' name="garage"
+                                        <Input type="number" placeholder='Ör: 1' name="garage"
                                             onChange={handleChange} defaultValue={listing?.garage} />
                                     </div>
 
                                     <div className='flex gap-2 flex-col'>
                                         <h2 className='text-slate-500'>Bahçe</h2>
-                                        <Input type="number" placeholder="Ör: 2" name="garden"
+                                        <Input type="number" placeholder="Ör: 1" name="garden"
                                             onChange={handleChange} defaultValue={listing?.garden} />
                                     </div>
 
                                     <div className='flex gap-2 flex-col'>
                                         <h2 className='text-slate-500'>Yüzme Havuzu</h2>
-                                        <Input type="number" placeholder="Ör: 2" name="swimmingPool"
-                                            onChange={handleChange} defaultValue={listing?.swimmingPool} />
+                                        <Input type="number" placeholder="Ör: 1" name="swimmingPool"
+                                            onChange={handleChange} defaultValue={listing?.swimmingPool}/>
                                     </div>
 
                                 </div>
                             }
 
-                            {adType == 'Rent' && <div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
+                            {params.type == 'Rent' && <div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
                                 <div className='flex gap-2 flex-col'>
                                     <h2 className='text-slate-500'>Eşyalı mı?</h2>
                                     <Select

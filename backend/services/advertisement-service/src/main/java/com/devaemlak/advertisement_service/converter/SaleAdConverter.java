@@ -1,6 +1,7 @@
 package com.devaemlak.advertisement_service.converter;
 
 import com.devaemlak.advertisement_service.dto.request.AdvertisementSaveRequest;
+import com.devaemlak.advertisement_service.dto.request.Coordinates;
 import com.devaemlak.advertisement_service.dto.request.SaleAdUpdateRequest;
 import com.devaemlak.advertisement_service.dto.response.SaleAdResponse;
 import com.devaemlak.advertisement_service.model.Advertisement;
@@ -48,7 +49,7 @@ public class SaleAdConverter {
                 .title(saleAd.getTitle())
                 .description(saleAd.getDescription())
                 .address(saleAd.getAddress())
-                .coordinates(saleAd.getCoordinates())
+                .coordinates(new Coordinates(saleAd.getCoordinates().getX(), saleAd.getCoordinates().getY()))
                 .advertisementType(saleAd.getAdvertisementType())
                 .advertisementStatus(saleAd.getAdvertisementStatus())
                 .price(saleAd.getPrice())
@@ -75,7 +76,6 @@ public class SaleAdConverter {
                 .address(request.getAddress())
                 .advertisementType(AdvertisementType.SALE)
                 .advertisementStatus(AdvertisementStatus.IN_REVIEW)
-                .coordinates(request.getCoordinates())
                 .createdBy(request.getCreatedBy())
                 .created_at(LocalDateTime.now())
                 .build();

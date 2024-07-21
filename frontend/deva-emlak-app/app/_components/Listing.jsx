@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { Bath, BedDouble, MapPin, Ruler, Search } from 'lucide-react'
+import { Bath, BedDouble, Columns3, DoorOpen, FoldHorizontalIcon, MapPin, Ruler, Search } from 'lucide-react'
 import GoogleAddressSearch from './GoogleAddressSearch'
 import { Button } from '@/components/ui/button'
 import FilterSection from './FilterSection'
@@ -11,6 +11,13 @@ function Listing({ listing, handleSearchClick, searchedAddress
   , setArea, setNumberOfRooms, setFloorNumber, setHomeType, setCoordinates
 }) {
   const [address, setAddress] = useState();
+
+  const truncateText = (text, maxLength) => {
+    if (text.length > maxLength) {
+        return text.substring(0, maxLength) + '...';
+    }
+    return text;
+};
 
   return (
     <div>
@@ -51,6 +58,13 @@ function Listing({ listing, handleSearchClick, searchedAddress
                 className='rounded-lg object-cover h-[170px] w-full'
               />
               <div className='flex mt-2 flex-col gap-2'>
+                <div className='flex justify-between'>
+                  <h2 className='font-semibold text-xl text-black'>
+                    {truncateText(item?.title, 25)}
+                  </h2>
+                  <h2 className='font-semibold text-lg text-slate-500'>{item?.assignee}</h2>
+                </div>
+
                 <h2 className='font-bold text-xl'>${item?.price}</h2>
                 <h2 className='flex gap-2 text-sm text-gray-400'>
                   <MapPin className='h-4 w-4' />
@@ -58,19 +72,19 @@ function Listing({ listing, handleSearchClick, searchedAddress
                 <div className='flex gap-2 mt-2 justify-stretch'>
                   <h2 className='flex gap-2 text-sm bg-slate-200 
                 rounded-md p-2 w-full text-gray-500 justify-center items-center'>
-                    <BedDouble />
+                    <Ruler />
                     {item?.area}
                   </h2>
 
                   <h2 className='flex gap-2 text-sm bg-slate-200 
                 rounded-md p-2 w-full text-gray-500 justify-center items-center'>
-                    <Bath />
+                    <DoorOpen />
                     {item?.numberOfRooms}
                   </h2>
 
                   <h2 className='flex gap-2 text-sm bg-slate-200 
                 rounded-md p-2 w-full text-gray-500 justify-center items-center'>
-                    <Ruler />
+                    <Columns3 />
                     {item?.floorNumber}
                   </h2>
                 </div>

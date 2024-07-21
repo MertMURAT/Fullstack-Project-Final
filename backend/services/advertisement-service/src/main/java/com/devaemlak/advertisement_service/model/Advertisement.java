@@ -1,10 +1,12 @@
 package com.devaemlak.advertisement_service.model;
+import com.devaemlak.advertisement_service.config.PointSerializer;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.locationtech.jts.geom.Point;
 
 import com.devaemlak.advertisement_service.model.enums.AdvertisementStatus;
 import com.devaemlak.advertisement_service.model.enums.AdvertisementType;
 import com.devaemlak.advertisement_service.model.enums.HousingType;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -40,8 +42,10 @@ public class Advertisement {
     @Column(name = "address")
     private String address;
 
-    @Column(name = "coordinates")
-    private String coordinates;
+
+    @JsonSerialize(using = PointSerializer.class)
+    @Column(name = "coordinates", columnDefinition = "geography(Point, 4326)")
+    private Point coordinates;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "advertisement_type")

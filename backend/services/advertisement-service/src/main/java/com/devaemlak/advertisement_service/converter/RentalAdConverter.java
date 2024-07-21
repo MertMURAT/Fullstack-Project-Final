@@ -1,6 +1,7 @@
 package com.devaemlak.advertisement_service.converter;
 
 import com.devaemlak.advertisement_service.dto.request.AdvertisementSaveRequest;
+import com.devaemlak.advertisement_service.dto.request.Coordinates;
 import com.devaemlak.advertisement_service.dto.request.RentalAdUpdateRequesst;
 import com.devaemlak.advertisement_service.dto.response.RentalAdResponse;
 import com.devaemlak.advertisement_service.model.Advertisement;
@@ -50,7 +51,7 @@ public class RentalAdConverter {
                 .title(rentalAd.getTitle())
                 .description(rentalAd.getDescription())
                 .address(rentalAd.getAddress())
-                .coordinates(rentalAd.getCoordinates())
+                .coordinates(new Coordinates(rentalAd.getCoordinates().getX(), rentalAd.getCoordinates().getY()))
                 .advertisementType(rentalAd.getAdvertisementType())
                 .advertisementStatus(rentalAd.getAdvertisementStatus())
                 .price(rentalAd.getPrice())
@@ -79,7 +80,6 @@ public class RentalAdConverter {
                 .address(request.getAddress())
                 .advertisementType(AdvertisementType.RENTAL)
                 .advertisementStatus(AdvertisementStatus.IN_REVIEW)
-                .coordinates(request.getCoordinates())
                 .createdBy(request.getCreatedBy())
                 .created_at(LocalDateTime.now())
                 .build();

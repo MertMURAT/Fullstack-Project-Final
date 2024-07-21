@@ -48,4 +48,10 @@ public class AdvertisementController {
     public GenericResponse<List<Advertisement>> getAllBySearchParams(@RequestBody AdvertisementSearchRequest request){
         return GenericResponse.success(advertisementService.getAllBySearchParams(request));
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteById(@PathVariable Long id) {
+        advertisementService.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

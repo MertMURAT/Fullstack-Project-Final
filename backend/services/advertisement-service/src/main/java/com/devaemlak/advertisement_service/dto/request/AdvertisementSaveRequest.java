@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.locationtech.jts.geom.Point;
 
 @Getter
 @Setter
@@ -12,7 +13,7 @@ import lombok.Setter;
 public class AdvertisementSaveRequest {
 
     private String address;
-    private String coordinates;
+    private Coordinates coordinates;
     private String createdBy;
 
 }

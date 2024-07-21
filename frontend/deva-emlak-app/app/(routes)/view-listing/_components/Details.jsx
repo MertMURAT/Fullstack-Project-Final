@@ -1,6 +1,6 @@
 import GoogleMapSection from '@/app/_components/GoogleMapSection';
 import { Button } from '@/components/ui/button'
-import { Bath, BedSingle, CarFront, Dog, Flower, LandPlot, MapPin, Share, Wallet, Waves } from 'lucide-react'
+import { Bath, BedSingle, CarFront, Columns3, Dog, DoorOpen, Flower, LandPlot, MapPin, Ruler, Share, Wallet, Waves } from 'lucide-react'
 import React from 'react'
 import AgentDetail from './AgentDetail';
 
@@ -20,7 +20,32 @@ function Details({ listingDetail }) {
                 </div>
                 <hr></hr>
                 <div className='mt-4 flex flex-col gap-3'>
-                    <h2 className='font-bold text-2xl'>Key Features</h2>
+                    <h2 className='font-bold text-2xl'>Ana Özellikler</h2>
+                    <div className='flex gap-2'>
+                        <h2 className='font-bold text-xl'>İlan Tipi : </h2>
+                        <h2 className='font-sans text-xl'>{listingDetail?.advertisementType == 'SALE' ? 'Satılık' : 'Kiralık'} </h2>
+                    </div>
+
+
+                    <div className='grid grid-cols-2 md:grid-cols-3 gap-4'>
+                        <h2 className='flex gap-5 items-center bg-orange-200
+                        rounded-lg p-3 font-bold justify-start text-primary'>
+                            <DoorOpen />
+                            {listingDetail?.numberOfRooms} Oda Sayısı
+                        </h2>
+                        <h2 className='flex gap-5 items-center bg-orange-200
+                        rounded-lg p-3 font-bold justify-start text-primary'>
+                            <Columns3 />
+                            {listingDetail?.floorNumber} Kat Numarası
+                        </h2>
+                        <h2 className='flex gap-5 items-center bg-orange-200
+                        rounded-lg p-3 font-bold justify-start text-primary'>
+                            <Ruler />
+                            {listingDetail?.area} Alan(Metrekare)
+                        </h2>
+
+                    </div>
+
                     {listingDetail?.advertisementType == 'SALE' ?
                         <div className='grid grid-cols-2 md:grid-cols-3 gap-4'>
                             <h2 className='flex gap-5 items-center bg-orange-200

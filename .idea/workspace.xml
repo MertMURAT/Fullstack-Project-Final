@@ -5,13 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ade2e6a-db94-43b4-ba27-91a98be78c59" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/AdvertisementSearchRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/BaseSaveRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/repository/specification/AdvertisementSpecification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/config/GeometryConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/config/PointSerializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/AdvertisementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/AdvertisementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/repository/AdvertisementRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/repository/AdvertisementRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/AdvertisementConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/AdvertisementConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/RentalAdConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/RentalAdConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/SaleAdConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/SaleAdConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/AdvertisementSaveRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/AdvertisementSaveRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/AdvertisementUpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/AdvertisementUpdateRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/Coordinates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/AdvertisementResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/AdvertisementResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/Advertisement.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/Advertisement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AdvertisementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AdvertisementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/RentalAdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/RentalAdService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/SaleAdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/SaleAdService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/WiredTiger.turtle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/WiredTiger.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/collection-0--3893855849773330699.wt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/collection-0--3893855849773330699.wt" afterDir="false" />
@@ -23,8 +31,10 @@
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-6--812744859606587770.wt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-6--812744859606587770.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/journal/WiredTigerLog.0000000004" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/journal/WiredTigerLog.0000000004" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/sizeStorer.wt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/sizeStorer.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/deva-emlak-app/app/(routes)/edit-new-listing/[type]/[id]/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/deva-emlak-app/app/(routes)/edit-new-listing/[type]/[id]/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/deva-emlak-app/app/(routes)/user/_components/UserListing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/deva-emlak-app/app/(routes)/user/_components/UserListing.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/deva-emlak-app/app/(routes)/view-listing/_components/Details.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/deva-emlak-app/app/(routes)/view-listing/_components/Details.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/deva-emlak-app/app/_components/Listing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/deva-emlak-app/app/_components/Listing.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/deva-emlak-app/app/_components/ListingMapView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/deva-emlak-app/app/_components/ListingMapView.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,44 +75,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Docker.resources/docker-compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.AdvertisementServiceApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;Spring Boot.ApiGatewayServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.DiscoveryClientServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.LogServiceApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;Spring Boot.OrderServiceApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;Spring Boot.UserServiceApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mert/Desktop/Fullstack-Project-Final/backend/services/order-service/src/main/java/com/devaemlak/order_service&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Docker.resources/docker-compose.yaml: Compose Deployment.executor": "Run",
+    "Maven.advertisement-service [clean,install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.AdvertisementServiceApplication.executor": "Debug",
+    "Spring Boot.ApiGatewayServiceApplication.executor": "Run",
+    "Spring Boot.DiscoveryClientServiceApplication.executor": "Run",
+    "Spring Boot.LogServiceApplication.executor": "Debug",
+    "Spring Boot.OrderServiceApplication.executor": "Debug",
+    "Spring Boot.UserServiceApplication.executor": "Debug",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Mert/Desktop/Fullstack-Project-Final/backend/services/order-service/src/main/java/com/devaemlak/order_service",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -225,7 +236,7 @@
       <workItem from="1720602203065" duration="38000" />
       <workItem from="1721123713966" duration="67240000" />
       <workItem from="1721381199897" duration="34508000" />
-      <workItem from="1721467056320" duration="37393000" />
+      <workItem from="1721467056320" duration="46195000" />
     </task>
     <servers />
   </component>
@@ -275,7 +286,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/SaleAdService.java</url>
-          <line>48</line>
+          <line>54</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -305,7 +316,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/SaleAdService.java</url>
-          <line>70</line>
+          <line>76</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -320,8 +331,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AdvertisementService.java</url>
-          <line>79</line>
+          <line>84</line>
           <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/RentalAdService.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

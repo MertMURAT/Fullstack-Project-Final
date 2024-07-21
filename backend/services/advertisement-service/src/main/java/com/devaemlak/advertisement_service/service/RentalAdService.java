@@ -1,5 +1,6 @@
 package com.devaemlak.advertisement_service.service;
 
+import com.devaemlak.advertisement_service.converter.AdvertisementConverter;
 import com.devaemlak.advertisement_service.converter.RentalAdConverter;
 import com.devaemlak.advertisement_service.dto.request.AdvertisementSaveRequest;
 import com.devaemlak.advertisement_service.dto.request.AdvertisementUpdateStatusRequest;
@@ -16,6 +17,9 @@ import com.devaemlak.advertisement_service.producer.dto.enums.LogType;
 import com.devaemlak.advertisement_service.producer.dto.enums.OperationType;
 import com.devaemlak.advertisement_service.repository.AdvertisementRepository;
 import lombok.RequiredArgsConstructor;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.GeometryFactory;
+import org.locationtech.jts.geom.Point;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,12 +32,15 @@ import java.util.Optional;
 public class RentalAdService {
 
     private final AdvertisementRepository advertisementRepository;
+    private final GeometryFactory geometryFactory;
     private final LogProducer logProducer;
 
     @Transactional
     public RentalAdResponse save(AdvertisementSaveRequest request) {
         try {
+            Point point = geometryFactory.createPoint(new Coordinate(request.getCoordinates().getLng(), request.getCoordinates().getLat()));
             RentalAd rentalAd = RentalAdConverter.toRentalInit(request);
+            rentalAd.setCoordinates(point);
             advertisementRepository.save(rentalAd);
             logProducer.sendToLog(prepareLogDto(OperationType.INSERT, ExceptionMessages.ADVERTISEMENT_CREATED, LogType.INFO));
             return RentalAdConverter.toResponse(rentalAd);

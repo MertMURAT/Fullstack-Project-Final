@@ -28,12 +28,21 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
+		<db.dialect>org.hibernatespatial.postgis.PostgisDialect</db.dialect>
+		<jdbc.driver>org.postgresql.Driver</jdbc.driver>
+		<jdbc.url>jdbc:postgresql://localhost:5432:hibbrtru</jdbc.url>
+		<jdbc.user>hibbrtru</jdbc.user>
+		<jdbc.pass>hibbrtru</jdbc.pass>
+		<jdbc.isolation/>
 	</properties>
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<version>3.0.6</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -53,13 +62,25 @@
 			<optional>true</optional>
 		</dependency>
 
-
-
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-spatial</artifactId>
+			<version>6.5.2.Final</version>
+		</dependency>
+
+		<!-- Hibernate ORM -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>6.5.0.Final</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.postgresql</groupId>
