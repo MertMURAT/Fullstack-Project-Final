@@ -15,45 +15,65 @@ function UserListing() {
     const [listing, setListing] = useState();
 
     useEffect(() => {
-        user && GetUserListing()
+        user && getLatestAdvertisements()
     }, [])
 
+    const getLatestAdvertisements = async () => {
+        try {
 
-    // console.log('listing : ', listing);
+            const response = await fetch("http://localhost:8080/api/v1/advertisements");
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`HTTP error! status: ${response.status}, response: ${errorText}`);
+            }
 
-    const GetUserListing = async () => {
-        const { data, error } = await supabase
-            .from('listing')
-            .select('*, listingImages(url, listing_id)')
-            .eq('createdBy', user?.primaryEmailAddress.emailAddress)
-        // console.log(data);
+            const result = await response.json();
+            console.log('Ana sayfa güncel ilan listesi', result.data);
+            setListing(result.data);
 
-        if (data) {
-            setListing(data);
+            return result;
+        } catch (error) {
+            console.error('Error:', error);
+            toast('Server Side Error');
+            throw error;
         }
-    }
+    };
 
-    const DeleteUserListing = async (id) => {
-        console.log('id değeri', id);
-        const responseListingImages = await supabase
-            .from('listingImages')
-            .delete()
-            .eq('listing_id', id)
+    // // console.log('listing : ', listing);
 
-        const responseListing = await supabase
-            .from('listing')
-            .delete()
-            .eq('createdBy', user?.primaryEmailAddress.emailAddress)
-            .eq('id', id)
+    // const GetUserListing = async () => {
+    //     const { data, error } = await supabase
+    //         .from('listing')
+    //         .select('*, listingImages(url, listing_id)')
+    //         .eq('createdBy', user?.primaryEmailAddress.emailAddress)
+    //     // console.log(data);
+
+    //     if (data) {
+    //         setListing(data);
+    //     }
+    // }
+
+    // const DeleteUserListing = async (id) => {
+    //     console.log('id değeri', id);
+    //     const responseListingImages = await supabase
+    //         .from('listingImages')
+    //         .delete()
+    //         .eq('listing_id', id)
+
+    //     const responseListing = await supabase
+    //         .from('listing')
+    //         .delete()
+    //         .eq('createdBy', user?.primaryEmailAddress.emailAddress)
+    //         .eq('id', id)
 
 
-        if (responseListing) {
-            console.log('işlem başarılı');
-            toast('Advertisement deleted!')
-        }
+    //     if (responseListing) {
+    //         console.log('işlem başarılı');
+    //         toast('Advertisement deleted!')
+    //     }
 
 
-    }
+    // }
 
     return (
         <div>
@@ -62,8 +82,8 @@ function UserListing() {
                 {listing && listing.map((item, index) => (
                     <div className='relative p-3 hover:border hover:border-primary rounded-lg cursor-pointer'>
                         <h2 className='bg-primary m-2 rounded-lg text-white absolute top-2 left-2 px-2 text-sm p-1'>{item.active ? 'ACTIVE' : 'IN_REVIEW'}</h2>
-                        <Image src={item?.listingImages[0] ?
-                            item?.listingImages[0]?.url
+                        <Image src={item?.images[0].imageUrl ?
+                            item?.images[0].imageUrl
                             : '/placeholder.png'}
                             width={800}
                             height={150}
@@ -98,7 +118,8 @@ function UserListing() {
                                     <Button size='sm' variant='outline' className='w-full'>View</Button>
                                 </Link>
 
-                                <Link href={'/edit-new-listing/' + item.id} className='w-full' >
+                                <Link href={`/edit-new-listing/${item.advertisementType === 'SALE' ? 'Sell' : 'Rent'}/${item.id}`} 
+                                className='w-full' >
                                     <Button size='sm' className='w-full'>Edit</Button>
                                 </Link>
 

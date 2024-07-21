@@ -11,10 +11,14 @@ import org.hibernate.annotations.GenericGenerator;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Attachment {
+
     @Id
-    @GeneratedValue(generator= "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2" )
-    @Column(name = "id")
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
+    )
+    @Column(name = "id", updatable = false, nullable = false)
     private String id;
 
     @Column(name = "fileName")
@@ -28,7 +32,8 @@ public class Attachment {
     @Column(name = "data")
     private byte[] data;
 
-    @Column(name = "advertisement_id")
-    private Long advertisementId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "advertisement_id")
+    private Advertisement advertisement;
 
 }

@@ -3,6 +3,7 @@ package com.devaemlak.advertisement_service.model;
 import com.devaemlak.advertisement_service.model.enums.AdvertisementStatus;
 import com.devaemlak.advertisement_service.model.enums.AdvertisementType;
 import com.devaemlak.advertisement_service.model.enums.HousingType;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
@@ -12,6 +13,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -86,4 +88,7 @@ public class Advertisement {
     @Column(name = "fullName")
     private String fullName;
 
+    @JsonManagedReference
+    @OneToMany(mappedBy = "advertisement", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Image> images;
 }

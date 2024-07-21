@@ -46,7 +46,7 @@ function FileUpload({ setImages, imageList }) {
              lg:grid-cols-7 xl:grid-cols-10 gap-3 mt-3'>
                     {imageList.map((image, index) => (
                         <div key={index}>
-                            <Image src={image?.url} width={100} height={100}
+                            <Image src={image?.imageUrl} width={100} height={100}
                                 className='rounded-lg object-cover h-[100px] w-[100px]'
                                 alt={index}
                             />

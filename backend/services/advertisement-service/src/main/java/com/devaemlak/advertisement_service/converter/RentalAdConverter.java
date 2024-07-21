@@ -64,6 +64,7 @@ public class RentalAdConverter {
                 .createdBy(rentalAd.getCreatedBy())
                 .profileImage(rentalAd.getProfileImage())
                 .fullName(rentalAd.getFullName())
+                .images(rentalAd.getImages())
 
                 .monthlyRent(rentalAd.getMonthlyRent())
                 .depositAmount(rentalAd.getDepositAmount())

@@ -1,5 +1,6 @@
 package com.devaemlak.advertisement_service.dto.response;
 
+import com.devaemlak.advertisement_service.model.Image;
 import com.devaemlak.advertisement_service.model.enums.AdvertisementStatus;
 import com.devaemlak.advertisement_service.model.enums.AdvertisementType;
 import com.devaemlak.advertisement_service.model.enums.HousingType;
@@ -9,6 +10,7 @@ import lombok.experimental.SuperBuilder;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -36,5 +38,6 @@ public class AdvertisementResponse {
     private String createdBy;
     private String profileImage;
     private String fullName;
+    private List<Image> images;
 
 }

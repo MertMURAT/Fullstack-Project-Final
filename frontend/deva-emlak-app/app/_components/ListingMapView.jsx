@@ -26,7 +26,6 @@ function ListingMapView({ type }) {
             getRentAndSellAd();
         }else{
             getLatestAdvertisements();
-            getAttachmentsAndSetImages();
         }
         
     }, [])
@@ -96,55 +95,7 @@ function ListingMapView({ type }) {
             throw error;
         }
     };
-    const getAttachmentsAndSetImages = async () => {
-        try {
-            const attachments = await getAttachmentsByAdvertisementId(advertisementId);
-            const imageUrls = await Promise.all(attachments.map(async (attachment) => {
-                const downloadUrl = await downloadFile(attachment.id);
-                return downloadUrl;
-            }));
-            setImagesList(imageUrls);
-        } catch (error) {
-            console.error('Error:', error);
-            toast('Error while fetching images');
-        }
-    };
-
-    const getAttachments = async () => {
-        try {
-            const response = await fetch(`http://localhost:8080/api/v1/attachments`, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
-            if (!response.ok) {
-                const errorText = await response.text();
-                throw new Error(`HTTP error! status: ${response.status}, response: ${errorText}`);
-            }
-            const result = await response.json();
-            console.log('getAttachmentsByAdvertisementId', result);
-            return result.data;
-        } catch (error) {
-            console.error('Error:', error);
-            toast('Server Side Error');
-            throw error;
-        }
-    };
-
-    const downloadFile = async (fileId) => {
-        try {
-            const response = await fetch(`http://localhost:8080/api/v1/attachments/download/${fileId}`);
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            const blob = await response.blob();
-            return URL.createObjectURL(blob);
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    };
-
-
-
+  
     const searchAdvertisements = async (type, area, numberOfRooms, floorNumber, searchTerm, homeType) => {
         try {
 
@@ -212,7 +163,6 @@ function ListingMapView({ type }) {
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
             <div>
                 <Listing listing={listing}
-                    imageListing={imagesList}
                     handleSearchClick={handleSearchClick}
                     searchedAddress={(v) => setSearchedAddress(v)}
                     setArea={setArea}

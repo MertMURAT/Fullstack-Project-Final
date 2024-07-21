@@ -7,16 +7,11 @@ import { Button } from '@/components/ui/button'
 import FilterSection from './FilterSection'
 import Link from 'next/link'
 
-function Listing({ listing, imageListing, handleSearchClick, searchedAddress
+function Listing({ listing, handleSearchClick, searchedAddress
   , setArea, setNumberOfRooms, setFloorNumber, setHomeType, setCoordinates
 }) {
   const [address, setAddress] = useState();
 
-  useEffect(() => {
-
-    console.log('imagelisting listing',imageListing);
-
-}, [])
   return (
     <div>
       <div className='p-3 flex gap-7'>
@@ -49,7 +44,7 @@ function Listing({ listing, imageListing, handleSearchClick, searchedAddress
           <Link href={'/view-listing/' + item.id}>
             <div className='p-3 hover:border hover:border-primary rounded-lg cursor-pointer'>
               <img
-                src={imageListing[item.id]?.[0] || "/placeholder.svg"}
+                src={item.images[0].imageUrl || "/placeholder.svg"}
                 width={800}
                 height={150}
                 alt='Listing Image'

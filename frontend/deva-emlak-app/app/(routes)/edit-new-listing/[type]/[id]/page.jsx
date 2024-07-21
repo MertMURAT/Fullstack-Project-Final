@@ -43,19 +43,24 @@ function EditListing({ params }) {
     const [loading, setLoading] = useState(false);
     const [adType, setAdType] = useState();
 
+    // useEffect(() => {
+
+    //     setAdType(params.type);
+    //     console.log(params.type);
+    //     console.log(adType);
+    //     console.log('listing : ', listing);
+    // }, [adType]);
+
     useEffect(() => {
-
-        setAdType(params.type);
-        console.log(params.type);
-        console.log(adType);
-        console.log('listing : ', listing);
-    }, [adType, listing]);
-
+        if (params.id) {
+            verifyUserRecord();
+        }
+    }, [user, params.id]);
 
     const verifyUserRecord = async () => {
 
-        const responseData = await getAdData();
-        setListing(responseData.data);
+            await getAdData();
+          }
 
         // const { data, error } = await supabase
         //     .from('listing')
@@ -65,11 +70,10 @@ function EditListing({ params }) {
 
         // if (data) {
         //     console.log("Veri :", data[0]);
-        //     setListing(data[0]);
         // }
 
         // if (data && data.length > 0) {
-        //     setListing(data[0]);
+        //     setSupaBaseListing(data[0]);
         // }
         // else {
         //     router.replace('/');
@@ -78,12 +82,12 @@ function EditListing({ params }) {
         // if(data?.length<=0){
         //     router.replace('/')
         // }
-    }
+    // }
 
     const getAdData = async () => {
         try {
             let uriExt;
-            if (adType == 'Sell') {
+            if (params.type == 'Sell') {
                 uriExt = 'sale-ads'
             } else {
                 uriExt = 'rental-ads'
@@ -97,6 +101,7 @@ function EditListing({ params }) {
 
             const result = await response.json();
             console.log('Getirilen veri', result.data);
+            setListing(result.data);
 
             return result;
         } catch (error) {
@@ -105,16 +110,12 @@ function EditListing({ params }) {
         }
     };
 
-    const updateDataStatus = {
-        id: params?.id,
-        status: "ACTIVE"
-    }
 
     const updateAd = async (data) => {
         try {
             console.log("ad type : ", adType);
             let uriExt;
-            if (adType == 'Sell') {
+            if (params.type == 'Sell') {
                 uriExt = 'sale-ads'
             } else {
                 uriExt = 'rental-ads'
@@ -153,7 +154,7 @@ function EditListing({ params }) {
     const updateAdStatus = async (data) => {
         try {
             let uriExt;
-            if (adType == 'Sale') {
+            if (params.type == 'Sale') {
                 uriExt = 'sale-ads'
             } else {
                 uriExt = 'rental-ads'
@@ -191,33 +192,35 @@ function EditListing({ params }) {
         }
     };
 
-    const uploadImage = async (file) => {
-
-        let formImageData = new FormData();
-        formImageData.append('file', file);
-
+    const uploadImage = async (name, file, advertisementId) => {
+        const formData = new FormData();
+        formData.append("name", name);
+        formData.append("file", file);
+        formData.append("advertisement-id", advertisementId);
+      
         try {
-            const response = await fetch(`http://localhost:8080/api/v1/attachments/upload/${params.id}`, {
-                method: 'POST',
-                body: formImageData,
-            });
+          const response = await fetch("http://localhost:8080/api/v1/attachments/upload", {
+            method: "POST",
+            body: formData,
+          });
+      
+          if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`HTTP error! status: ${response.status}, response: ${errorText}`);
+          }
+      
+          const result = await response.json();
+          console.log("Image uploaded successfully:", result);
+          toast.success("Fotoğraf başarıyla yüklendi.");
+          setImages(result.data);
 
-            if (response.ok) {
-                const data = await response.json();
-
-                toast('File uploaded successfully');
-                console.log('File upload response:', data);
-            } else {
-                toast('File upload failed');
-                console.error('Error uploading file:', response.statusText);
-            }
+          return result;
         } catch (error) {
-            toast('Error while uploading images');
-            console.error('Error uploading file:', error);
+          console.error("Error uploading image:", error);
+          toast.error("Error uploading image.");
+          throw error;
         }
-    };
-
-   
+      };
 
     const onSubmitHandler = async (formValue) => {
         setLoading(true);
@@ -225,9 +228,10 @@ function EditListing({ params }) {
 
         await updateAd(formValue);
 
+        console.log("image : " , images);
         for (const image of images) {
             console.log(image);
-            await uploadImage(image);
+            await uploadImage(image?.name, image, params.id);
         }
         setLoading(false);
 
@@ -309,17 +313,16 @@ function EditListing({ params }) {
 
     const publishButtonHandler = async () => {
         setLoading(true);
+        const updateDataStatus = {
+            id: params?.id,
+            status: "ACTIVE"
+        };
 
-        console.log('update status id', updateDataStatus.id);
         await updateAdStatus(updateDataStatus);
-        updatePackageCount();
-        console.log("yayınlama işlemi tamamlandı");
-    }
-
-    useEffect(() => {
-        // console.log(params.split('/')[2])
-        user & verifyUserRecord();
-    }, [user])
+        await updatePackageCount();
+        setLoading(false);
+        toast("İlan yayınlandı!");
+    };
 
     // if (!listing) {
     //     return <div>Veriler Yükleniyor...</div>;
@@ -527,7 +530,7 @@ function EditListing({ params }) {
                             <div className='grid grid-cols-1 gap-2'>
                                 <h2 className=' font-lg text-slate-500 my-2'>Fotoğraf Yükle</h2>
                                 <FileUpload setImages={(value) => setImages(value)}
-                                     imageList={listing?.listingImages} 
+                                     imageList={listing?.images} 
                                     // imageList={images}
                                 />
                             </div>

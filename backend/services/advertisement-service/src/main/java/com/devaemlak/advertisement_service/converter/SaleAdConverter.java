@@ -62,6 +62,7 @@ public class SaleAdConverter {
                 .createdBy(saleAd.getCreatedBy())
                 .profileImage(saleAd.getProfileImage())
                 .fullName(saleAd.getFullName())
+                .images(saleAd.getImages())
 
                 .garage(saleAd.getGarage())
                 .garden(saleAd.getGarden())

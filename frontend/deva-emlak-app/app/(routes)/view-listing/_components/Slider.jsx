@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image';
 import {
     Carousel,
     CarouselContent,
@@ -11,16 +12,16 @@ function Slider({ imageList }) {
     console.log('Resim liste : ', imageList);
     return (
         <div className='mt-5'>
-            {imageList.length > 0 ?
+            {imageList?.length > 0 ?
                 <Carousel>
                     <CarouselContent>
                         {imageList.map((url, index) => (
                             <CarouselItem key={index}>
-                                <img src={url} width={800}
+                                <Image src={url.imageUrl} width={800}
                                     height={300}
                                     alt='image'
                                     className='rounded-xl object-contain h-[360px] w-full'>
-                                </img>
+                                </Image>
                             </CarouselItem>
                         ))}
                     </CarouselContent>
