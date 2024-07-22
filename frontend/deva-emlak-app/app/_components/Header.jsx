@@ -1,5 +1,5 @@
 "use client"
-import { SignOutButton, UserButton, useUser } from '@clerk/nextjs'
+import { SignInButton, SignOutButton, UserButton, useUser } from '@clerk/nextjs'
 import { Plus } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -61,30 +61,47 @@ function Header() {
                 <ul className='hidden md:flex gap-10'>
                     <Link href={'/sell'}>
                         <li className={`'hover:text-primary font-medium text-sm cursor-pointer' 
-                            ${path == '/sell' && 'text-primary'}`}>For Sell</li>
+                            ${path == '/sell' && 'text-primary'}`}>Satılık</li>
                     </Link>
                     <Link href={'/rent'}>
                         <li className={`'hover:text-primary font-medium text-sm cursor-pointer' 
-                            ${path == '/rent' && 'text-primary'}`}>For Rent</li>
+                            ${path == '/rent' && 'text-primary'}`}>Kiralık</li>
                     </Link>
                     {/* <li className='hover:text-primary font-medium text-sm cursor-pointer'>Agent Finder</li> */}
                 </ul>
             </div>
             <div className='flex gap-5 items-center'>
-                <div className='flex'>
-                    <Link href={'/pricing'}>
-                        <Button className='flex gap-2'><Plus className='h-5 w-5' /></Button>
-                    </Link>
+                {
+                    isSignedIn ?
+                        <div className='flex'>
+                            <Link href={'/pricing'}>
+                                <Button className='flex gap-2'><Plus className='h-5 w-5' /></Button>
+                            </Link>
 
-                    <Button className='flex gap-2 bg-slate-200 text-black text-lg font-bold'>{totalPackageQuantity}</Button>
-                </div>
+                            <Button className='flex gap-2 bg-slate-200 text-black text-lg font-bold'>{totalPackageQuantity}</Button>
+                        </div> :
+
+                        <div className='flex'>
+                            <Link href={'/sign-in'}>
+                                <Button className='flex gap-2'><Plus className='h-5 w-5' /></Button>
+                            </Link>
+
+                            <Button className='flex gap-2 bg-slate-200 text-black text-lg font-bold'>Paket al</Button>
+                        </div>
+                }
 
 
                 {/* <Link href={'/add-new-listing'}>
                     <Button className='flex gap-2'><Plus className='h-5 w-5' /> Post Your Ad</Button>
                 </Link> */}
-
-                <AdModal />
+                {isSignedIn ?
+                    <div>
+                        <AdModal />
+                    </div> :
+                    <Link href={'/sign-in'}>
+                        <Button className='bg-primary'>İlan oluştur</Button>
+                    </Link>
+                }
 
                 {isSignedIn ?
                     // <UserButton />
@@ -100,7 +117,6 @@ function Header() {
                             <DropdownMenuItem>
                                 <Link href={'/user'}>Profile</Link>
                             </DropdownMenuItem>
-                            <DropdownMenuItem>My Listing</DropdownMenuItem>
                             <DropdownMenuItem><SignOutButton>
                                 Logout</SignOutButton>
                             </DropdownMenuItem>
@@ -108,7 +124,7 @@ function Header() {
                     </DropdownMenu>
                     :
                     <Link href={'/sign-in'}>
-                        <Button variant="outline">Login</Button>
+                        <Button variant="outline">Giriş</Button>
                     </Link>
                 }
             </div>

@@ -2,15 +2,13 @@ package com.devaemlak.log_service.dto.request;
 
 import com.devaemlak.log_service.model.enums.OperationType;
 import com.devaemlak.log_service.model.enums.LogType;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class LogUpdateRequest {

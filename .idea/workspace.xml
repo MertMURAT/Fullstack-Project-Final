@@ -5,36 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ade2e6a-db94-43b4-ba27-91a98be78c59" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/config/GeometryConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/config/PointSerializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/config/TestJpaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/test/java/com/devaemlak/advertisement_service/controller/AdvertisementControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/test/java/com/devaemlak/advertisement_service/controller/ImageControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/test/java/com/devaemlak/advertisement_service/controller/RentalAdControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/test/java/com/devaemlak/advertisement_service/controller/SaleAdControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/test/java/com/devaemlak/advertisement_service/service/AdvertisementServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/test/java/com/devaemlak/advertisement_service/service/CloudinaryServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/test/java/com/devaemlak/advertisement_service/service/ImageServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/config/JacksonConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/test/java/com/devaemlak/log_service/controller/LogControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/log-service/src/test/java/com/devaemlak/log_service/service/LogServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/test/java/com/devaemlak/order_service/controller/OrderControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/test/java/com/devaemlak/order_service/controller/PackageControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/test/java/com/devaemlak/order_service/service/OrderServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/order-service/src/test/java/com/devaemlak/order_service/service/PackageServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/test/java/com/devaemlak/user_service/controller/UserControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/services/user-service/src/test/java/com/devaemlak/user_service/service/UserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/AdvertisementConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/AdvertisementConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/RentalAdConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/RentalAdConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/SaleAdConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/converter/SaleAdConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/AdvertisementSaveRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/AdvertisementSaveRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/AdvertisementUpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/AdvertisementUpdateRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/request/Coordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/AdvertisementResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/AdvertisementResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/Advertisement.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/Advertisement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/controller/AttachmentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/dto/response/ResponseData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/model/Attachment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/repository/AttachmentRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AdvertisementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AdvertisementService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/RentalAdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/RentalAdService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/SaleAdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/SaleAdService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AttachmentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/log-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/dto/request/LogSaveRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/dto/request/LogSaveRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/dto/request/LogUpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/java/com/devaemlak/log_service/dto/request/LogUpdateRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/WiredTiger.turtle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/WiredTiger.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/collection-0--3893855849773330699.wt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/collection-0--3893855849773330699.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/collection-4--812744859606587770.wt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/collection-4--812744859606587770.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/diagnostic.data/metrics.2024-07-20T09-22-15Z-00000" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/diagnostic.data/metrics.2024-07-20T09-22-15Z-00000" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/diagnostic.data/metrics.2024-07-21T19-13-04Z-00000" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/diagnostic.data/metrics.2024-07-21T19-13-04Z-00000" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/diagnostic.data/metrics.interim" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/diagnostic.data/metrics.interim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-1--3893855849773330699.wt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-1--3893855849773330699.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-5--812744859606587770.wt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-5--812744859606587770.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-6--812744859606587770.wt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/index-6--812744859606587770.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/journal/WiredTigerLog.0000000004" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/journal/WiredTigerLog.0000000004" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/sizeStorer.wt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/log-service/src/main/resources/mongodb/sizeStorer.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/deva-emlak-app/app/(routes)/edit-new-listing/[type]/[id]/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/deva-emlak-app/app/(routes)/edit-new-listing/[type]/[id]/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/deva-emlak-app/app/(routes)/user/_components/UserListing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/deva-emlak-app/app/(routes)/user/_components/UserListing.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/deva-emlak-app/app/(routes)/view-listing/_components/Details.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/deva-emlak-app/app/(routes)/view-listing/_components/Details.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/deva-emlak-app/app/_components/Listing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/deva-emlak-app/app/_components/Listing.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/order-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/order-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/services/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/deva-emlak-app/app/_components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/deva-emlak-app/app/_components/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/deva-emlak-app/components/component/pricing-cards.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/deva-emlak-app/components/component/pricing-cards.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +63,7 @@
         <option value="package-info" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -79,6 +96,38 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Docker.resources/docker-compose.yaml: Compose Deployment.executor": "Run",
+    "JUnit.AdvertisementControllerTest.executor": "Coverage",
+    "JUnit.AdvertisementServiceTest and 6 more.executor": "Coverage",
+    "JUnit.AdvertisementServiceTest.deleteById_successfully.executor": "Run",
+    "JUnit.AdvertisementServiceTest.executor": "Coverage",
+    "JUnit.AdvertisementServiceTest.getAllByActive_successfully.executor": "Run",
+    "JUnit.AdvertisementServiceTest.getAllBySearchParams_successfully.executor": "Run",
+    "JUnit.AdvertisementServiceTest.save_successfully.executor": "Run",
+    "JUnit.AdvertisementServiceTest.shouldThrowException_whenAdvertisementNotFound.executor": "Run",
+    "JUnit.AdvertisementServiceTest.shouldThrowException_whenDeleteByIdFails.executor": "Run",
+    "JUnit.CloudinaryServiceTest.executor": "Coverage",
+    "JUnit.ImageControllerTest.executor": "Coverage",
+    "JUnit.ImageServiceTest.executor": "Coverage",
+    "JUnit.LogControllerTest.executor": "Coverage",
+    "JUnit.LogControllerTest.save_successfully.executor": "Run",
+    "JUnit.LogServiceTest.deleteById_successfully.executor": "Run",
+    "JUnit.LogServiceTest.executor": "Coverage",
+    "JUnit.LogServiceTest.shouldThrowException_whenLogNotFound.executor": "Run",
+    "JUnit.OrderControllerTest.executor": "Coverage",
+    "JUnit.OrderServiceTest.executor": "Coverage",
+    "JUnit.OrderServiceTest.shouldThrowException_whenOrderNotFound.executor": "Run",
+    "JUnit.PackageControllerTest.executor": "Coverage",
+    "JUnit.PackageServiceTest.executor": "Coverage",
+    "JUnit.PackageServiceTest.shouldThrowException_whenGetAllFails.executor": "Run",
+    "JUnit.RentalAdControllerTest.executor": "Coverage",
+    "JUnit.RentalAdServiceTest.executor": "Run",
+    "JUnit.SaleAdControllerTest.executor": "Coverage",
+    "JUnit.SaleAdServiceTest.executor": "Run",
+    "JUnit.SaleAdServiceTest.update_ShouldReturnSaleAdResponse_WhenSuccessful.executor": "Run",
+    "JUnit.UserControllerTest.executor": "Coverage",
+    "JUnit.UserServiceTest.executor": "Coverage",
+    "JUnit.UserServiceTest.shouldThrowException_whenUserNotFound.executor": "Run",
+    "JUnit.service in advertisement-service.executor": "Coverage",
     "Maven.advertisement-service [clean,install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -92,6 +141,8 @@
     "Spring Boot.LogServiceApplication.executor": "Debug",
     "Spring Boot.OrderServiceApplication.executor": "Debug",
     "Spring Boot.UserServiceApplication.executor": "Debug",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
@@ -128,6 +179,16 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Mert\Desktop\Fullstack-Project-Final\services\discovery-client-service\src\main\resources" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.devaemlak.advertisement_service.service" />
+      <recent name="com.devaemlak.advertisement_service.controller" />
+      <recent name="com.devaemlak.order_service.service" />
+      <recent name="com.devaemlak.order_service.controller" />
+      <recent name="com.devaemlak.log_service.service" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.devaemlak.log_service.consumer.response" />
     </key>
@@ -141,24 +202,86 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.LogServiceApplication">
-    <configuration name="AdvertisementServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+  <component name="RunManager" selected="JUnit.SaleAdControllerTest">
+    <configuration name="AdvertisementControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="advertisement-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.devaemlak.advertisement_service.AdvertisementServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.devaemlak.advertisement_service.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.devaemlak.advertisement_service.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.devaemlak.advertisement_service.controller.AdvertisementControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApiGatewayServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="api-gateway-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.devaemlak.api_gateway_service.ApiGatewayServiceApplication" />
+    <configuration name="ImageControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="advertisement-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.devaemlak.api_gateway_service.*" />
+          <option name="PATTERN" value="com.devaemlak.advertisement_service.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.devaemlak.advertisement_service.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.devaemlak.advertisement_service.controller.ImageControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImageServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="advertisement-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.devaemlak.advertisement_service.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.devaemlak.advertisement_service.service" />
+      <option name="MAIN_CLASS_NAME" value="com.devaemlak.advertisement_service.service.ImageServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RentalAdControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="advertisement-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.devaemlak.advertisement_service.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.devaemlak.advertisement_service.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.devaemlak.advertisement_service.controller.RentalAdControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SaleAdControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="advertisement-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.devaemlak.advertisement_service.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.devaemlak.advertisement_service.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.devaemlak.advertisement_service.controller.SaleAdControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdvertisementServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="advertisement-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.devaemlak.advertisement_service.AdvertisementServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -199,18 +322,13 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="resources/docker-compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="backend/services/log-service/src/main/resources/docker-compose.yaml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ApiGatewayServiceApplication" />
-        <item itemvalue="Docker.resources/docker-compose.yaml: Compose Deployment" />
+        <item itemvalue="JUnit.SaleAdControllerTest" />
+        <item itemvalue="JUnit.RentalAdControllerTest" />
+        <item itemvalue="JUnit.ImageControllerTest" />
+        <item itemvalue="JUnit.AdvertisementControllerTest" />
+        <item itemvalue="JUnit.ImageServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +354,7 @@
       <workItem from="1720602203065" duration="38000" />
       <workItem from="1721123713966" duration="67240000" />
       <workItem from="1721381199897" duration="34508000" />
-      <workItem from="1721467056320" duration="46195000" />
+      <workItem from="1721467056320" duration="62357000" />
     </task>
     <servers />
   </component>
@@ -295,11 +413,6 @@
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/service/OrderService.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/services/order-service/src/main/java/com/devaemlak/order_service/service/PackageService.java</url>
           <line>50</line>
           <option name="timeStamp" value="27" />
@@ -325,19 +438,14 @@
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AttachmentService.java</url>
-          <line>97</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/AdvertisementService.java</url>
-          <line>84</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/services/advertisement-service/src/main/java/com/devaemlak/advertisement_service/service/RentalAdService.java</url>
-          <line>40</line>
+          <line>50</line>
           <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/services/user-service/src/main/java/com/devaemlak/user_service/producer/LogProducer.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -346,5 +454,60 @@
         <watch expression="e" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Fullstack_Project_Final$AdvertisementServiceTest.ic" NAME="AdvertisementServiceTest Coverage Results" MODIFIED="1721608361968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.devaemlak.advertisement_service.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Fullstack_Project_Final$SaleAdControllerTest.ic" NAME="SaleAdControllerTest Coverage Results" MODIFIED="1721608470262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.devaemlak.advertisement_service.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Fullstack_Project_Final$AdvertisementControllerTest.ic" NAME="AdvertisementControllerTest Coverage Results" MODIFIED="1721608421229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.devaemlak.advertisement_service.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Fullstack_Project_Final$PackageControllerTest.ic" NAME="PackageControllerTest Coverage Results" MODIFIED="1721608289963" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.devaemlak.order_service.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Fullstack_Project_Final$service_in_advertisement_service.ic" NAME="service in advertisement-service Coverage Results" MODIFIED="1721608078165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/Fullstack_Project_Final$LogServiceTest.ic" NAME="LogServiceTest Coverage Results" MODIFIED="1721608336055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.devaemlak.log_service.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Fullstack_Project_Final$LogControllerTest.ic" NAME="LogControllerTest Coverage Results" MODIFIED="1721608316625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.devaemlak.log_service.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Fullstack_Project_Final$ImageControllerTest.ic" NAME="ImageControllerTest Coverage Results" MODIFIED="1721608444551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.devaemlak.advertisement_service.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Fullstack_Project_Final$OrderServiceTest.ic" NAME="OrderServiceTest Coverage Results" MODIFIED="1721608235994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.devaemlak.order_service.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Fullstack_Project_Final$CloudinaryServiceTest.ic" NAME="CloudinaryServiceTest Coverage Results" MODIFIED="1721608377017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.devaemlak.advertisement_service.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Fullstack_Project_Final$UserControllerTest.ic" NAME="UserControllerTest Coverage Results" MODIFIED="1721608209935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.devaemlak.user_service.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Fullstack_Project_Final$AdvertisementServiceTest_and_6_more.ic" NAME="AdvertisementServiceTest and 6 more Coverage Results" MODIFIED="1721608134949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/Fullstack_Project_Final$SaleAdServiceTest.ic" NAME="SaleAdServiceTest Coverage Results" MODIFIED="1721607023404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.devaemlak.advertisement_service.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Fullstack_Project_Final$RentalAdControllerTest.ic" NAME="RentalAdControllerTest Coverage Results" MODIFIED="1721608455290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.devaemlak.advertisement_service.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Fullstack_Project_Final$OrderControllerTest.ic" NAME="OrderControllerTest Coverage Results" MODIFIED="1721608271947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.devaemlak.order_service.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Fullstack_Project_Final$UserServiceTest.ic" NAME="UserServiceTest Coverage Results" MODIFIED="1721608194352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.devaemlak.user_service.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Fullstack_Project_Final$ImageServiceTest.ic" NAME="ImageServiceTest Coverage Results" MODIFIED="1721608390861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.devaemlak.advertisement_service.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Fullstack_Project_Final$RentalAdServiceTest.ic" NAME="RentalAdServiceTest Coverage Results" MODIFIED="1721607090567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.devaemlak.advertisement_service.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Fullstack_Project_Final$PackageServiceTest.ic" NAME="PackageServiceTest Coverage Results" MODIFIED="1721608249200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.devaemlak.order_service.service.*</FILTER>
+    </SUITE>
   </component>
 </project>

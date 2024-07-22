@@ -50,11 +50,16 @@ public class OrderService {
     }
 
     public OrderResponse getById(Long id) {
-        OrderResponse orderResponse = orderRepository.findById(id)
-                .map(OrderConverter::toResponse)
-                .orElseThrow(() -> new OrderException(ExceptionMessages.ORDER_NOT_FOUND));
-        logProducer.sendToLog(prepareLogDto(OperationType.GET, ExceptionMessages.ORDER_RETRIEVED, LogType.INFO));
-        return orderResponse;
+        try {
+            OrderResponse orderResponse = orderRepository.findById(id)
+                    .map(OrderConverter::toResponse)
+                    .orElseThrow(() -> new OrderException(ExceptionMessages.ORDER_NOT_FOUND));
+            logProducer.sendToLog(prepareLogDto(OperationType.GET, ExceptionMessages.ORDER_RETRIEVED, LogType.INFO));
+            return orderResponse;
+        } catch (OrderException e) {
+            logProducer.sendToLog(prepareLogDto(OperationType.GET, ExceptionMessages.ORDER_NOT_FOUND, LogType.ERROR));
+            throw e;
+        }
     }
 
     private LogDto prepareLogDto(OperationType operationType, String message, LogType logType) {

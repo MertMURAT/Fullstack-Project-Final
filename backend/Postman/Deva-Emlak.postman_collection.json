@@ -1,0 +1,524 @@
+{
+	"info": {
+		"_postman_id": "79f2c86e-2a85-412f-8f30-2f7459bcd1c9",
+		"name": "Deva-Emlak",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34670894"
+	},
+	"item": [
+		{
+			"name": "advertisement",
+			"item": [
+				{
+					"name": "rental-ad",
+					"item": [
+						{
+							"name": "Save",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"address\": \"Ankara, Türkiye\",\r\n    \"coordinates\": {\r\n        \"lat\": 28.7040592,\r\n        \"lng\": 77.10249019999999\r\n        },\r\n    \"createdBy\": \"mert@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/v1/rental-ads"
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Kiralık Geniş Daire\",\r\n    \"description\": \"Sakin bir mahallede yer alan geniş bir daire.\",\r\n    \"price\": 1500.00,\r\n    \"numberOfRooms\": 4,\r\n    \"area\": 160,\r\n    \"assignee\": \"Sahibinden\",\r\n    \"housingType\": \"APARTMENT\",\r\n    \"floorNumber\": 8,\r\n    \"userId\": 1,\r\n    \"profileImage\": \"https://vcxvvcxnatsbqmksoblu.supabase.co/storage/v1/object/public/listingImages/1720802255615\",\r\n    \"fullName\": \"Mert MURAT\",\r\n    \"createdBy\": \"mert@gmail.com\",\r\n    \"monthlyRent\": 1500.00,\r\n    \"depositAmount\": 3000.00,\r\n    \"isFurnished\": true,\r\n    \"includesUtilities\": false,\r\n    \"allowsPets\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/v1/rental-ads/1"
+							},
+							"response": []
+						},
+						{
+							"name": "update status",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/v1/rental-ads"
+							},
+							"response": []
+						},
+						{
+							"name": "get by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/v1/rental-ads/3"
+							},
+							"response": []
+						},
+						{
+							"name": "get by status",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/rental-ads/status?userId=1&status=ACTIVE",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"rental-ads",
+										"status"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "1"
+										},
+										{
+											"key": "status",
+											"value": "ACTIVE"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/v1/rental-ads"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "sale-ad",
+					"item": [
+						{
+							"name": "save",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"address\": \"İstanbul, Türkiye\",\r\n    \"coordinates\": \"{\\\"lat\\\": 28.7040592, \\\"lng\\\": 77.10249019999999}\",\r\n    \"createdBy\": \"mert@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/v1/sale-ads"
+							},
+							"response": []
+						},
+						{
+							"name": "update status",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 2,\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/v1/sale-ads"
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Luxury Apartment for Sale 2\",\r\n    \"description\": \"A beautiful apartment located in the heart of the city.\",\r\n    \"price\": 250000.00,\r\n    \"numberOfRooms\": 3,\r\n    \"area\": 190,\r\n    \"assignee\": \"John Doe\",\r\n    \"housingType\": \"VILLA\",\r\n    \"floorNumber\": 20,\r\n    \"userId\": 1,\r\n    \"profileImage\": \"https://vcxvvcxnatsbqmksoblu.supabase.co/storage/v1/object/public/listingImages/1720802255615\",\r\n    \"fullName\": \"Mert MURAT2\",\r\n    \"createdBy\": \"mert@gmail.com\",\r\n    \"garage\": 1222,\r\n    \"garden\": 44,\r\n    \"swimmingPool\": 55\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:8080/api/v1/sale-ads/2"
+							},
+							"response": []
+						},
+						{
+							"name": "get by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/v1/sale-ads/1"
+							},
+							"response": []
+						},
+						{
+							"name": "get by status",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/sale-ads/status?userId=3&status=ACTIVE",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sale-ads",
+										"status"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "3"
+										},
+										{
+											"key": "status",
+											"value": "ACTIVE"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/v1/sale-ads"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "image",
+					"item": [
+						{
+							"name": "upload image",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "test_foto_2",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "0cZUSePZf/workshop.png"
+										},
+										{
+											"key": "advertisement-id",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": "localhost:8080/api/v1/attachments/upload"
+							},
+							"response": []
+						},
+						{
+							"name": "get all",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "test_foto",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "postman-cloud:///1ef46d64-7f8f-4b60-88ff-04155aee7ff3"
+										},
+										{
+											"key": "advertisement-id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": "localhost:8080/api/v1/attachments"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "get all advertisements",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/v1/advertisements"
+					},
+					"response": []
+				},
+				{
+					"name": "get all latest list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/v1/advertisements/latest"
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/v1/advertisements/1"
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"page\": 0,\r\n    \"size\": 20,\r\n    \"address\": \"Ankara, Türkiye\",\r\n    \"area\": 100.0,\r\n    \"numberOfRooms\": 3,\r\n    \"floorNumber\": 2,\r\n    \"housingType\": \"VILLA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/v1/advertisements/search"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mert\",\r\n    \"surname\": \"MURAT\",\r\n    \"email\": \"mert@gmail.com\",\r\n    \"password\": \"12345\",\r\n    \"phoneNumber\": \"05335321612\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/v1/users"
+					},
+					"response": []
+				},
+				{
+					"name": "get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/v1/users"
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/v1/users/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "ad-packages",
+					"item": [
+						{
+							"name": "get all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/v1/ad-packages"
+							},
+							"response": []
+						},
+						{
+							"name": "get total quantity",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:8080/api/v1/ad-packages/total-quantity"
+							},
+							"response": []
+						},
+						{
+							"name": "decrease by one",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": "localhost:8080/api/v1/ad-packages"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/v1/orders"
+					},
+					"response": []
+				},
+				{
+					"name": "get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/v1/orders"
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/v1/orders/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "log",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"serviceName\": \"UserService\",\r\n  \"operationType\": \"INSERT\",\r\n  \"logType\": \"INFO\",\r\n  \"message\": \"New user created successfully\",\r\n  \"timestamp\": \"2024-07-18T15:00:00\",\r\n  \"exception\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/v1/logs"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"669a6041f6e5877df97016fb\",\r\n  \"serviceName\": \"UserService\",\r\n  \"operationType\": \"UPDATE\",\r\n  \"logType\": \"INFO\",\r\n  \"message\": \"User details updated successfully\",\r\n  \"timestamp\": \"2024-07-18T15:30:00\",\r\n  \"exception\": \"test\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/v1/logs/update"
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/v1/logs"
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/v1/logs/669a6041f6e5877df97016fb"
+					},
+					"response": []
+				},
+				{
+					"name": "delete by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/api/v1/logs/669a6012f6e5877df97016fa"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

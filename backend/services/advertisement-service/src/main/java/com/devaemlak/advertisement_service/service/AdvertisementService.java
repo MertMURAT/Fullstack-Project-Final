@@ -21,6 +21,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -88,7 +89,12 @@ public class AdvertisementService {
         return advertisements.stream().toList();
     }
 
+    @Transactional
     public void deleteById(Long id) {
+        if (!advertisementRepository.existsById(id)) {
+            logProducer.sendToLog(prepareLogDto(OperationType.DELETE, ExceptionMessages.ADVERTISEMENT_NOT_FOUND, LogType.ERROR));
+            throw new AdvertisementException(ExceptionMessages.ADVERTISEMENT_NOT_FOUND);
+        }
         advertisementRepository.deleteById(id);
         logProducer.sendToLog(prepareLogDto(OperationType.DELETE, ExceptionMessages.ADVERTISEMENT_DELETED, LogType.INFO));
     }
