@@ -73,7 +73,7 @@ public class PackageService {
                 throw new OrderException(ExceptionMessages.AD_PACKAGE_DELETE_ERROR);
             }
         };
-        Instant deleteTimeInstant = adPackage.getCreatedDate().plusSeconds(50000).atZone(ZoneId.systemDefault()).toInstant();
+        Instant deleteTimeInstant = adPackage.getCreatedDate().plusSeconds(30).atZone(ZoneId.systemDefault()).toInstant();
         taskScheduler.schedule(task, deleteTimeInstant);
     }
 

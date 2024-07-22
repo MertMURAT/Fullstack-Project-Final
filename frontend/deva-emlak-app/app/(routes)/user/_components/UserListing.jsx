@@ -206,26 +206,26 @@ function UserListing() {
                             </div>
                             <div className='flex gap-2 justify-between'>
                                 <Link href={'/view-listing/' + item.id} className='w-full' >
-                                    <Button size='sm' variant='outline' className='w-full'>View</Button>
+                                    <Button size='sm' variant='outline' className='w-full'>Detay</Button>
                                 </Link>
 
                                 <Link href={`/edit-new-listing/${item.advertisementType === 'SALE' ? 'Sell' : 'Rent'}/${item.id}`}
                                     className='w-full' >
-                                    <Button size='sm' className='w-full'>Edit</Button>
+                                    <Button size='sm' className='w-full'>Düzenle</Button>
                                 </Link>
 
                                 <Link href={'/user#/my-listing'} className='w-full'>
                                     <Button
                                         onClick={() => {
-                                            item.advertisementStatus === 'PASSIVE' ?
+                                            item.advertisementStatus === 'PASSIVE' || item.advertisementStatus == 'IN_REVIEW' ?
                                                 publishButtonHandler(item.id, item.advertisementType, 'ACTIVE') :
                                                 publishButtonHandler(item.id, item.advertisementType, 'PASSIVE')
                                         }}
                                         size='sm'
                                         variant="outline"
-                                        className={`w-full ${item.advertisementStatus === 'PASSIVE' ? 'bg-green-500 hover:bg-green-700 text-white' : 'bg-red-500 hover:bg-red-700 text-white'}`}
+                                        className={`w-full ${item.advertisementStatus === 'ACTIVE' ?'bg-red-500 hover:bg-red-700 text-white'  :'bg-green-500 hover:bg-green-700 text-white' }`}
                                     >
-                                        {item.advertisementStatus === 'ACTIVE' || item.advertisementStatus === 'IN_REVIEW' ? 'PASİF' : 'AKTİF'}
+                                        {item.advertisementStatus === 'ACTIVE' ? 'PASİF' : 'AKTİF'}
                                     </Button>
                                 </Link>
 

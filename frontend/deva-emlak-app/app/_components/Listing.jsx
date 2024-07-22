@@ -13,8 +13,8 @@ function Listing({ listing, handleSearchClick, searchedAddress
   const [address, setAddress] = useState();
 
   const truncateText = (text, maxLength) => {
-    if (text.length > maxLength) {
-        return text.substring(0, maxLength) + '...';
+    if (text?.length > maxLength) {
+        return text?.substring(0, maxLength) + '...';
     }
     return text;
 };
@@ -29,17 +29,17 @@ function Listing({ listing, handleSearchClick, searchedAddress
           }}
           setCoordinates={setCoordinates}
         />
-        <Button className='flex gap-2'
+        {/* <Button className='flex gap-2'
           onClick={handleSearchClick}>
-          <Search className='h-4 w-4' />Search</Button>
+          <Search className='h-4 w-4' />Search</Button> */}
       </div>
-
+{/* 
       <FilterSection
         setArea={setArea}
         setNumberOfRooms={setNumberOfRooms}
         setFloorNumber={setFloorNumber}
         setHomeType={setHomeType}
-      />
+      /> */}
 
       {address && <div className='px-3'>
         <h2 className='text-xl'>
@@ -65,7 +65,7 @@ function Listing({ listing, handleSearchClick, searchedAddress
                   <h2 className='font-semibold text-lg text-slate-500'>{item?.assignee}</h2>
                 </div>
 
-                <h2 className='font-bold text-xl'>${item?.price}</h2>
+                <h2 className='font-bold text-xl'>{item?.price} ₺</h2>
                 <h2 className='flex gap-2 text-sm text-gray-400'>
                   <MapPin className='h-4 w-4' />
                   {item?.address}</h2>

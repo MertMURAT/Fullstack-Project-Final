@@ -57,18 +57,22 @@ function Header() {
                     <Image src={'/logo.svg'} width={50}
                         height={50} alt='logo' />
                 </Link>
-
-                <ul className='hidden md:flex gap-10'>
-                    <Link href={'/sell'}>
-                        <li className={`'hover:text-primary font-medium text-sm cursor-pointer' 
+                {isSignedIn ?
+                    <ul className='hidden md:flex gap-10'>
+                        <Link href={'/sell'}>
+                            <li className={`'hover:text-primary font-medium text-sm cursor-pointer' 
                             ${path == '/sell' && 'text-primary'}`}>Satılık</li>
-                    </Link>
-                    <Link href={'/rent'}>
-                        <li className={`'hover:text-primary font-medium text-sm cursor-pointer' 
+                        </Link>
+                        <Link href={'/rent'}>
+                            <li className={`'hover:text-primary font-medium text-sm cursor-pointer' 
                             ${path == '/rent' && 'text-primary'}`}>Kiralık</li>
-                    </Link>
-                    {/* <li className='hover:text-primary font-medium text-sm cursor-pointer'>Agent Finder</li> */}
-                </ul>
+                        </Link>
+                        {/* <li className='hover:text-primary font-medium text-sm cursor-pointer'>Agent Finder</li> */}
+                    </ul> :
+                    <div>
+                    </div>
+                }
+
             </div>
             <div className='flex gap-5 items-center'>
                 {

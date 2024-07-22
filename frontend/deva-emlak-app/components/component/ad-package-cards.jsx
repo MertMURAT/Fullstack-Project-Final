@@ -43,8 +43,8 @@ export function AdPackageCards({ quantity, createdDate, expiryDate }) {
             <span>{formattedCreatedDate}</span>
           </div>
           <div>
-            <span>Son Kullanım: </span>
-            <span>{formattedExpiryDate}</span>
+            <span>Kullanım Süresi : 30 Gün </span>
+            {/* <span>{formattedExpiryDate}</span> */}
           </div>
         </div>
       </CardFooter>

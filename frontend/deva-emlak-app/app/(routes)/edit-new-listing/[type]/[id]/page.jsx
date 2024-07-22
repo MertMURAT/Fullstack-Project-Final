@@ -514,11 +514,13 @@ function EditListing({ params }) {
                             </div>
 
                             <div className='flex gap-7 justify-end'>
-                                <Button type="onSubmit" disabled={loading} variant="outline" className="text-primary border-primary">
+                                <Button type="onSubmit" disabled={loading}
+                                //  variant="outline" 
+                                 className="text-white border-primary">
                                     {loading ? <Loader className='animate-spin' /> : 'Kaydet'}
                                 </Button>
 
-                                <AlertDialog>
+                                {/* <AlertDialog>
                                     <AlertDialogTrigger asChild>
                                         <Button type="button" disabled={loading} className="">
                                             {loading ? <Loader className='animate-spin' /> : 'Yayınla'}</Button>
@@ -537,7 +539,7 @@ function EditListing({ params }) {
                                             </AlertDialogAction>
                                         </AlertDialogFooter>
                                     </AlertDialogContent>
-                                </AlertDialog>
+                                </AlertDialog> */}
 
                             </div>
                         </div>

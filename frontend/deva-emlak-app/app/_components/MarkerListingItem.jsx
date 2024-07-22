@@ -14,7 +14,7 @@ function MarkerListingItem({ item, closeHandler }) {
                 </div>
 
                 <Image 
-                src={item?.images[0].imageUrl}
+                src={item?.images[0]?.imageUrl}
                     width={800}
                     height={150}
                     className='rounded-lg w-full object-cover h-full'
