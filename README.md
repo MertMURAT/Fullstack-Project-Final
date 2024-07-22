@@ -2,6 +2,15 @@
 <div align="center"><h1> :sparkles: DEVA EMLAK :sparkles: </h1> </div>
 <div align="center"><h2> 🚥 FULL STACK REAL ESTATE PROJECT 🚥 </h2> </div>
 
+## APPLICATION
+
+| LINK                                                                                                                 | HTTP                     | 
+|----------------------------------------------------------------------------------------------------------------------|--------------------------|
+| [CLICK](https://github.com/MertMURAT/Fullstack-Project-Final/tree/main/backend/screenshots)                          | APPLICATION SCREENSHOTS  | 
+| [CLICK](https://github.com/MertMURAT/Fullstack-Project-Final/tree/main/backend/Log_Reports)                          | LOG REPORTS              | 
+| [CLICK](https://github.com/MertMURAT/Fullstack-Project-Final/tree/main/backend/Postman)                              | POSTMAN JSON FILE        |
+| [CLICK](https://github.com/MertMURAT/Fullstack-Project-Final/tree/main/backend/Unit_Test_Coverage)                   | UNIT TEST COVERAGE       | 
+
 
 ## Technology stacks
 
@@ -11,7 +20,6 @@
  - [x] Spring Boot <img src="https://img.icons8.com/color/48/000000/spring-logo.png" width="40" height="40"/>
 
 
-
 ##
  **Dependencies**
  
@@ -19,6 +27,7 @@
  - Spring Data Jpa
  - Data MongoDB
  - Spring for Rabbitmq
+ - JUnit
  - Lombok
  - Devtools
  - Eureka Server
@@ -31,7 +40,7 @@
  - [x] MongoDB (Logging) <img src="https://img.icons8.com/color/48/000000/mongodb.png" width="40" height="40"/>
  
 ### Tools
-
+ - [x] Docker <img src="https://cdn-icons-png.flaticon.com/512/919/919853.png" width="40" height="40"/>
  - [x] Maven <img src="https://icons-for-free.com/iff/png/256/vscode+icons+type+maven-1324451386617447973.png" width="40" height="40"/> 
  - [x] Postman <img src="https://cdn.iconscout.com/icon/free/png-512/free-postman-3521648-2945092.png?f=webp&w=256" width="40" height="40"/>
 
@@ -117,11 +126,11 @@
 
 
 
-## THIRD-PARTY
+ ## OTHER APPLICATIONS
 
- - [x] CLERK <img src="https://imgix.cosmicjs.com/9d8bc340-e63d-11ee-b074-b5c8fe3ef189-clerk.webp?w=1200&auto=format" width="40" height="40"/>
- - [X] GOOGLE PLACE API <img src="https://cdn-icons-png.freepik.com/256/16509/16509523.png?semt=ais_hybrid" width="40" height="40"/>
-
+ - [x] CLERK (AUTH) <img src="https://imgix.cosmicjs.com/9d8bc340-e63d-11ee-b074-b5c8fe3ef189-clerk.webp?w=1200&auto=format" width="40" height="40"/>
+ - [X] GOOGLE PLACE API (MAP) <img src="https://cdn-icons-png.freepik.com/256/16509/16509523.png?semt=ais_hybrid" width="40" height="40"/>
+ - [X] CLOUDINARY (UPLOAD IMAGE) <img src="https://d2ooyrflu7lhqd.cloudfront.net/cloudinary_f1b7a83593.png" width="40" height="40"/>
 
 
 ## `Aplication Screenshots` 
